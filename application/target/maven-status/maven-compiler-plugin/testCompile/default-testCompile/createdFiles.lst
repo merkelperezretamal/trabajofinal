@@ -1,0 +1,8 @@
+domainapp\application\bdd\specglue\BootstrappingGlue.class
+domainapp\application\bdd\specs\RunIntegBddSpecs.class
+domainapp\application\integtests\mml\MetaModelService_IntegTest$2.class
+domainapp\application\integtests\mml\MetaModelService_IntegTest$1.class
+domainapp\application\integtests\mml\MetaModelService_IntegTest.class
+domainapp\application\integtests\smoke\Smoke_IntegTest.class
+domainapp\application\integtests\DomainAppIntegTestAbstract.class
+domainapp\application\bdd\specglue\CatalogOfFixturesGlue.class

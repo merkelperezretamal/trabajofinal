@@ -1,0 +1,13 @@
+2021-05-17 16:59:15.035 9e342628-cb57-4924-9535-4ec44da63ce4,0: simple.Equipo:1 by sven, denominacion: [NEW] -> EQ002
+2021-05-17 16:59:15.036 9e342628-cb57-4924-9535-4ec44da63ce4,0: simple.Equipo:1 by sven, horometro: [NEW] -> 0.0
+2021-05-17 16:59:15.036 9e342628-cb57-4924-9535-4ec44da63ce4,0: simple.Equipo:1 by sven, notes: [NEW] -> null
+2021-05-17 16:59:15.036 9e342628-cb57-4924-9535-4ec44da63ce4,0: simple.Equipo:1 by sven, porcentajeDisponibilidad: [NEW] -> 0.0
+2021-05-17 16:59:15.036 9e342628-cb57-4924-9535-4ec44da63ce4,0: simple.Equipo:1 by sven, presionAceite: [NEW] -> 0.0
+2021-05-17 16:59:15.036 9e342628-cb57-4924-9535-4ec44da63ce4,0: simple.Equipo:1 by sven, rpm: [NEW] -> 0.0
+2021-05-17 16:59:26.385 bc019772-ba72-453f-ae94-b572ccea7b80,0: simple.Equipo:1 by sven, horometro: 0.0 -> 15.0
+2021-05-17 16:59:58.016 bcb63b72-5321-4ac7-820a-db095a3ee716,0: simple.Equipo:1 by sven, notes: null -> [DELETED]
+2021-05-17 16:59:58.016 bcb63b72-5321-4ac7-820a-db095a3ee716,0: simple.Equipo:1 by sven, denominacion: EQ002 -> [DELETED]
+2021-05-17 16:59:58.016 bcb63b72-5321-4ac7-820a-db095a3ee716,0: simple.Equipo:1 by sven, horometro: 15.0 -> [DELETED]
+2021-05-17 16:59:58.016 bcb63b72-5321-4ac7-820a-db095a3ee716,0: simple.Equipo:1 by sven, porcentajeDisponibilidad: 0.0 -> [DELETED]
+2021-05-17 16:59:58.016 bcb63b72-5321-4ac7-820a-db095a3ee716,0: simple.Equipo:1 by sven, presionAceite: 0.0 -> [DELETED]
+2021-05-17 16:59:58.016 bcb63b72-5321-4ac7-820a-db095a3ee716,0: simple.Equipo:1 by sven, rpm: 0.0 -> [DELETED]
