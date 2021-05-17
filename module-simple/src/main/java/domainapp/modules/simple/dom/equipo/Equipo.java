@@ -19,6 +19,7 @@
 package domainapp.modules.simple.dom.equipo;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.motor.Motor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,6 +30,7 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
 import javax.jdo.annotations.IdentityType;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
 import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
@@ -45,16 +47,11 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @lombok.RequiredArgsConstructor
 public class Equipo implements Comparable<Equipo> {
 
-/*    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property() // editing disabled by default, see isis.properties
-    @Title(prepend = "Object: ")
-    private String name; */
-
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Getter
     @Setter
+    @Title(prepend = "Equipo: ")
     private String denominacion;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
@@ -77,6 +74,14 @@ public class Equipo implements Comparable<Equipo> {
     @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
     private String notes;
+
+    @Persistent(
+            mappedBy = "equipo",
+            dependentElement = "true"
+    )
+    @Getter @Setter
+    @javax.jdo.annotations.Column(allowsNull="true")
+    private Motor motor;
 
     public Equipo(final String denominacion,
                   final double horometro) {
@@ -120,6 +125,21 @@ public class Equipo implements Comparable<Equipo> {
                 .compare(this.getDenominacion(), other.getDenominacion())
                 .result();
     }
+
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    public Motor nuevoMotor(final String tag) {
+        return repositoryService.persist(new Motor(this, tag));
+    }
+
+    @Action(
+            semantics = SemanticsOf.NON_IDEMPOTENT,
+            associateWith = "motors", associateWithSequence = "2"
+    )
+    public Equipo borrarMotor(Motor motor) {
+        repositoryService.remove(motor);
+        return this;
+    }
+
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

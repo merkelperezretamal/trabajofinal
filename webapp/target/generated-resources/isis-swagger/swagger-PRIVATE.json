@@ -231,6 +231,105 @@
         }
       }
     },
+    "/objects/simple.Equipo/{objectId}/actions/borrarMotor/invoke" : {
+      "post" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Equipo#borrarMotor",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "motor" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "$ref" : "#/definitions/LinkRepr"
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Equipo#borrarMotor",
+            "schema" : {
+              "$ref" : "#/definitions/simple.EquipoRepr"
+            }
+          }
+        }
+      }
+    },
+    "/objects/simple.Equipo/{objectId}/actions/nuevoMotor/invoke" : {
+      "post" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Equipo#nuevoMotor",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "string" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Equipo#nuevoMotor",
+            "schema" : {
+              "$ref" : "#/definitions/simple.MotorRepr"
+            }
+          }
+        }
+      }
+    },
+    "/objects/simple.Motor/{objectId}" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 14.1",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Motor , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "$ref" : "#/definitions/simple.MotorRepr"
+            }
+          }
+        }
+      }
+    },
     "/objects/simple.SimpleObject/{objectId}" : {
       "get" : {
         "tags" : [ "simple" ],
@@ -732,6 +831,38 @@
         }
       }
     },
+    "simple.MotorRepr" : {
+      "type" : "object",
+      "properties" : {
+        "datanucleusIdLong" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "datanucleusVersionLong" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "datanucleusVersionTimestamp" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "equipo" : {
+          "$ref" : "#/definitions/HrefRepr"
+        },
+        "tag" : {
+          "type" : "string"
+        },
+        "temperaturaAceite" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "temperaturaAgua" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "description" : "simple.Motor (domainapp.modules.simple.dom.motor.Motor)"
+    },
     "isisApplib.DomainObjectListRepr" : {
       "type" : "object",
       "properties" : {
@@ -816,6 +947,9 @@
         "horometro" : {
           "type" : "number",
           "format" : "double"
+        },
+        "motor" : {
+          "$ref" : "#/definitions/HrefRepr"
         },
         "notes" : {
           "type" : "string"

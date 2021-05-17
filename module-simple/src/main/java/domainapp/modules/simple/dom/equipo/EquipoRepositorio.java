@@ -41,28 +41,18 @@ public class EquipoRepositorio {
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "1")
+    @MemberOrder(sequence = "2")
     public List<Equipo> listAll() {
         return repositoryService.allInstances(Equipo.class);
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
 
-  /*  @Action(domainEvent = CreateDomainEvent.class)
-    @MemberOrder(sequence = "3")
-    public Equipo create(
-            @ParameterLayout(named="Name")
-            final String name) {
-        return repositoryService.persist(new Equipo(name));
-    } */
-
     @Action(domainEvent = CreateDomainEvent.class)
-    @MemberOrder(sequence = "3")
+    @MemberOrder(sequence = "1")
     public Equipo create(
-
             @ParameterLayout(named="Denominacion")
             final String denominacion,
-
             @ParameterLayout(named="Horometro")
             final double horometro){
         return repositoryService.persist(new Equipo(denominacion, horometro));

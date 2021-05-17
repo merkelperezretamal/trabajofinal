@@ -1,4 +1,5 @@
 domainapp\modules\simple\SimpleModule.class
+domainapp\modules\simple\dom\motor\QMotor.class
 domainapp\modules\simple\dom\impl\SimpleObject.class
 domainapp\modules\simple\SimpleModule$ActionDomainEvent.class
 domainapp\modules\simple\dom\equipo\Equipo.class
@@ -12,6 +13,7 @@ domainapp\modules\simple\dom\impl\QSimpleObject.class
 domainapp\modules\simple\SimpleModule$CollectionDomainEvent.class
 domainapp\modules\simple\dom\impl\SimpleObjects$CreateDomainEvent.class
 domainapp\modules\simple\dom\impl\SimpleObjects.class
+domainapp\modules\simple\dom\motor\Motor.class
 domainapp\modules\simple\fixture\SimpleObject_persona$PersistAll.class
 domainapp\modules\simple\SimpleModule$PropertyDomainEvent.class
 domainapp\modules\simple\SimpleModule$1.class
