@@ -1,0 +1,10 @@
+domainapp\application\fixture\DomainAppFixtureScriptsSpecificationProvider.class
+domainapp\application\services\homepage\HomePageViewModel.class
+domainapp\application\services\homepage\HomePageService.class
+domainapp\application\fixture\scenarios\DomainAppDemo.class
+domainapp\application\manifest\DomainAppAppManifestBypassSecurity.class
+domainapp\application\services\health\HealthCheckServiceImpl.class
+domainapp\application\manifest\DomainAppAppManifestWithFixtures.class
+domainapp\application\DomainAppApplicationModule.class
+domainapp\application\manifest\DomainAppAppManifestWithFixturesBypassSecurity.class
+domainapp\application\manifest\DomainAppAppManifest.class
