@@ -19,6 +19,7 @@
 package domainapp.modules.simple.dom.equipo;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.motor.Motor;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -83,6 +84,14 @@ public class Equipo implements Comparable<Equipo> {
     @javax.jdo.annotations.Column(allowsNull="true")
     private Motor motor;
 
+    @Persistent(
+            mappedBy = "equipo",
+            dependentElement = "true"
+    )
+    @Getter @Setter
+    @javax.jdo.annotations.Column(allowsNull="true")
+    private Compresor compresor;
+
     public Equipo(final String denominacion,
                   final double horometro) {
         this.denominacion = denominacion;
@@ -131,6 +140,10 @@ public class Equipo implements Comparable<Equipo> {
         return repositoryService.persist(new Motor(this, tag));
     }
 
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    public Compresor nuevoCompresor(final String tag) {
+        return repositoryService.persist(new Compresor(this, tag));
+    }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

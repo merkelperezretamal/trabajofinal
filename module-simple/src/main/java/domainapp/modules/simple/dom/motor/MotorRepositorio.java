@@ -13,7 +13,7 @@ public class MotorRepositorio {
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "2")
+    @MemberOrder(sequence = "1")
     public List<Motor> listAll() {
         return repositoryService.allInstances(Motor.class);
     }

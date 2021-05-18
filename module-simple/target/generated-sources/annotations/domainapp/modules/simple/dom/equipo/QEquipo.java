@@ -34,6 +34,7 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     public final NumericExpression<Double> presionAceite;
     public final StringExpression notes;
     public final domainapp.modules.simple.dom.motor.QMotor motor;
+    public final domainapp.modules.simple.dom.compresor.QCompresor compresor;
 
     public QEquipo(PersistableExpression parent, String name, int depth)
     {
@@ -52,6 +53,14 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
         {
             this.motor = null;
         }
+        if (depth > 0)
+        {
+            this.compresor = new domainapp.modules.simple.dom.compresor.QCompresor(this, "compresor", depth-1);
+        }
+        else
+        {
+            this.compresor = null;
+        }
     }
 
     public QEquipo(Class type, String name, ExpressionType exprType)
@@ -64,5 +73,6 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
         this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
         this.notes = new StringExpressionImpl(this, "notes");
         this.motor = new domainapp.modules.simple.dom.motor.QMotor(this, "motor", 5);
+        this.compresor = new domainapp.modules.simple.dom.compresor.QCompresor(this, "compresor", 5);
     }
 }
