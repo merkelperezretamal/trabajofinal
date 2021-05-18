@@ -39,15 +39,6 @@ import java.util.List;
 )
 public class EquipoRepositorio {
 
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "2")
-    public List<Equipo> listAll() {
-        return repositoryService.allInstances(Equipo.class);
-    }
-
-    public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
-
     @Action(domainEvent = CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
     public Equipo create(
@@ -57,6 +48,15 @@ public class EquipoRepositorio {
             final double horometro){
         return repositoryService.persist(new Equipo(denominacion, horometro));
     }
+
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @MemberOrder(sequence = "2")
+    public List<Equipo> listAll() {
+        return repositoryService.allInstances(Equipo.class);
+    }
+
+    public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
 
     @javax.inject.Inject
     RepositoryService repositoryService;

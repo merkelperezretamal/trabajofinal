@@ -231,45 +231,6 @@
         }
       }
     },
-    "/objects/simple.Equipo/{objectId}/actions/borrarMotor/invoke" : {
-      "post" : {
-        "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Equipo#borrarMotor",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
-        "parameters" : [ {
-          "name" : "objectId",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "object",
-            "properties" : {
-              "motor" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "$ref" : "#/definitions/LinkRepr"
-                  }
-                }
-              }
-            }
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "simple.Equipo#borrarMotor",
-            "schema" : {
-              "$ref" : "#/definitions/simple.EquipoRepr"
-            }
-          }
-        }
-      }
-    },
     "/objects/simple.Equipo/{objectId}/actions/nuevoMotor/invoke" : {
       "post" : {
         "tags" : [ "simple" ],
@@ -325,6 +286,35 @@
             "description" : "simple.Motor , if Accept: application/json;profile=urn:org.apache.isis/v1",
             "schema" : {
               "$ref" : "#/definitions/simple.MotorRepr"
+            }
+          }
+        }
+      }
+    },
+    "/objects/simple.Motor/{objectId}/actions/borrar/invoke" : {
+      "post" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Motor#borrar",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Motor#borrar",
+            "schema" : {
+              "type" : "object"
             }
           }
         }

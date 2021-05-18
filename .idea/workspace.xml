@@ -5,29 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06b75487-5796-4526-9397-a904e09d98c8" name="Default Changelist" comment="Commit testgit">
-      <change afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor/Motor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor/Motor.layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/compresor/Compresor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/compresor/Compresor.layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor/MotorRepositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.flattened-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/target/classes/domainapp/application/manifest/isis-non-changing.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/classes/domainapp/application/manifest/isis-non-changing.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/.flattened-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT-tests.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/.flattened-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/Equipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/EquipoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/EquipoRepositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor/Motor.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor/Motor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor/Motor.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor/Motor.layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/Equipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/Equipo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/EquipoRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/EquipoRepositorio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/QEquipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/QEquipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/motor/Motor.class" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/motor/Motor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/motor/Motor.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/motor/Motor.layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/equipo/QEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/equipo/QEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/impl/QSimpleObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/impl/QSimpleObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/motor/QMotor.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/motor/QMotor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT-tests.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/project-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/project-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/.flattened-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/logs/AuditerServiceLogging.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/AuditerServiceLogging.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/logs/PublisherServiceLogging.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/PublisherServiceLogging.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/logs/ThreadPoolSupport.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/ThreadPoolSupport.log" afterDir="false" />
@@ -37,7 +49,7 @@
       <change beforePath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-application-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-application-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-module-simple-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-module-simple-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/target/project.war" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/project.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/target/tmp/WicketFilter-filestore/7579/4314/1pxdc15dw4z1h19gd7bf9a3w8x/data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/tmp/WicketFilter-filestore/6104/7377/oi56wx3z9bt8wdkr2u3r78cl/data" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +75,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/motor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/compresor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\compresor" />
       <recent name="K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\motor" />
       <recent name="C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\project\module-simple\src\main\java\domainapp\modules\simple\dom\equipo" />
     </key>

@@ -51,7 +51,7 @@ public class Equipo implements Comparable<Equipo> {
     @lombok.NonNull
     @Getter
     @Setter
-    @Title(prepend = "Equipo: ")
+    @Title
     private String denominacion;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
@@ -89,7 +89,7 @@ public class Equipo implements Comparable<Equipo> {
         this.horometro = horometro;
     }
 
-    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED, associateWith = "horometro")
+    @Action(semantics = IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED, associateWith = "horometro")
     public Equipo actualizarHorometro(
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Horometro") //teniamos "Name"
@@ -129,15 +129,6 @@ public class Equipo implements Comparable<Equipo> {
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public Motor nuevoMotor(final String tag) {
         return repositoryService.persist(new Motor(this, tag));
-    }
-
-    @Action(
-            semantics = SemanticsOf.NON_IDEMPOTENT,
-            associateWith = "motors", associateWithSequence = "2"
-    )
-    public Equipo borrarMotor(Motor motor) {
-        repositoryService.remove(motor);
-        return this;
     }
 
 
