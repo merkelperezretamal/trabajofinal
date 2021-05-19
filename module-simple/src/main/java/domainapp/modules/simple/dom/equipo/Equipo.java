@@ -19,6 +19,7 @@
 package domainapp.modules.simple.dom.equipo;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.motor.Motor;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -51,10 +52,10 @@ public class Equipo implements Comparable<Equipo> {
     @lombok.NonNull
     @Getter
     @Setter
-    @Title(prepend = "Equipo: ")
+    @Title
     private String denominacion;
 
-    @javax.jdo.annotations.Column(allowsNull = "false")
+ /*   @javax.jdo.annotations.Column(allowsNull = "false")
 //    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
     private double horometro;
@@ -73,7 +74,7 @@ public class Equipo implements Comparable<Equipo> {
 
     @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
-    private String notes;
+    private String notes;*/
 
     @Persistent(
             mappedBy = "equipo",
@@ -83,13 +84,20 @@ public class Equipo implements Comparable<Equipo> {
     @javax.jdo.annotations.Column(allowsNull="true")
     private Motor motor;
 
-    public Equipo(final String denominacion,
-                  final double horometro) {
+    @Persistent(
+            mappedBy = "equipo",
+            dependentElement = "true"
+    )
+    @Getter @Setter
+    @javax.jdo.annotations.Column(allowsNull="true")
+    private Compresor compresor;
+
+  /*  public Equipo(final String denominacion) {
         this.denominacion = denominacion;
-        this.horometro = horometro;
+
     }
 
-    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED, associateWith = "horometro")
+    @Action(semantics = IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED, associateWith = "horometro")
     public Equipo actualizarHorometro(
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Horometro") //teniamos "Name"
@@ -97,7 +105,7 @@ public class Equipo implements Comparable<Equipo> {
         setHorometro(horometro);
         return this;
     }
-
+*/
     /* En primer proyecto lo borramos, en multimodulo hacia que tire error
     public double default0UpdateHorometro() {
         return getHorometro();
@@ -131,15 +139,10 @@ public class Equipo implements Comparable<Equipo> {
         return repositoryService.persist(new Motor(this, tag));
     }
 
-    @Action(
-            semantics = SemanticsOf.NON_IDEMPOTENT,
-            associateWith = "motors", associateWithSequence = "2"
-    )
-    public Equipo borrarMotor(Motor motor) {
-        repositoryService.remove(motor);
-        return this;
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    public Compresor nuevoCompresor(final String tag) {
+        return repositoryService.persist(new Compresor(this, tag));
     }
-
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

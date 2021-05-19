@@ -142,6 +142,56 @@
         }
       }
     },
+    "/objects/simple.Compresor/{objectId}" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 14.1",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Compresor , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "$ref" : "#/definitions/simple.CompresorRepr"
+            }
+          }
+        }
+      }
+    },
+    "/objects/simple.Compresor/{objectId}/actions/borrar/invoke" : {
+      "post" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Compresor#borrar",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Compresor#borrar",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        }
+      }
+    },
     "/objects/simple.Equipo/{objectId}" : {
       "get" : {
         "tags" : [ "simple" ],
@@ -156,45 +206,6 @@
         "responses" : {
           "200" : {
             "description" : "simple.Equipo , if Accept: application/json;profile=urn:org.apache.isis/v1",
-            "schema" : {
-              "$ref" : "#/definitions/simple.EquipoRepr"
-            }
-          }
-        }
-      }
-    },
-    "/objects/simple.Equipo/{objectId}/actions/actualizarHorometro/invoke" : {
-      "put" : {
-        "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Equipo#actualizarHorometro",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
-        "parameters" : [ {
-          "name" : "objectId",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "object",
-            "properties" : {
-              "horometro" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "object"
-                  }
-                }
-              }
-            }
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "simple.Equipo#actualizarHorometro",
             "schema" : {
               "$ref" : "#/definitions/simple.EquipoRepr"
             }
@@ -231,10 +242,10 @@
         }
       }
     },
-    "/objects/simple.Equipo/{objectId}/actions/borrarMotor/invoke" : {
+    "/objects/simple.Equipo/{objectId}/actions/nuevoCompresor/invoke" : {
       "post" : {
         "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Equipo#borrarMotor",
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Equipo#nuevoCompresor",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
         "parameters" : [ {
@@ -249,11 +260,11 @@
           "schema" : {
             "type" : "object",
             "properties" : {
-              "motor" : {
+              "string" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {
-                    "$ref" : "#/definitions/LinkRepr"
+                    "type" : "object"
                   }
                 }
               }
@@ -262,9 +273,9 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "simple.Equipo#borrarMotor",
+            "description" : "simple.Equipo#nuevoCompresor",
             "schema" : {
-              "$ref" : "#/definitions/simple.EquipoRepr"
+              "$ref" : "#/definitions/simple.CompresorRepr"
             }
           }
         }
@@ -325,6 +336,35 @@
             "description" : "simple.Motor , if Accept: application/json;profile=urn:org.apache.isis/v1",
             "schema" : {
               "$ref" : "#/definitions/simple.MotorRepr"
+            }
+          }
+        }
+      }
+    },
+    "/objects/simple.Motor/{objectId}/actions/borrar/invoke" : {
+      "post" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Motor#borrar",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Motor#borrar",
+            "schema" : {
+              "type" : "object"
             }
           }
         }
@@ -508,14 +548,6 @@
             "type" : "object",
             "properties" : {
               "denominacion" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "string"
-                  }
-                }
-              },
-              "horometro" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {
@@ -926,6 +958,62 @@
       },
       "description" : "domainapp.application.services.homepage.HomePageViewModel (domainapp.application.services.homepage.HomePageViewModel)"
     },
+    "simple.CompresorRepr" : {
+      "type" : "object",
+      "properties" : {
+        "datanucleusIdLong" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "datanucleusVersionLong" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "datanucleusVersionTimestamp" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "caudalDiario" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "equipo" : {
+          "$ref" : "#/definitions/HrefRepr"
+        },
+        "presionDescarga" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "presionSuccion1" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "presionSuccion2" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "presionSuccion3" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "tag" : {
+          "type" : "string"
+        },
+        "temperaturaSuccion1" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "temperaturaSuccion2" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "temperaturaSuccion3" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "description" : "simple.Compresor (domainapp.modules.simple.dom.compresor.Compresor)"
+    },
     "simple.EquipoRepr" : {
       "type" : "object",
       "properties" : {
@@ -941,30 +1029,14 @@
           "type" : "integer",
           "format" : "int64"
         },
+        "compresor" : {
+          "$ref" : "#/definitions/HrefRepr"
+        },
         "denominacion" : {
           "type" : "string"
         },
-        "horometro" : {
-          "type" : "number",
-          "format" : "double"
-        },
         "motor" : {
           "$ref" : "#/definitions/HrefRepr"
-        },
-        "notes" : {
-          "type" : "string"
-        },
-        "porcentajeDisponibilidad" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "presionAceite" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "rpm" : {
-          "type" : "number",
-          "format" : "double"
         }
       },
       "description" : "simple.Equipo (domainapp.modules.simple.dom.equipo.Equipo)"

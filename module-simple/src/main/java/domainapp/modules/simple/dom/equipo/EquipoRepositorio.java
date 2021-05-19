@@ -39,6 +39,16 @@ import java.util.List;
 )
 public class EquipoRepositorio {
 
+    @Action(domainEvent = CreateDomainEvent.class)
+    @MemberOrder(sequence = "1")
+    public Equipo create(
+            @ParameterLayout(named="Denominacion")
+            final String denominacion)
+  /*          @ParameterLayout(named="Horometro")
+            final double horometro)*/{
+        return repositoryService.persist(new Equipo(denominacion));
+    }
+
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")
@@ -47,16 +57,6 @@ public class EquipoRepositorio {
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
-
-    @Action(domainEvent = CreateDomainEvent.class)
-    @MemberOrder(sequence = "1")
-    public Equipo create(
-            @ParameterLayout(named="Denominacion")
-            final String denominacion,
-            @ParameterLayout(named="Horometro")
-            final double horometro){
-        return repositoryService.persist(new Equipo(denominacion, horometro));
-    }
 
     @javax.inject.Inject
     RepositoryService repositoryService;

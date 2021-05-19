@@ -1,11 +1,3 @@
-2021-05-17 18:35:02.966 b88b2825-0845-4713-8d47-6560d0030359,0: simple.Equipo:1 by sven, denominacion: [NEW] -> E001
-2021-05-17 18:35:02.967 b88b2825-0845-4713-8d47-6560d0030359,0: simple.Equipo:1 by sven, horometro: [NEW] -> 0.0
-2021-05-17 18:35:02.967 b88b2825-0845-4713-8d47-6560d0030359,0: simple.Equipo:1 by sven, motor: [NEW] -> null
-2021-05-17 18:35:02.967 b88b2825-0845-4713-8d47-6560d0030359,0: simple.Equipo:1 by sven, notes: [NEW] -> null
-2021-05-17 18:35:02.967 b88b2825-0845-4713-8d47-6560d0030359,0: simple.Equipo:1 by sven, porcentajeDisponibilidad: [NEW] -> 0.0
-2021-05-17 18:35:02.967 b88b2825-0845-4713-8d47-6560d0030359,0: simple.Equipo:1 by sven, presionAceite: [NEW] -> 0.0
-2021-05-17 18:35:02.967 b88b2825-0845-4713-8d47-6560d0030359,0: simple.Equipo:1 by sven, rpm: [NEW] -> 0.0
-2021-05-17 18:35:18.927 763cd8f7-c183-44cc-b76c-c44ae3455c88,0: simple.Motor:1 by sven, equipo: [NEW] -> E001
-2021-05-17 18:35:18.927 763cd8f7-c183-44cc-b76c-c44ae3455c88,0: simple.Motor:1 by sven, tag: [NEW] -> M001
-2021-05-17 18:35:18.927 763cd8f7-c183-44cc-b76c-c44ae3455c88,0: simple.Motor:1 by sven, temperaturaAceite: [NEW] -> 0.0
-2021-05-17 18:35:18.927 763cd8f7-c183-44cc-b76c-c44ae3455c88,0: simple.Motor:1 by sven, temperaturaAgua: [NEW] -> 0.0
+2021-05-19 12:52:08.477 e7d1ef21-b0f9-4d69-8e43-796eceb36e12,0: simple.Equipo:1 by sven, compresor: [NEW] -> null
+2021-05-19 12:52:08.477 e7d1ef21-b0f9-4d69-8e43-796eceb36e12,0: simple.Equipo:1 by sven, denominacion: [NEW] -> mav 123
+2021-05-19 12:52:08.477 e7d1ef21-b0f9-4d69-8e43-796eceb36e12,0: simple.Equipo:1 by sven, motor: [NEW] -> null
