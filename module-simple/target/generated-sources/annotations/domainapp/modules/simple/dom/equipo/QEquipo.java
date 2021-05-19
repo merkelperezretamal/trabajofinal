@@ -28,11 +28,6 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     }
 
     public final StringExpression denominacion;
-    public final NumericExpression<Double> horometro;
-    public final NumericExpression<Double> porcentajeDisponibilidad;
-    public final NumericExpression<Double> rpm;
-    public final NumericExpression<Double> presionAceite;
-    public final StringExpression notes;
     public final domainapp.modules.simple.dom.motor.QMotor motor;
     public final domainapp.modules.simple.dom.compresor.QCompresor compresor;
 
@@ -40,11 +35,6 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     {
         super(parent, name);
         this.denominacion = new StringExpressionImpl(this, "denominacion");
-        this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.porcentajeDisponibilidad = new NumericExpressionImpl<Double>(this, "porcentajeDisponibilidad");
-        this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
-        this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
-        this.notes = new StringExpressionImpl(this, "notes");
         if (depth > 0)
         {
             this.motor = new domainapp.modules.simple.dom.motor.QMotor(this, "motor", depth-1);
@@ -67,11 +57,6 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     {
         super(type, name, exprType);
         this.denominacion = new StringExpressionImpl(this, "denominacion");
-        this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.porcentajeDisponibilidad = new NumericExpressionImpl<Double>(this, "porcentajeDisponibilidad");
-        this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
-        this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
-        this.notes = new StringExpressionImpl(this, "notes");
         this.motor = new domainapp.modules.simple.dom.motor.QMotor(this, "motor", 5);
         this.compresor = new domainapp.modules.simple.dom.compresor.QCompresor(this, "compresor", 5);
     }

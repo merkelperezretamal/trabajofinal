@@ -39,7 +39,7 @@
                                     <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
                                 </c:action>
                                 <c:property id="denominacion" namedEscaped="true"/>
-                                <c:property id="horometro" namedEscaped="true">
+                              <!--  <c:property id="horometro" namedEscaped="true">
                                     <c:action id="actualizarHorometro">
                                         <c:describedAs>Actualiza el horometro</c:describedAs>
                                     </c:action>
@@ -55,7 +55,7 @@
                                         <c:describedAs>Actualiza la presion del aceite</c:describedAs>
                                     </c:action>
                                 </c:property>
-                                <c:property id="Notas" namedEscaped="true" multiLine="10" hidden="ALL_TABLES"/>
+                                <c:property id="Notas" namedEscaped="true" multiLine="10" hidden="ALL_TABLES"/>-->
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>

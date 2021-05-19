@@ -55,7 +55,7 @@ public class Equipo implements Comparable<Equipo> {
     @Title
     private String denominacion;
 
-    @javax.jdo.annotations.Column(allowsNull = "false")
+ /*   @javax.jdo.annotations.Column(allowsNull = "false")
 //    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
     private double horometro;
@@ -74,7 +74,7 @@ public class Equipo implements Comparable<Equipo> {
 
     @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
-    private String notes;
+    private String notes;*/
 
     @Persistent(
             mappedBy = "equipo",
@@ -92,10 +92,9 @@ public class Equipo implements Comparable<Equipo> {
     @javax.jdo.annotations.Column(allowsNull="true")
     private Compresor compresor;
 
-    public Equipo(final String denominacion,
-                  final double horometro) {
+  /*  public Equipo(final String denominacion) {
         this.denominacion = denominacion;
-        this.horometro = horometro;
+
     }
 
     @Action(semantics = IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED, associateWith = "horometro")
@@ -106,7 +105,7 @@ public class Equipo implements Comparable<Equipo> {
         setHorometro(horometro);
         return this;
     }
-
+*/
     /* En primer proyecto lo borramos, en multimodulo hacia que tire error
     public double default0UpdateHorometro() {
         return getHorometro();

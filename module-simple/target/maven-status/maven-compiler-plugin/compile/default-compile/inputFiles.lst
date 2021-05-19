@@ -1,12 +1,12 @@
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\fixture\SimpleObject_persona.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\motor\Motor.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\SimpleModuleManifest.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\impl\SimpleObject.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\compresor\CompresorRepositorio.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\equipo\Equipo.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\equipo\EquipoRepositorio.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\impl\SimpleObjects.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\fixture\SimpleObjectBuilder.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\SimpleModule.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\compresor\Compresor.java
-K:\Users\LENOVO\Workspaces\workspace-pp2\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\motor\MotorRepositorio.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\equipo\EquipoRepositorio.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\fixture\SimpleObject_persona.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\impl\SimpleObjects.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\motor\Motor.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\motor\MotorRepositorio.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\compresor\Compresor.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\compresor\CompresorRepositorio.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\equipo\Equipo.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\SimpleModule.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\SimpleModuleManifest.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\dom\impl\SimpleObject.java
+C:\Pendientes\Damian\Info\IFES\Materias\2021\1° Cuatrimestre\Practica 02\trabajofinal\module-simple\src\main\java\domainapp\modules\simple\fixture\SimpleObjectBuilder.java

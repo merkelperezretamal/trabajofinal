@@ -213,45 +213,6 @@
         }
       }
     },
-    "/objects/simple.Equipo/{objectId}/actions/actualizarHorometro/invoke" : {
-      "put" : {
-        "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Equipo#actualizarHorometro",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
-        "parameters" : [ {
-          "name" : "objectId",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "object",
-            "properties" : {
-              "horometro" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "object"
-                  }
-                }
-              }
-            }
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "simple.Equipo#actualizarHorometro",
-            "schema" : {
-              "$ref" : "#/definitions/simple.EquipoRepr"
-            }
-          }
-        }
-      }
-    },
     "/objects/simple.Equipo/{objectId}/actions/borrar/invoke" : {
       "post" : {
         "tags" : [ "simple" ],
@@ -587,14 +548,6 @@
             "type" : "object",
             "properties" : {
               "denominacion" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "string"
-                  }
-                }
-              },
-              "horometro" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {
@@ -1082,27 +1035,8 @@
         "denominacion" : {
           "type" : "string"
         },
-        "horometro" : {
-          "type" : "number",
-          "format" : "double"
-        },
         "motor" : {
           "$ref" : "#/definitions/HrefRepr"
-        },
-        "notes" : {
-          "type" : "string"
-        },
-        "porcentajeDisponibilidad" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "presionAceite" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "rpm" : {
-          "type" : "number",
-          "format" : "double"
         }
       },
       "description" : "simple.Equipo (domainapp.modules.simple.dom.equipo.Equipo)"
