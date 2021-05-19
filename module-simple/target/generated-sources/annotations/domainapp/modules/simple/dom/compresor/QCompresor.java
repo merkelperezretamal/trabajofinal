@@ -29,14 +29,13 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
 
     public final domainapp.modules.simple.dom.equipo.QEquipo equipo;
     public final StringExpression tag;
-    public final NumericExpression<Double> temperaturaSuccion1;
-    public final NumericExpression<Double> temperaturaSuccion2;
-    public final NumericExpression<Double> temperaturaSuccion3;
-    public final NumericExpression<Double> presionSuccion1;
-    public final NumericExpression<Double> presionSuccion2;
-    public final NumericExpression<Double> presionSuccion3;
-    public final NumericExpression<Double> presionDescarga;
-    public final NumericExpression<Double> caudalDiario;
+    public final StringExpression marca;
+    public final StringExpression modelo;
+    public final StringExpression frame;
+    public final StringExpression cylinder1;
+    public final StringExpression cylinder2;
+    public final StringExpression cylinder3;
+    public final StringExpression cylinder4;
 
     public QCompresor(PersistableExpression parent, String name, int depth)
     {
@@ -50,14 +49,13 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
             this.equipo = null;
         }
         this.tag = new StringExpressionImpl(this, "tag");
-        this.temperaturaSuccion1 = new NumericExpressionImpl<Double>(this, "temperaturaSuccion1");
-        this.temperaturaSuccion2 = new NumericExpressionImpl<Double>(this, "temperaturaSuccion2");
-        this.temperaturaSuccion3 = new NumericExpressionImpl<Double>(this, "temperaturaSuccion3");
-        this.presionSuccion1 = new NumericExpressionImpl<Double>(this, "presionSuccion1");
-        this.presionSuccion2 = new NumericExpressionImpl<Double>(this, "presionSuccion2");
-        this.presionSuccion3 = new NumericExpressionImpl<Double>(this, "presionSuccion3");
-        this.presionDescarga = new NumericExpressionImpl<Double>(this, "presionDescarga");
-        this.caudalDiario = new NumericExpressionImpl<Double>(this, "caudalDiario");
+        this.marca = new StringExpressionImpl(this, "marca");
+        this.modelo = new StringExpressionImpl(this, "modelo");
+        this.frame = new StringExpressionImpl(this, "frame");
+        this.cylinder1 = new StringExpressionImpl(this, "cylinder1");
+        this.cylinder2 = new StringExpressionImpl(this, "cylinder2");
+        this.cylinder3 = new StringExpressionImpl(this, "cylinder3");
+        this.cylinder4 = new StringExpressionImpl(this, "cylinder4");
     }
 
     public QCompresor(Class type, String name, ExpressionType exprType)
@@ -65,13 +63,12 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
         super(type, name, exprType);
         this.equipo = new domainapp.modules.simple.dom.equipo.QEquipo(this, "equipo", 5);
         this.tag = new StringExpressionImpl(this, "tag");
-        this.temperaturaSuccion1 = new NumericExpressionImpl<Double>(this, "temperaturaSuccion1");
-        this.temperaturaSuccion2 = new NumericExpressionImpl<Double>(this, "temperaturaSuccion2");
-        this.temperaturaSuccion3 = new NumericExpressionImpl<Double>(this, "temperaturaSuccion3");
-        this.presionSuccion1 = new NumericExpressionImpl<Double>(this, "presionSuccion1");
-        this.presionSuccion2 = new NumericExpressionImpl<Double>(this, "presionSuccion2");
-        this.presionSuccion3 = new NumericExpressionImpl<Double>(this, "presionSuccion3");
-        this.presionDescarga = new NumericExpressionImpl<Double>(this, "presionDescarga");
-        this.caudalDiario = new NumericExpressionImpl<Double>(this, "caudalDiario");
+        this.marca = new StringExpressionImpl(this, "marca");
+        this.modelo = new StringExpressionImpl(this, "modelo");
+        this.frame = new StringExpressionImpl(this, "frame");
+        this.cylinder1 = new StringExpressionImpl(this, "cylinder1");
+        this.cylinder2 = new StringExpressionImpl(this, "cylinder2");
+        this.cylinder3 = new StringExpressionImpl(this, "cylinder3");
+        this.cylinder4 = new StringExpressionImpl(this, "cylinder4");
     }
 }

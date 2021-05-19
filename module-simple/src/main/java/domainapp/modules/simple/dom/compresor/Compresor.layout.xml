@@ -71,14 +71,14 @@
                     <bs3:row>
                         <bs3:col span="12">
                             <c:fieldSet name="Details">
-                                <c:property id="temperaturaSuccion1"/>
-                                <c:property id="temperaturaSuccion2"/>
-                                <c:property id="temperaturaSuccion3"/>
-                                <c:property id="presionSuccion1"/>
-                                <c:property id="presionSuccion2"/>
-                                <c:property id="presionSuccion3"/>
-                                <c:property id="presionDescarga"/>
-                                <c:property id="caudalDiario"/>
+                                <c:property id="marca"/>
+                                <c:property id="modelo"/>
+                                <c:property id="frame"/>
+                                <c:property id="cylinder1"/>
+                                <c:property id="cylinder2"/>
+                                <c:property id="cylinder3"/>
+                                <c:property id="cylinder4"/>
+                       <!--         <c:property id="caudalDiario"/-->
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>

@@ -881,16 +881,17 @@
         "equipo" : {
           "$ref" : "#/definitions/HrefRepr"
         },
-        "tag" : {
+        "marca" : {
           "type" : "string"
         },
-        "temperaturaAceite" : {
-          "type" : "number",
-          "format" : "double"
+        "modelo" : {
+          "type" : "string"
         },
-        "temperaturaAgua" : {
-          "type" : "number",
-          "format" : "double"
+        "serial" : {
+          "type" : "string"
+        },
+        "tag" : {
+          "type" : "string"
         }
       },
       "description" : "simple.Motor (domainapp.modules.simple.dom.motor.Motor)"
@@ -973,43 +974,32 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "caudalDiario" : {
-          "type" : "number",
-          "format" : "double"
+        "cylinder1" : {
+          "type" : "string"
+        },
+        "cylinder2" : {
+          "type" : "string"
+        },
+        "cylinder3" : {
+          "type" : "string"
+        },
+        "cylinder4" : {
+          "type" : "string"
         },
         "equipo" : {
           "$ref" : "#/definitions/HrefRepr"
         },
-        "presionDescarga" : {
-          "type" : "number",
-          "format" : "double"
+        "frame" : {
+          "type" : "string"
         },
-        "presionSuccion1" : {
-          "type" : "number",
-          "format" : "double"
+        "marca" : {
+          "type" : "string"
         },
-        "presionSuccion2" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "presionSuccion3" : {
-          "type" : "number",
-          "format" : "double"
+        "modelo" : {
+          "type" : "string"
         },
         "tag" : {
           "type" : "string"
-        },
-        "temperaturaSuccion1" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "temperaturaSuccion2" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "temperaturaSuccion3" : {
-          "type" : "number",
-          "format" : "double"
         }
       },
       "description" : "simple.Compresor (domainapp.modules.simple.dom.compresor.Compresor)"

@@ -21,7 +21,7 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @javax.jdo.annotations.Unique(name="Motor_equipo_tag_UNQ", members = {"equipo","tag"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-public class Motor implements Comparable<Motor>{
+public class Motor<string> implements Comparable<Motor>{
 
     public Motor(Equipo equipo, String tag){
         this.equipo = equipo;
@@ -40,7 +40,7 @@ public class Motor implements Comparable<Motor>{
     @Setter
     private Equipo equipo;
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @javax.jdo.annotations.Column(allowsNull = "true", length = 40)
     @Getter
     @Setter
     @Title
@@ -48,11 +48,15 @@ public class Motor implements Comparable<Motor>{
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaAceite;
+    private String marca;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaAgua;
+    private String modelo;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private String serial;
 
     @Override
     public String toString() {

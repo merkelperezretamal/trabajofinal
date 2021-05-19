@@ -1,3 +1,43 @@
-2021-05-19 12:52:08.477 e7d1ef21-b0f9-4d69-8e43-796eceb36e12,0: simple.Equipo:1 by sven, compresor: [NEW] -> null
-2021-05-19 12:52:08.477 e7d1ef21-b0f9-4d69-8e43-796eceb36e12,0: simple.Equipo:1 by sven, denominacion: [NEW] -> mav 123
-2021-05-19 12:52:08.477 e7d1ef21-b0f9-4d69-8e43-796eceb36e12,0: simple.Equipo:1 by sven, motor: [NEW] -> null
+2021-05-19 15:02:33.335 658d1422-83e9-4d67-99dd-350088abb1aa,0: simple.Equipo:1 by sven, compresor: [NEW] -> null
+2021-05-19 15:02:33.337 658d1422-83e9-4d67-99dd-350088abb1aa,0: simple.Equipo:1 by sven, denominacion: [NEW] -> mav 123
+2021-05-19 15:02:33.338 658d1422-83e9-4d67-99dd-350088abb1aa,0: simple.Equipo:1 by sven, motor: [NEW] -> null
+2021-05-19 15:02:40.739 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, cylinder1: [NEW] -> null
+2021-05-19 15:02:40.741 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, cylinder2: [NEW] -> null
+2021-05-19 15:02:40.741 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, cylinder3: [NEW] -> null
+2021-05-19 15:02:40.742 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, cylinder4: [NEW] -> null
+2021-05-19 15:02:40.742 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, equipo: [NEW] -> mav 123
+2021-05-19 15:02:40.742 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, frame: [NEW] -> null
+2021-05-19 15:02:40.742 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, marca: [NEW] -> null
+2021-05-19 15:02:40.742 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, modelo: [NEW] -> null
+2021-05-19 15:02:40.743 19cf8b8f-d604-4891-90bd-2c91e68bd63e,0: simple.Compresor:1 by sven, tag: [NEW] -> C001
+2021-05-19 15:03:19.869 6029c440-4359-418b-bc07-86e0ab06cce3,0: simple.Motor:1 by sven, equipo: [NEW] -> mav 123
+2021-05-19 15:03:19.869 6029c440-4359-418b-bc07-86e0ab06cce3,0: simple.Motor:1 by sven, marca: [NEW] -> null
+2021-05-19 15:03:19.869 6029c440-4359-418b-bc07-86e0ab06cce3,0: simple.Motor:1 by sven, modelo: [NEW] -> null
+2021-05-19 15:03:19.869 6029c440-4359-418b-bc07-86e0ab06cce3,0: simple.Motor:1 by sven, serial: [NEW] -> null
+2021-05-19 15:03:19.869 6029c440-4359-418b-bc07-86e0ab06cce3,0: simple.Motor:1 by sven, tag: [NEW] -> M001
+2021-05-19 15:03:56.952 0921e969-49d3-46ee-95f2-ccefd2bb0033,0: simple.Equipo:2 by sven, denominacion: [NEW] -> MAV 124
+2021-05-19 15:03:56.953 0921e969-49d3-46ee-95f2-ccefd2bb0033,0: simple.Equipo:2 by sven, compresor: [NEW] -> null
+2021-05-19 15:03:56.953 0921e969-49d3-46ee-95f2-ccefd2bb0033,0: simple.Equipo:2 by sven, motor: [NEW] -> null
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, tag: [NEW] -> M002
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, equipo: [NEW] -> mav 123
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, marca: [NEW] -> null
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, modelo: [NEW] -> null
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, frame: [NEW] -> null
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, cylinder1: [NEW] -> null
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, cylinder2: [NEW] -> null
+2021-05-19 15:06:18.549 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, cylinder3: [NEW] -> null
+2021-05-19 15:06:18.550 edc7c917-578b-4705-87df-5efff1687fa4,0: simple.Compresor:2 by sven, cylinder4: [NEW] -> null
+2021-05-19 15:06:57.406 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, tag: [NEW] -> C002
+2021-05-19 15:06:57.406 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, equipo: [NEW] -> MAV 124
+2021-05-19 15:06:57.406 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, marca: [NEW] -> null
+2021-05-19 15:06:57.406 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, modelo: [NEW] -> null
+2021-05-19 15:06:57.406 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, frame: [NEW] -> null
+2021-05-19 15:06:57.406 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, cylinder1: [NEW] -> null
+2021-05-19 15:06:57.406 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, cylinder2: [NEW] -> null
+2021-05-19 15:06:57.407 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, cylinder3: [NEW] -> null
+2021-05-19 15:06:57.407 7a7ab08a-e471-4ec6-8b99-584faf67610b,0: simple.Compresor:3 by sven, cylinder4: [NEW] -> null
+2021-05-19 15:07:07.378 f9d93f4b-2037-499c-9ee4-31aa3c6cfa2d,0: simple.Motor:2 by sven, tag: [NEW] -> C003
+2021-05-19 15:07:07.379 f9d93f4b-2037-499c-9ee4-31aa3c6cfa2d,0: simple.Motor:2 by sven, equipo: [NEW] -> MAV 124
+2021-05-19 15:07:07.379 f9d93f4b-2037-499c-9ee4-31aa3c6cfa2d,0: simple.Motor:2 by sven, serial: [NEW] -> null
+2021-05-19 15:07:07.379 f9d93f4b-2037-499c-9ee4-31aa3c6cfa2d,0: simple.Motor:2 by sven, marca: [NEW] -> null
+2021-05-19 15:07:07.379 f9d93f4b-2037-499c-9ee4-31aa3c6cfa2d,0: simple.Motor:2 by sven, modelo: [NEW] -> null

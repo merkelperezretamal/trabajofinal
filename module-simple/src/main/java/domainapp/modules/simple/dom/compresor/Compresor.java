@@ -49,35 +49,35 @@ public class Compresor implements Comparable<Compresor>{
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaSuccion1;
+    private String marca;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaSuccion2;
+    private String modelo;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaSuccion3;
+    private String frame;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionSuccion1;
+    private String cylinder1;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionSuccion2;
+    private String cylinder2;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionSuccion3;
+    private String cylinder3;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionDescarga;
+    private String cylinder4;
 
-    @javax.jdo.annotations.Column(allowsNull = "true")
+   /* @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double caudalDiario;
+    private double caudalDiario;*/
 
     @Override
     public String toString() {

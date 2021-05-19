@@ -29,8 +29,9 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
 
     public final domainapp.modules.simple.dom.equipo.QEquipo equipo;
     public final StringExpression tag;
-    public final NumericExpression<Double> temperaturaAceite;
-    public final NumericExpression<Double> temperaturaAgua;
+    public final StringExpression marca;
+    public final StringExpression modelo;
+    public final StringExpression serial;
 
     public QMotor(PersistableExpression parent, String name, int depth)
     {
@@ -44,8 +45,9 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
             this.equipo = null;
         }
         this.tag = new StringExpressionImpl(this, "tag");
-        this.temperaturaAceite = new NumericExpressionImpl<Double>(this, "temperaturaAceite");
-        this.temperaturaAgua = new NumericExpressionImpl<Double>(this, "temperaturaAgua");
+        this.marca = new StringExpressionImpl(this, "marca");
+        this.modelo = new StringExpressionImpl(this, "modelo");
+        this.serial = new StringExpressionImpl(this, "serial");
     }
 
     public QMotor(Class type, String name, ExpressionType exprType)
@@ -53,7 +55,8 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
         super(type, name, exprType);
         this.equipo = new domainapp.modules.simple.dom.equipo.QEquipo(this, "equipo", 5);
         this.tag = new StringExpressionImpl(this, "tag");
-        this.temperaturaAceite = new NumericExpressionImpl<Double>(this, "temperaturaAceite");
-        this.temperaturaAgua = new NumericExpressionImpl<Double>(this, "temperaturaAgua");
+        this.marca = new StringExpressionImpl(this, "marca");
+        this.modelo = new StringExpressionImpl(this, "modelo");
+        this.serial = new StringExpressionImpl(this, "serial");
     }
 }
