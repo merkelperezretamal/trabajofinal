@@ -1,4 +1,1 @@
     *.idea
-    *webapp/logs/AuditerServiceLogging.log
-    *webapp/logs/PublisherServiceLogging.log
-    *webapp/logs/ThreadPoolSupport.log

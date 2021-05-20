@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06b75487-5796-4526-9397-a904e09d98c8" name="Default Changelist" comment="Commit testgit">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/logs/AuditerServiceLogging.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/AuditerServiceLogging.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/logs/PublisherServiceLogging.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/PublisherServiceLogging.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/logs/ThreadPoolSupport.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/ThreadPoolSupport.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
