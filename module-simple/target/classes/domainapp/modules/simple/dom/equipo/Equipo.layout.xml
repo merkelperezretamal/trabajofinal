@@ -39,23 +39,6 @@
                                     <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
                                 </c:action>
                                 <c:property id="denominacion" namedEscaped="true"/>
-                              <!--  <c:property id="horometro" namedEscaped="true">
-                                    <c:action id="actualizarHorometro">
-                                        <c:describedAs>Actualiza el horometro</c:describedAs>
-                                    </c:action>
-                                </c:property>
-                                <c:property id="porcentajeDisponibilidad" namedEscaped="true"/>
-                                <c:property id="rpm" namedEscaped="true">
-                                    <c:action id="actualizarRpm">
-                                        <c:describedAs>Actualiza el RPM</c:describedAs>
-                                    </c:action>
-                                </c:property>
-                                <c:property id="presionAceite" namedEscaped="true">
-                                    <c:action id="actualizarPresionAceite">
-                                        <c:describedAs>Actualiza la presion del aceite</c:describedAs>
-                                    </c:action>
-                                </c:property>
-                                <c:property id="Notas" namedEscaped="true" multiLine="10" hidden="ALL_TABLES"/>-->
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
@@ -80,11 +63,13 @@
         </bs3:col>
         <bs3:col span="6">
             <bs3:tabGroup collapseIfOne="false">
-                <bs3:tab name="Details">
+                <c:action id="nuevaCargaDiaria">
+                    <c:describedAs>Generar una nueva carga diaria</c:describedAs>
+                </c:action>
+                <bs3:tab name="Funcionamiento">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:collection id="motors" defaultView="table"/>
-                            <c:collection id="compresors" defaultView="table"/>
+                            <c:collection id="cargasDiarias" defaultView="table"/>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>

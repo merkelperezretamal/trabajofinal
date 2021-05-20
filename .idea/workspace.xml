@@ -5,8 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06b75487-5796-4526-9397-a904e09d98c8" name="Default Changelist" comment="Commit testgit">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/cargadiaria/CargaDiaria.layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/cargadiaria/CargaDiariaRepositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/project-application-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/equipo/Equipo.layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/project-module-simple-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/project-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/logs/AuditerServiceLogging.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/AuditerServiceLogging.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/logs/PublisherServiceLogging.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/PublisherServiceLogging.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/logs/ThreadPoolSupport.log" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/logs/ThreadPoolSupport.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-application-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-application-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-module-simple-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-module-simple-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/project.war" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/project.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/tmp/WicketFilter-filestore/3516/5207/1af97e0sgg5i2r1f9i112zn7h/data" beforeDir="false" />
+>>>>>>> feature45_46
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +62,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../isis-petclinic-tutorial/myapp" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
