@@ -6,6 +6,8 @@ domainapp\modules\simple\dom\equipo\EquipoRepositorio$CreateDomainEvent.class
 domainapp\modules\simple\dom\cargadiaria\QCargaDiaria.class
 domainapp\modules\simple\fixture\SimpleObjectBuilder.class
 domainapp\modules\simple\dom\equipo\EquipoRepositorio.class
+domainapp\modules\simple\dom\cargadiaria\CargaDiariaRepositorio.class
+domainapp\modules\simple\dom\cargadiaria\CargaDiariaRepositorio$CreateDomainEvent.class
 domainapp\modules\simple\dom\compresor\CompresorRepositorio.class
 domainapp\modules\simple\SimpleModule$CollectionDomainEvent.class
 domainapp\modules\simple\dom\compresor\CompresorRepositorio$CreateDomainEvent.class
