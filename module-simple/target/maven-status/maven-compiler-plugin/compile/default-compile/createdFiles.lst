@@ -3,6 +3,7 @@ domainapp\modules\simple\SimpleModule$ActionDomainEvent.class
 domainapp\modules\simple\dom\equipo\Equipo.class
 domainapp\modules\simple\dom\compresor\Compresor.class
 domainapp\modules\simple\dom\equipo\EquipoRepositorio$CreateDomainEvent.class
+domainapp\modules\simple\dom\cargadiaria\QCargaDiaria.class
 domainapp\modules\simple\fixture\SimpleObjectBuilder.class
 domainapp\modules\simple\dom\equipo\EquipoRepositorio.class
 domainapp\modules\simple\dom\compresor\CompresorRepositorio.class
@@ -18,6 +19,7 @@ domainapp\modules\simple\dom\motor\QMotor.class
 domainapp\modules\simple\dom\equipo\QEquipo.class
 domainapp\modules\simple\SimpleModuleManifest.class
 domainapp\modules\simple\fixture\SimpleObject_persona.class
+domainapp\modules\simple\dom\cargadiaria\CargaDiaria.class
 domainapp\modules\simple\dom\impl\QSimpleObject.class
 domainapp\modules\simple\dom\compresor\QCompresor.class
 domainapp\modules\simple\dom\impl\SimpleObjects.class
