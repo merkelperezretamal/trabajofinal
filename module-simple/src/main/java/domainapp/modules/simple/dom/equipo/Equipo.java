@@ -22,6 +22,7 @@ import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.motor.Motor;
+import domainapp.modules.simple.dom.planta.Planta;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,7 +46,7 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @javax.jdo.annotations.PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@javax.jdo.annotations.Unique(name="Equipo_denominacion_UNQ", members = {"denominacion"})
+@javax.jdo.annotations.Unique(name="Equipo_denominacion_planta_UNQ", members = {"denominacion", "planta"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 @lombok.Getter @lombok.Setter
@@ -68,6 +69,11 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="true")
     private Compresor compresor;
+
+    @javax.jdo.annotations.Column(allowsNull = "true", name = "plantaId")
+    @Property(editing = Editing.DISABLED)
+    @Getter @Setter
+    private Planta planta;
 
     @Persistent(mappedBy = "equipo", dependentElement = "true")
     @Collection()
@@ -107,12 +113,10 @@ public class Equipo implements Comparable<Equipo> {
                                     final String cylinder1,
                                     final String cylinder2,
                                     final String cylinder3,
-                                    final String cylinder4
-    ) {
+                                    final String cylinder4) {
         return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
     }
 
-    /* return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));*/
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public CargaDiaria nuevaCargaDiaria(final String codigo,

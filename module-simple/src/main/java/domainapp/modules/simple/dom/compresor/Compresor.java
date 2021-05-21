@@ -45,8 +45,7 @@ public class Compresor implements Comparable<Compresor>{
 
     @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
     @Property(editing = Editing.DISABLED)
-    @Getter
-    @Setter
+    @Getter @Setter
     private Equipo equipo;
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)

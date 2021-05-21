@@ -30,7 +30,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
     public final domainapp.modules.simple.dom.equipo.QEquipo equipo;
     public final StringExpression codigo;
     public final NumericExpression<Double> horometro;
-    public final NumericExpression<Double> porcentajeDisponibilidad;
+    public final NumericExpression<Double> disponibilidad;
     public final NumericExpression<Double> rpm;
     public final NumericExpression<Double> presionAceite;
     public final NumericExpression<Double> temperaturaAceite;
@@ -57,7 +57,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
         }
         this.codigo = new StringExpressionImpl(this, "codigo");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.porcentajeDisponibilidad = new NumericExpressionImpl<Double>(this, "porcentajeDisponibilidad");
+        this.disponibilidad = new NumericExpressionImpl<Double>(this, "disponibilidad");
         this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
         this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
         this.temperaturaAceite = new NumericExpressionImpl<Double>(this, "temperaturaAceite");
@@ -78,7 +78,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
         this.equipo = new domainapp.modules.simple.dom.equipo.QEquipo(this, "equipo", 5);
         this.codigo = new StringExpressionImpl(this, "codigo");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.porcentajeDisponibilidad = new NumericExpressionImpl<Double>(this, "porcentajeDisponibilidad");
+        this.disponibilidad = new NumericExpressionImpl<Double>(this, "disponibilidad");
         this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
         this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
         this.temperaturaAceite = new NumericExpressionImpl<Double>(this, "temperaturaAceite");

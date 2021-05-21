@@ -3,7 +3,6 @@ package domainapp.modules.simple.dom.cargadiaria;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.equipo.Equipo;
-import domainapp.modules.simple.dom.motor.Motor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -44,7 +43,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double porcentajeDisponibilidad;
+    private double disponibilidad;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
@@ -116,8 +115,9 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     public CargaDiaria(Equipo equipo,
                        String codigo,
                        double horometro,
-                       double porcentajeDisponibilidad,
-                       double rpm, double presionAceite,
+                       double disponibilidad,
+                       double rpm,
+                       double presionAceite,
                        double temperaturaAceite,
                        double temperaturaAgua,
                        double temperaturaSuccion1,
@@ -131,7 +131,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         this.equipo = equipo;
         this.codigo = codigo;
         this.horometro = horometro;
-        this.porcentajeDisponibilidad = porcentajeDisponibilidad;
+        this.disponibilidad = disponibilidad;
         this.rpm = rpm;
         this.presionAceite = presionAceite;
         this.temperaturaAceite = temperaturaAceite;

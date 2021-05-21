@@ -30,6 +30,7 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     public final StringExpression denominacion;
     public final domainapp.modules.simple.dom.motor.QMotor motor;
     public final domainapp.modules.simple.dom.compresor.QCompresor compresor;
+    public final domainapp.modules.simple.dom.planta.QPlanta planta;
     public final CollectionExpression cargasDiarias;
 
     public QEquipo(PersistableExpression parent, String name, int depth)
@@ -52,6 +53,14 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
         {
             this.compresor = null;
         }
+        if (depth > 0)
+        {
+            this.planta = new domainapp.modules.simple.dom.planta.QPlanta(this, "planta", depth-1);
+        }
+        else
+        {
+            this.planta = null;
+        }
         this.cargasDiarias = new CollectionExpressionImpl(this, "cargasDiarias");
     }
 
@@ -61,6 +70,7 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
         this.denominacion = new StringExpressionImpl(this, "denominacion");
         this.motor = new domainapp.modules.simple.dom.motor.QMotor(this, "motor", 5);
         this.compresor = new domainapp.modules.simple.dom.compresor.QCompresor(this, "compresor", 5);
+        this.planta = new domainapp.modules.simple.dom.planta.QPlanta(this, "planta", 5);
         this.cargasDiarias = new CollectionExpressionImpl(this, "cargasDiarias");
     }
 }
