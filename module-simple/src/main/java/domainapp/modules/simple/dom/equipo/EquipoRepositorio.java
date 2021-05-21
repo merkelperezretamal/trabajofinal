@@ -43,9 +43,7 @@ public class EquipoRepositorio {
     @MemberOrder(sequence = "1")
     public Equipo create(
             @ParameterLayout(named="Denominacion")
-            final String denominacion)
-  /*          @ParameterLayout(named="Horometro")
-            final double horometro)*/{
+            final String denominacion){
         return repositoryService.persist(new Equipo(denominacion));
     }
 

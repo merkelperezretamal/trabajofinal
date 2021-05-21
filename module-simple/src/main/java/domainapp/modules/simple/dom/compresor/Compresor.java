@@ -24,9 +24,17 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @DomainObjectLayout()  // causes UI events to be triggered
 public class Compresor implements Comparable<Compresor>{
 
-    public Compresor(Equipo equipo, String tag){
+
+    public Compresor(Equipo equipo, String tag, String marca, String modelo, String frame, String cylinder1, String cylinder2, String cylinder3, String cylinder4) {
         this.equipo = equipo;
         this.tag = tag;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.frame = frame;
+        this.cylinder1 = cylinder1;
+        this.cylinder2 = cylinder2;
+        this.cylinder3 = cylinder3;
+        this.cylinder4 = cylinder4;
     }
 
     public String title() {

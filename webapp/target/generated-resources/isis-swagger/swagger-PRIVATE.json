@@ -461,7 +461,63 @@
           "schema" : {
             "type" : "object",
             "properties" : {
-              "string" : {
+              "string1" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              },
+              "string2" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              },
+              "string3" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              },
+              "string4" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              },
+              "string5" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              },
+              "string6" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              },
+              "string7" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "object"
+                  }
+                }
+              },
+              "string8" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {

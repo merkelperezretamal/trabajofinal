@@ -98,10 +98,21 @@ public class Equipo implements Comparable<Equipo> {
         return repositoryService.persist(new Motor(this, tag));
     }
 
+
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public Compresor nuevoCompresor(final String tag) {
-        return repositoryService.persist(new Compresor(this, tag));
+    public Compresor nuevoCompresor(final String tag,
+                                    final String marca,
+                                    final String modelo,
+                                    final String frame,
+                                    final String cylinder1,
+                                    final String cylinder2,
+                                    final String cylinder3,
+                                    final String cylinder4
+    ) {
+        return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
     }
+
+    /* return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));*/
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public CargaDiaria nuevaCargaDiaria(final String codigo,
@@ -152,40 +163,8 @@ public class Equipo implements Comparable<Equipo> {
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
 
-    /*   @javax.jdo.annotations.Column(allowsNull = "false")
-    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
-    @Getter @Setter
-    private double horometro;
 
-    @javax.jdo.annotations.Column(allowsNull = "true")
-    @Getter @Setter
-    private double porcentajeDisponibilidad;
-
-    @javax.jdo.annotations.Column(allowsNull = "false")
-    @Getter @Setter
-    private double rpm;
-
-    @javax.jdo.annotations.Column(allowsNull = "false")
-    @Getter @Setter
-    private double presionAceite;
-
-    @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
-    @Property(editing = Editing.ENABLED)
-    private String notes;
-
-    public Equipo(final String denominacion) {
-        this.denominacion = denominacion;
-
-    }
-
-    @Action(semantics = IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED, associateWith = "horometro")
-    public Equipo actualizarHorometro(
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Horometro") //teniamos "Name"
-            final double horometro) {
-        setHorometro(horometro);
-        return this;
-    }
+/*
 
     //En primer proyecto lo borramos, en multimodulo hacia que tire error
     public double default0UpdateHorometro() {
