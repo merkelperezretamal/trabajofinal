@@ -25,6 +25,7 @@ import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.planta.Planta;
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.i18n.TranslatableString;
@@ -52,6 +53,11 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @lombok.Getter @lombok.Setter
 @lombok.RequiredArgsConstructor
 public class Equipo implements Comparable<Equipo> {
+
+    public Equipo(@NonNull String denominacion, Planta planta) {
+        this.denominacion = denominacion;
+        this.planta = planta;
+    }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
@@ -100,44 +106,45 @@ public class Equipo implements Comparable<Equipo> {
     }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public Motor nuevoMotor(final String tag) {
-        return repositoryService.persist(new Motor(this, tag));
+    public Motor nuevoMotor(final @ParameterLayout (named="TAG") String tag,
+                            final @ParameterLayout (named="Marca") String marca,
+                            final @ParameterLayout (named="Modelo") String modelo,
+                            final @ParameterLayout (named="Serial") String serial) {
+        return repositoryService.persist(new Motor(this, tag, marca, modelo, serial));
     }
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public Compresor nuevoCompresor(final String tag,
-                                    final String marca,
-                                    final String modelo,
-                                    final String frame,
-                                    final String cylinder1,
-                                    final String cylinder2,
-                                    final String cylinder3,
-                                    final String cylinder4) {
+    public Compresor nuevoCompresor(final @ParameterLayout (named="TAG") String tag,
+                                    final @ParameterLayout (named="Marca") String marca,
+                                    final @ParameterLayout (named="Modelo") String modelo,
+                                    final @ParameterLayout (named="Frame") String frame,
+                                    final @ParameterLayout (named="Cylinder 1") String cylinder1,
+                                    final @ParameterLayout (named="Cylinder 2") String cylinder2,
+                                    final @ParameterLayout (named="Cylinder 3") String cylinder3,
+                                    final @ParameterLayout (named="Cylinder 4") String cylinder4) {
         return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
     }
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public CargaDiaria nuevaCargaDiaria(final String codigo,
-                                        final double horometro,
-                                        double porcentajeDisponibilidad,
-                                        double rpm,
-                                        double presionAceite,
-                                        double temperaturaAceite,
-                                        double temperaturaAgua,
-                                        double temperaturaSuccion1,
-                                        double presionSuccion1,
-                                        double temperaturaSuccion2,
-                                        double presionSuccion2,
-                                        double temperaturaSuccion3,
-                                        double presionSuccion3,
-                                        double presionDescarga,
-                                        double caudalDiario) {
+    public CargaDiaria nuevaCargaDiaria(final @ParameterLayout (named="Codigo") String codigo,
+                                        final @ParameterLayout (named="Horometro") double horometro,
+                                        @ParameterLayout (named="RPM") double rpm,
+                                        @ParameterLayout (named="Presion Aceite") double presionAceite,
+                                        @ParameterLayout (named="Temperatura Aceite") double temperaturaAceite,
+                                        @ParameterLayout (named="Temperatura Agua") double temperaturaAgua,
+                                        @ParameterLayout (named="Temperatura Succion 1") double temperaturaSuccion1,
+                                        @ParameterLayout (named="Presion Succion 1") double presionSuccion1,
+                                        @ParameterLayout (named="Temperatura Succion 2") double temperaturaSuccion2,
+                                        @ParameterLayout (named="Presion Succion 2") double presionSuccion2,
+                                        @ParameterLayout (named="Temperatura Succion 3") double temperaturaSuccion3,
+                                        @ParameterLayout (named="Presion Succion 3") double presionSuccion3,
+                                        @ParameterLayout (named="Presion Descarga") double presionDescarga,
+                                        @ParameterLayout (named="Caudal Diario") double caudalDiario) {
         return repositoryService.persist(new CargaDiaria(this,
                                                         codigo,
                                                         horometro,
-                                                        porcentajeDisponibilidad,
                                                         rpm,
                                                         presionAceite,
                                                         temperaturaAceite,

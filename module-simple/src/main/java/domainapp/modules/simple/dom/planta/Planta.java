@@ -38,11 +38,6 @@ public class Planta implements Comparable<Planta> {
         this.cliente = cliente;
     }
 
-    public Planta(@NonNull String nombre, String provincia) {
-        this.nombre = nombre;
-        this.provincia = provincia;
-    }
-
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Getter
@@ -86,7 +81,7 @@ public class Planta implements Comparable<Planta> {
     public Equipo nuevoEquipo(
                             @ParameterLayout(named="Denominacion")
                             final String denominacion) {
-        return repositoryService.persist(new Equipo(denominacion));
+        return repositoryService.persist(new Equipo(denominacion, this));
     }
 
     public String title() {

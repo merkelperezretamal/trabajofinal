@@ -23,9 +23,12 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @DomainObjectLayout()  // causes UI events to be triggered
 public class Motor<string> implements Comparable<Motor>{
 
-    public Motor(Equipo equipo, String tag){
+    public Motor(Equipo equipo, String tag, String marca, String modelo, String serial){
         this.equipo = equipo;
         this.tag = tag;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.serial = serial;
     }
 
     public String title() {

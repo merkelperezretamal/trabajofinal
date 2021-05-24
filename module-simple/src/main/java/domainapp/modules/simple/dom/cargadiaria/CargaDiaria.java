@@ -115,7 +115,6 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     public CargaDiaria(Equipo equipo,
                        String codigo,
                        double horometro,
-                       double disponibilidad,
                        double rpm,
                        double presionAceite,
                        double temperaturaAceite,
@@ -131,7 +130,6 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         this.equipo = equipo;
         this.codigo = codigo;
         this.horometro = horometro;
-        this.disponibilidad = disponibilidad;
         this.rpm = rpm;
         this.presionAceite = presionAceite;
         this.temperaturaAceite = temperaturaAceite;
