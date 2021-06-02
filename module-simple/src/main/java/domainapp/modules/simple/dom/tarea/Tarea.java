@@ -24,13 +24,15 @@ import javax.jdo.annotations.VersionStrategy;
 @DomainObjectLayout()  // causes UI events to be triggered
 public class Tarea implements Comparable<Tarea> {
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Title
-    @javax.jdo.annotations.Column(allowsNull="false")
+    @javax.jdo.annotations.Column(allowsNull = "false")
     private String nombre;
 
-    @Getter @Setter
-    @javax.jdo.annotations.Column(allowsNull="false")
+    @Getter
+    @Setter
+    @javax.jdo.annotations.Column(allowsNull = "false")
     private String descripcion;
 
     public Tarea(String nombre, String descripcion) {
@@ -49,19 +51,23 @@ public class Tarea implements Comparable<Tarea> {
     public String toString() {
         return getNombre();
     }
-}
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
     TitleService titleService;
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
+
+}

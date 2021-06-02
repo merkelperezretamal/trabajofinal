@@ -2,25 +2,25 @@
     .idea/
     application/target/maven-archiver/pom.properties
     application/target/project-application-1.0-SNAPSHOT-tests.jar
-application/target/project-application-1.0-SNAPSHOT.jar
-datanucleus.log
-module-simple/target/maven-archiver/pom.properties
-module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
-module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
-module-simple/target/project-module-simple-1.0-SNAPSHOT-tests.jar
-module-simple/target/project-module-simple-1.0-SNAPSHOT.jar
-target/maven-archiver/pom.properties
-target/project-1.0-SNAPSHOT-tests.jar
-webapp/logs/AuditerServiceLogging.log
-webapp/logs/PublisherServiceLogging.log
-webapp/logs/ThreadPoolSupport.log
-webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json
-webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json
-webapp/target/maven-archiver/pom.properties
-webapp/target/project-webapp-1.0-SNAPSHOT-tests.jar
-webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-application-1.0-SNAPSHOT.jar
-webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-module-simple-1.0-SNAPSHOT.jar
-webapp/target/project.war
-webapp/target/tmp/WicketFilter-filestore/953/7699/18cj3q07ngasi1329nfyc7xpm6/data/
+    application/target/project-application-1.0-SNAPSHOT.jar
+    datanucleus.log
+    module-simple/target/maven-archiver/pom.properties
+    module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+    module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+    module-simple/target/project-module-simple-1.0-SNAPSHOT-tests.jar
+    module-simple/target/project-module-simple-1.0-SNAPSHOT.jar
+    target/maven-archiver/pom.properties
+    target/project-1.0-SNAPSHOT-tests.jar
+    webapp/logs/AuditerServiceLogging.log
+    webapp/logs/PublisherServiceLogging.log
+    webapp/logs/ThreadPoolSupport.log
+    webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json
+    webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json
+    webapp/target/maven-archiver/pom.properties
+    webapp/target/project-webapp-1.0-SNAPSHOT-tests.jar
+    webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-application-1.0-SNAPSHOT.jar
+    webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-module-simple-1.0-SNAPSHOT.jar
+    webapp/target/project.war
+    webapp/target/tmp/WicketFilter-filestore/953/7699/18cj3q07ngasi1329nfyc7xpm6/data/
 
 
