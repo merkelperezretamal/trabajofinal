@@ -1,7 +1,8 @@
-package domainapp.modules.simple.dom.motor;
+package domainapp.modules.simple.dom.compresor;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.compresor.Compresor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,12 +19,12 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple" )
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
-@javax.jdo.annotations.Unique(name="Motor_equipo_tag_UNQ", members = {"equipo","tag"})
+@javax.jdo.annotations.Unique(name="Compresor_equipo_tag_UNQ", members = {"equipo","tag"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-public class Motor implements Comparable<Motor>{
+public class Compresor implements Comparable<Compresor>{
 
-    public Motor(Equipo equipo, String tag){
+    public Compresor(Equipo equipo, String tag){
         this.equipo = equipo;
         this.tag = tag;
     }
@@ -48,11 +49,35 @@ public class Motor implements Comparable<Motor>{
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaAceite;
+    private double temperaturaSuccion1;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaAgua;
+    private double temperaturaSuccion2;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private double temperaturaSuccion3;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private double presionSuccion1;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private double presionSuccion2;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private double presionSuccion3;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private double presionDescarga;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private double caudalDiario;
 
     @Override
     public String toString() {
@@ -60,7 +85,7 @@ public class Motor implements Comparable<Motor>{
     }
 
     @Override
-    public int compareTo(final Motor other) {
+    public int compareTo(final Compresor other) {
         return ComparisonChain.start()
                 .compare(this.getEquipo(), other.getEquipo())
                 .compare(this.getTag(), other.getTag())
