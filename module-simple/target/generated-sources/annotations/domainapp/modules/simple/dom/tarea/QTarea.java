@@ -29,12 +29,21 @@ public class QTarea extends PersistableExpressionImpl<Tarea> implements Persista
 
     public final StringExpression nombre;
     public final StringExpression descripcion;
+    public final domainapp.modules.simple.dom.mantenimiento.QMantenimiento mantenimiento;
 
     public QTarea(PersistableExpression parent, String name, int depth)
     {
         super(parent, name);
         this.nombre = new StringExpressionImpl(this, "nombre");
         this.descripcion = new StringExpressionImpl(this, "descripcion");
+        if (depth > 0)
+        {
+            this.mantenimiento = new domainapp.modules.simple.dom.mantenimiento.QMantenimiento(this, "mantenimiento", depth-1);
+        }
+        else
+        {
+            this.mantenimiento = null;
+        }
     }
 
     public QTarea(Class type, String name, ExpressionType exprType)
@@ -42,5 +51,6 @@ public class QTarea extends PersistableExpressionImpl<Tarea> implements Persista
         super(type, name, exprType);
         this.nombre = new StringExpressionImpl(this, "nombre");
         this.descripcion = new StringExpressionImpl(this, "descripcion");
+        this.mantenimiento = new domainapp.modules.simple.dom.mantenimiento.QMantenimiento(this, "mantenimiento", 5);
     }
 }

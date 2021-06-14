@@ -1,14 +1,13 @@
 package domainapp.modules.simple.dom.tarea;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
 import domainapp.modules.simple.dom.planta.Planta;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.isis.applib.annotation.Auditing;
-import org.apache.isis.applib.annotation.DomainObject;
-import org.apache.isis.applib.annotation.DomainObjectLayout;
-import org.apache.isis.applib.annotation.Title;
+import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
@@ -35,9 +34,18 @@ public class Tarea implements Comparable<Tarea> {
     @javax.jdo.annotations.Column(allowsNull = "false")
     private String descripcion;
 
-    public Tarea(String nombre, String descripcion) {
+
+    @javax.jdo.annotations.Column(allowsNull = "false", name = "mantenimientoId")
+    @Property(editing = Editing.DISABLED)
+    @Getter
+    @Setter
+    private Mantenimiento mantenimiento;
+
+
+    public Tarea(String nombre, String descripcion, Mantenimiento mantenimiento) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.mantenimiento = mantenimiento;
     }
 
     @Override
@@ -51,6 +59,8 @@ public class Tarea implements Comparable<Tarea> {
     public String toString() {
         return getNombre();
     }
+
+
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
