@@ -1,19 +1,23 @@
 package domainapp.modules.simple.dom.mantenimiento;
 import com.google.common.collect.ComparisonChain;
-import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.tarea.Tarea;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.services.clock.ClockService;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 
+import javax.inject.Inject;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
+import java.util.Date;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -22,24 +26,23 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @javax.jdo.annotations.PersistenceCapable(identityType= IdentityType.DATASTORE, schema = "simple")
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@javax.jdo.annotations.Unique(name="Mantenimiento_tag_UNQ", members = {"tag"})
+@javax.jdo.annotations.Unique(name="Mantenimiento_horas_tipoMantenimiento_UNQ", members = {"horas", "tipoMantenimiento"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 @lombok.Getter @lombok.Setter
 @lombok.RequiredArgsConstructor
 
-public class Mantenimiento implements Comparable<Mantenimiento> {
-    @lombok.NonNull
-    @Getter
-    @Setter
-    @javax.jdo.annotations.Column(allowsNull="false")
-    private String tag;
 
+public class Mantenimiento implements Comparable<Mantenimiento>{
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Getter
     @Setter
     private ETipoMantenimiento tipoMantenimiento;
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Getter @Setter
+    private Date fecha;
 
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="false")
@@ -52,17 +55,17 @@ public class Mantenimiento implements Comparable<Mantenimiento> {
     private SortedSet<Tarea> tareas = new TreeSet<Tarea>();
 
     public Mantenimiento(@NonNull ETipoMantenimiento tipoMantenimiento, int horas) {
-        String horasTexto;
         this.tipoMantenimiento = tipoMantenimiento;
         this.horas = horas;
-        horasTexto = String.valueOf(horas);
-        this.tag = this.tipoMantenimiento + " " + horasTexto;
+        this.fecha = new Date();
     }
 
     @Override
     public int compareTo(final Mantenimiento other) {
         return ComparisonChain.start()
-                .compare(this.getTag(), other.getTag())
+                .compare(this.getTipoMantenimiento(), other.getTipoMantenimiento())
+                .compare(this.getHoras(), other.getHoras())
+                .compare(this.getFecha(), other.getFecha())
                 .result();
     }
 
@@ -92,7 +95,6 @@ public class Mantenimiento implements Comparable<Mantenimiento> {
     }
 
 
-
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
@@ -108,4 +110,9 @@ public class Mantenimiento implements Comparable<Mantenimiento> {
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
 
+    /*
+    @Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    ClockService clockService;*/
 }

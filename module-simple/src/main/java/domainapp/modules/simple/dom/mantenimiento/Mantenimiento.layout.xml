@@ -39,6 +39,7 @@
                                 <c:action id="borrar">
                                     <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
                                 </c:action>
+                                <c:property id="fecha"/>
                                 <c:property id="tipoMantenimiento" namedEscaped="true"/>
                                 <c:property id="horas" namedEscaped="true"/>
                             </c:fieldSet>

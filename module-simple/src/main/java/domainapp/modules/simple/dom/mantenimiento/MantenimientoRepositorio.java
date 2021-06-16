@@ -42,4 +42,6 @@ public class MantenimientoRepositorio {
     @javax.inject.Inject
     IsisJdoSupport isisJdoSupport;
 
+
+
 }
