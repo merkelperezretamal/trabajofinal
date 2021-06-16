@@ -17,6 +17,8 @@ import javax.jdo.annotations.VersionStrategy;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
+
 @javax.jdo.annotations.PersistenceCapable(identityType= IdentityType.DATASTORE, schema = "simple")
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
@@ -81,6 +83,14 @@ public class Mantenimiento implements Comparable<Mantenimiento> {
                             final @ParameterLayout (named="Descripcion") String descripcion) {
         return repositoryService.persist(new Tarea(nombre, descripcion, this));
     }
+
+    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
+    public void borrar() {
+        final String title = titleService.titleOf(this);
+        messageService.informUser(String.format("'%s' deleted", title));
+        repositoryService.remove(this);
+    }
+
 
 
     @javax.inject.Inject
