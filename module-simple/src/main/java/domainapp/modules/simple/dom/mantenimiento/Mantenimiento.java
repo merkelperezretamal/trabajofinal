@@ -94,6 +94,16 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
         repositoryService.remove(this);
     }
 
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Mantenimiento modificarHoras(
+            @Parameter(maxLength = 40)
+            final int horas) {
+        setHoras(horas);
+        return this;
+    }
+    public int default0ModificarHoras() {
+        return getHoras();
+    }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
