@@ -37,11 +37,15 @@
                         <bs3:col span="12">
                             <c:fieldSet name="Informacion">
                                 <c:action id="borrar">
-                                    <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
+                                    <c:describedAs>Borra el mantenimiento</c:describedAs>
                                 </c:action>
                                 <c:property id="fecha"/>
                                 <c:property id="tipoMantenimiento" namedEscaped="true"/>
-                                <c:property id="horas" namedEscaped="true"/>
+                                <c:property id="horas" namedEscaped="true">
+                                    <c:action id="modificarHoras">
+                                        <c:describedAs>Modifica las horas</c:describedAs>
+                                    </c:action>
+                                </c:property>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
