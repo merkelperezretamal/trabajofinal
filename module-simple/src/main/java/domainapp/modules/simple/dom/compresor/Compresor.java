@@ -24,9 +24,17 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @DomainObjectLayout()  // causes UI events to be triggered
 public class Compresor implements Comparable<Compresor>{
 
-    public Compresor(Equipo equipo, String tag){
+
+    public Compresor(Equipo equipo, String tag, String marca, String modelo, String frame, String cylinder1, String cylinder2, String cylinder3, String cylinder4) {
         this.equipo = equipo;
         this.tag = tag;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.frame = frame;
+        this.cylinder1 = cylinder1;
+        this.cylinder2 = cylinder2;
+        this.cylinder3 = cylinder3;
+        this.cylinder4 = cylinder4;
     }
 
     public String title() {
@@ -37,8 +45,7 @@ public class Compresor implements Comparable<Compresor>{
 
     @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
     @Property(editing = Editing.DISABLED)
-    @Getter
-    @Setter
+    @Getter @Setter
     private Equipo equipo;
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
@@ -49,35 +56,35 @@ public class Compresor implements Comparable<Compresor>{
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaSuccion1;
+    private String marca;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaSuccion2;
+    private String modelo;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double temperaturaSuccion3;
+    private String frame;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionSuccion1;
+    private String cylinder1;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionSuccion2;
+    private String cylinder2;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionSuccion3;
+    private String cylinder3;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double presionDescarga;
+    private String cylinder4;
 
-    @javax.jdo.annotations.Column(allowsNull = "true")
+   /* @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private double caudalDiario;
+    private double caudalDiario;*/
 
     @Override
     public String toString() {
