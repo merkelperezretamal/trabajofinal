@@ -39,8 +39,12 @@
                                     <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
                                 </c:action>
                                 <c:property id="nombre"/>
-                                <c:property id="descripcion"/>
                                 <c:property id="mantenimiento"/>
+                                <c:property id="descripcion" namedEscaped="true">
+                                    <c:action id="modificarTarea">
+                                        <c:describedAs>Modifica la tarea</c:describedAs>
+                                    </c:action>
+                                </c:property>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>

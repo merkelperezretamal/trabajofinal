@@ -70,6 +70,17 @@ public class Tarea implements Comparable<Tarea> {
     }
 
 
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Tarea modificarTarea(
+            @Parameter(maxLength = 40)
+            final String descripcion) {
+        setDescripcion(descripcion);
+        return this;
+    }
+    public String default0ModificarTarea() {
+        return getDescripcion();
+    }
+
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE)
