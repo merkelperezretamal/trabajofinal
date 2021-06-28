@@ -1,6 +1,7 @@
 package domainapp.modules.simple.dom.mantenimiento;
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.tarea.Tarea;
+import domainapp.modules.simple.dom.equipo.Equipo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -48,16 +49,23 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
     @javax.jdo.annotations.Column(allowsNull="false")
     private int horas;
 
+    @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
+    @Property(editing = Editing.DISABLED)
+    @Getter
+    @Setter
+    private Equipo equipo;
+
     @Persistent(mappedBy = "mantenimiento", dependentElement = "true")
     @Collection()
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="true")
     private SortedSet<Tarea> tareas = new TreeSet<Tarea>();
 
-    public Mantenimiento(@NonNull ETipoMantenimiento tipoMantenimiento, int horas) {
+    public Mantenimiento(@NonNull ETipoMantenimiento tipoMantenimiento, int horas, Equipo equipo) {
         this.tipoMantenimiento = tipoMantenimiento;
         this.horas = horas;
         this.fecha = new Date();
+        this.equipo = equipo;
     }
 
     @Override

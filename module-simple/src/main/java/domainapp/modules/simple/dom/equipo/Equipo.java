@@ -23,6 +23,8 @@ import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.planta.Planta;
+import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
+import domainapp.modules.simple.dom.mantenimiento.ETipoMantenimiento;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -85,6 +87,12 @@ public class Equipo implements Comparable<Equipo> {
     @Collection()
     @Getter @Setter
     private SortedSet<CargaDiaria> cargasDiarias = new TreeSet<CargaDiaria>();
+
+    @Persistent(mappedBy = "equipo", dependentElement = "true")
+    @Collection()
+    @Getter @Setter
+    @javax.jdo.annotations.Column(allowsNull="true")
+    private SortedSet<Mantenimiento> mantenimientos = new TreeSet<Mantenimiento>();
 
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     public void borrar() {
@@ -157,6 +165,12 @@ public class Equipo implements Comparable<Equipo> {
                                                         presionSuccion3,
                                                         presionDescarga,
                                                         caudalDiario));
+    }
+
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    public Mantenimiento nuevoMantenimiento(final @ParameterLayout (named="Tipo de Mtto") ETipoMantenimiento tipoMantenimiento,
+                            final @ParameterLayout (named="Horas") int horas) {
+        return repositoryService.persist(new Mantenimiento(tipoMantenimiento, horas, this));
     }
 
     @javax.inject.Inject
