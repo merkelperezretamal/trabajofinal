@@ -25,6 +25,7 @@ import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
 import domainapp.modules.simple.dom.mantenimiento.ETipoMantenimiento;
+import domainapp.modules.simple.dom.tarea.Tarea;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -59,6 +60,7 @@ public class Equipo implements Comparable<Equipo> {
     public Equipo(@NonNull String denominacion, Planta planta) {
         this.denominacion = denominacion;
         this.planta = planta;
+        this.activo = true;
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
@@ -93,6 +95,10 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="true")
     private SortedSet<Mantenimiento> mantenimientos = new TreeSet<Mantenimiento>();
+
+    @Getter @Setter
+    @javax.jdo.annotations.Column(allowsNull="false")
+    private boolean activo;
 
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     public void borrar() {
@@ -171,6 +177,16 @@ public class Equipo implements Comparable<Equipo> {
     public Mantenimiento nuevoMantenimiento(final @ParameterLayout (named="Tipo de Mtto") ETipoMantenimiento tipoMantenimiento,
                             final @ParameterLayout (named="Horas") int horas) {
         return repositoryService.persist(new Mantenimiento(tipoMantenimiento, horas, this));
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public void cambioEstado() {
+        setActivo(!this.activo);
+    }
+
+    @Programmatic
+    public boolean default0CambioEstado() {
+        return this.activo;
     }
 
     @javax.inject.Inject

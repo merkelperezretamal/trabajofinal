@@ -38,6 +38,9 @@
                                 <c:action id="borrar">
                                     <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
                                 </c:action>
+                                <c:action id="cambioEstado">
+                                    <c:describedAs>Cambia el estado</c:describedAs>
+                                </c:action>
                                 <c:property id="denominacion" namedEscaped="true"/>
                                 <c:property id="planta"/>
                             </c:fieldSet>
