@@ -3,6 +3,7 @@ package domainapp.modules.simple.dom.compresor;
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.compresor.Compresor;
+import domainapp.modules.simple.dom.motor.Motor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -105,6 +106,28 @@ public class Compresor implements Comparable<Compresor>{
         messageService.informUser(String.format("'%s' deleted", title));
         repositoryService.remove(this);
     }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Compresor modificarCompresor(
+            final @ParameterLayout(named="TAG") String tag,
+            final @ParameterLayout(named="Marca") String marca,
+            final @ParameterLayout(named="Modelo") String modelo,
+            final @ParameterLayout(named="Frame") String frame,
+            final @ParameterLayout(named="cylinder1") String cylinder1,
+            final @ParameterLayout(named="cylinder2") String cylinder2,
+            final @ParameterLayout(named="cylinder3") String cylinder3,
+            final @ParameterLayout(named="cylinder4") String cylinder4) {
+        setTag(tag);
+        setMarca(marca);
+        setModelo(modelo);
+        setFrame(frame);
+        setCylinder1(cylinder1);
+        setCylinder2(cylinder2);
+        setCylinder3(cylinder3);
+        setCylinder4(cylinder4);
+        return this;
+    }
+
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
