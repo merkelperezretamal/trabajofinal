@@ -2,8 +2,11 @@ package domainapp.modules.simple.dom.motor;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.planta.Planta;
+import domainapp.modules.simple.dom.tarea.Tarea;
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
@@ -79,6 +82,19 @@ public class Motor<string> implements Comparable<Motor>{
         final String title = titleService.titleOf(this);
         messageService.informUser(String.format("'%s' deleted", title));
         repositoryService.remove(this);
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Motor modificarMotor(
+            final @ParameterLayout(named="TAG") String tag,
+            final @ParameterLayout(named="Marca") String marca,
+            final @ParameterLayout(named="Modelo") String modelo,
+            final @ParameterLayout(named="Serial") String serial) {
+        setTag(tag);
+        setMarca(marca);
+        setModelo(modelo);
+        setSerial(serial);
+        return this;
     }
 
     @javax.inject.Inject
