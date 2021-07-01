@@ -100,12 +100,6 @@ public class Compresor implements Comparable<Compresor>{
                 .result();
     }
 
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void borrar() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
-        repositoryService.remove(this);
-    }
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Compresor modificarCompresor(
