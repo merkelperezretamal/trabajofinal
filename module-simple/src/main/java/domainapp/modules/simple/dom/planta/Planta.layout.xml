@@ -35,8 +35,8 @@
                     <bs3:row>
                         <bs3:col span="12">
                             <c:fieldSet name="Informacion">
-                                <c:action id="borrar">
-                                    <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
+                                <c:action id="nuevoEquipo">
+                                    <c:describedAs>Agrega un nuevo Equipo</c:describedAs>
                                 </c:action>
                                 <c:property id="nombre"/>
                                 <c:property id="provincia"/>

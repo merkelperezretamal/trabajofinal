@@ -70,12 +70,12 @@ public class Planta implements Comparable<Planta> {
         return getNombre()+" - "+getProvincia();
     }
 
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
+  /*  @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     public void borrar() {
         final String title = titleService.titleOf(this);
         messageService.informUser(String.format("'%s' deleted", title));
         repositoryService.remove(this);
-    }
+    } */
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public Equipo nuevoEquipo(

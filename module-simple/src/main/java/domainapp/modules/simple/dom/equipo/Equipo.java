@@ -99,14 +99,14 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="false")
     private boolean activo;
-
+/*
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     public void borrar() {
         final String title = titleService.titleOf(this);
         messageService.informUser(String.format("'%s' deleted", title));
         repositoryService.remove(this);
     }
-
+*/
     @Override
     public String toString() {
         return getDenominacion();
