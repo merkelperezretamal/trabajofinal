@@ -133,10 +133,10 @@ public class Equipo implements Comparable<Equipo> {
                                     final @ParameterLayout (named="Marca") String marca,
                                     final @ParameterLayout (named="Modelo") String modelo,
                                     final @ParameterLayout (named="Frame") String frame,
-                                    final @ParameterLayout (named="Cylinder 1") String cylinder1,
-                                    final @ParameterLayout (named="Cylinder 2") String cylinder2,
-                                    final @ParameterLayout (named="Cylinder 3") String cylinder3,
-                                    final @ParameterLayout (named="Cylinder 4") String cylinder4) {
+                                    final @ParameterLayout (named="Cyl 1") String cylinder1,
+                                    final @ParameterLayout (named="Cyl 2") String cylinder2,
+                                    final @ParameterLayout (named="Cyl 3") String cylinder3,
+                                    final @ParameterLayout (named="Cyl 4") String cylinder4) {
         return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
     }
 
