@@ -38,19 +38,20 @@
                                 <c:action id="modificarEquipo">
                                     <c:describedAs>Cambiar datos de Equipo</c:describedAs>
                                 </c:action>
-                                <c:action id="cambioEstado">
-                                    <c:describedAs>Cambia el estado</c:describedAs>
-                                </c:action>
                                 <c:property id="denominacion" namedEscaped="true"/>
                                 <c:property id="planta"/>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
-                <bs3:tab name="Other">
+                <bs3:tab name="Estado">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="Other" unreferencedProperties="true"/>
+                            <c:fieldSet name="Estado" unreferencedProperties="true">
+                                <c:action id="cambioEstado">
+                                    <c:describedAs>Cambia el estado</c:describedAs>
+                                </c:action>
+                            </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
