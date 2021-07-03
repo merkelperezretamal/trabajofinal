@@ -107,10 +107,10 @@ public class Compresor implements Comparable<Compresor>{
             final @ParameterLayout(named="Marca") String marca,
             final @ParameterLayout(named="Modelo") String modelo,
             final @ParameterLayout(named="Frame") String frame,
-            final @ParameterLayout(named="cylinder1") String cylinder1,
-            final @ParameterLayout(named="cylinder2") String cylinder2,
-            final @ParameterLayout(named="cylinder3") String cylinder3,
-            final @ParameterLayout(named="cylinder4") String cylinder4) {
+            final @ParameterLayout(named="Cyl 1") String cylinder1,
+            final @ParameterLayout(named="Cyl 2") String cylinder2,
+            final @ParameterLayout(named="Cyl 3") String cylinder3,
+            final @ParameterLayout(named="Cyl 4") String cylinder4) {
         setTag(tag);
         setMarca(marca);
         setModelo(modelo);
