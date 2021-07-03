@@ -30,6 +30,7 @@ public class QPlanta extends PersistableExpressionImpl<Planta> implements Persis
     public final StringExpression nombre;
     public final StringExpression provincia;
     public final StringExpression cliente;
+    public final BooleanExpression activo;
     public final CollectionExpression equipos;
 
     public QPlanta(PersistableExpression parent, String name, int depth)
@@ -38,6 +39,7 @@ public class QPlanta extends PersistableExpressionImpl<Planta> implements Persis
         this.nombre = new StringExpressionImpl(this, "nombre");
         this.provincia = new StringExpressionImpl(this, "provincia");
         this.cliente = new StringExpressionImpl(this, "cliente");
+        this.activo = new BooleanExpressionImpl(this, "activo");
         this.equipos = new CollectionExpressionImpl(this, "equipos");
     }
 
@@ -47,6 +49,7 @@ public class QPlanta extends PersistableExpressionImpl<Planta> implements Persis
         this.nombre = new StringExpressionImpl(this, "nombre");
         this.provincia = new StringExpressionImpl(this, "provincia");
         this.cliente = new StringExpressionImpl(this, "cliente");
+        this.activo = new BooleanExpressionImpl(this, "activo");
         this.equipos = new CollectionExpressionImpl(this, "equipos");
     }
 }

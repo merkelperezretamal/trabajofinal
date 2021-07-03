@@ -36,6 +36,7 @@ public class Planta implements Comparable<Planta> {
         this.nombre = nombre;
         this.provincia = provincia;
         this.cliente = cliente;
+        this.activo = true;
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
@@ -52,11 +53,17 @@ public class Planta implements Comparable<Planta> {
     @javax.jdo.annotations.Column(allowsNull="true")
     private String cliente;
 
+    @Getter @Setter
+    @javax.jdo.annotations.Column(allowsNull="false")
+    private boolean activo;
+
+
     @Persistent(mappedBy = "planta", dependentElement = "true")
     @Collection()
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="true")
     private SortedSet<Equipo> equipos = new TreeSet<Equipo>();
+
 
     @Override
     public int compareTo(final Planta other) {
@@ -70,7 +77,11 @@ public class Planta implements Comparable<Planta> {
         return getNombre()+" - "+getProvincia();
     }
 
-  /*  @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
+
+ /*   @Getter @Setter
+    @javax.jdo.annotations.Column(allowsNull="false")
+    private boolean activo;
+    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     public void borrar() {
         final String title = titleService.titleOf(this);
         messageService.informUser(String.format("'%s' deleted", title));
@@ -88,6 +99,21 @@ public class Planta implements Comparable<Planta> {
         return String.format(
                 "%s",
                 getNombre(), getProvincia());
+    }
+
+
+    /*
+    * DESDE ACA
+ */
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public void cambioEstado() {
+        setActivo(!this.activo);
+    }
+
+    @Programmatic
+    public boolean default0CambioEstado() {
+        return this.activo;
     }
 
     @javax.inject.Inject

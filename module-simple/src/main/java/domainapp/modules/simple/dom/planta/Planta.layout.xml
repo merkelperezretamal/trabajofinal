@@ -36,11 +36,15 @@
                         <bs3:col span="12">
                             <c:fieldSet name="Informacion">
                                 <c:action id="nuevoEquipo">
-                                    <c:describedAs>Agrega un nuevo Equipo</c:describedAs>
+                                    <c:describedAs>Generar un nuevo Equipo</c:describedAs>
+                                </c:action>
+                                <c:action id="cambioEstado">
+                                    <c:describedAs>Cambia el estado</c:describedAs>
                                 </c:action>
                                 <c:property id="nombre"/>
                                 <c:property id="provincia"/>
                                 <c:property id="cliente"/>
+
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
