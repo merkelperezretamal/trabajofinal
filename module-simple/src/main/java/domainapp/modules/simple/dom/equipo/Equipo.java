@@ -99,14 +99,7 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="false")
     private boolean activo;
-/*
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void borrar() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
-        repositoryService.remove(this);
-    }
-*/
+
     @Override
     public String toString() {
         return getDenominacion();
@@ -189,6 +182,14 @@ public class Equipo implements Comparable<Equipo> {
         return this.activo;
     }
 
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Equipo modificarEquipo(
+            final @ParameterLayout(named="TAG") String denominacion) {
+        setDenominacion(denominacion);
+        return this;
+    }
+
+
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
@@ -205,15 +206,5 @@ public class Equipo implements Comparable<Equipo> {
     MessageService messageService;
 
 
-/*
-
-    //En primer proyecto lo borramos, en multimodulo hacia que tire error
-    public double default0UpdateHorometro() {
-        return getHorometro();
-    }
-
-    public TranslatableString validate0UpdateHorometro(final double horometro) {
-        return horometro != null && horometro.contains("!") ? TranslatableString.tr("Exclamation mark is not allowed") : null;
-    } */
 
 }
