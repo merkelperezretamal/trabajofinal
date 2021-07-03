@@ -78,10 +78,7 @@ public class Planta implements Comparable<Planta> {
     }
 
 
- /*   @Getter @Setter
-    @javax.jdo.annotations.Column(allowsNull="false")
-    private boolean activo;
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
+ /*  @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     public void borrar() {
         final String title = titleService.titleOf(this);
         messageService.informUser(String.format("'%s' deleted", title));
@@ -101,11 +98,6 @@ public class Planta implements Comparable<Planta> {
                 getNombre(), getProvincia());
     }
 
-
-    /*
-    * DESDE ACA
- */
-
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public void cambioEstado() {
         setActivo(!this.activo);
@@ -114,6 +106,17 @@ public class Planta implements Comparable<Planta> {
     @Programmatic
     public boolean default0CambioEstado() {
         return this.activo;
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Planta modificarPlanta(
+            final @ParameterLayout(named="Nombre") String nombre,
+            final @ParameterLayout(named="Provincia") String provincia,
+            final @ParameterLayout(named="Cliente") String cliente) {
+        setNombre(nombre);
+        setProvincia(provincia);
+        setCliente(cliente);
+        return this;
     }
 
     @javax.inject.Inject

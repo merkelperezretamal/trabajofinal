@@ -38,6 +38,9 @@
                                 <c:action id="nuevoEquipo">
                                     <c:describedAs>Generar un nuevo Equipo</c:describedAs>
                                 </c:action>
+                                <c:action id="modificarPlanta">
+                                    <c:describedAs>Cambiar datos de Planta</c:describedAs>
+                                </c:action>
                                 <c:action id="cambioEstado">
                                     <c:describedAs>Cambia el estado</c:describedAs>
                                 </c:action>
