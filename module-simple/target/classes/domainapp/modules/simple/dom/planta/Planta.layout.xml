@@ -41,9 +41,9 @@
                                 <c:action id="modificarPlanta">
                                     <c:describedAs>Cambiar datos de Planta</c:describedAs>
                                 </c:action>
-                                <c:action id="cambioEstado">
+                             <!--   <c:action id="cambioEstado">
                                     <c:describedAs>Cambia el estado</c:describedAs>
-                                </c:action>
+                                </c:action>-->
                                 <c:property id="nombre"/>
                                 <c:property id="provincia"/>
                                 <c:property id="cliente"/>
@@ -52,10 +52,14 @@
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
-                <bs3:tab name="Other">
+                <bs3:tab name="Estado">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="Other" unreferencedProperties="true"/>
+                            <c:fieldSet name="Estado" unreferencedProperties="true">
+                            <c:action id="cambioEstado">
+                                <c:describedAs>Cambia el estado</c:describedAs>
+                            </c:action>
+                        </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
