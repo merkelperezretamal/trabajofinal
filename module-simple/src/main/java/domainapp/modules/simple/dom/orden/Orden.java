@@ -1,9 +1,7 @@
 package domainapp.modules.simple.dom.orden;
 
 import com.google.common.collect.ComparisonChain;
-import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
-import domainapp.modules.simple.dom.planta.Planta;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.Auditing;
@@ -24,11 +22,9 @@ import java.util.Date;
 @lombok.RequiredArgsConstructor
 public class Orden implements Comparable<Orden>{
 
-    public Orden(int numeroOrden, Planta planta, Equipo equipo, Mantenimiento mantenimiento) {
+    public Orden(int numeroOrden, Mantenimiento mantenimiento) {
         this.numeroOrden = numeroOrden;
         this.fecha = fecha;
-        this.planta = planta;
-        this.equipo = equipo;
         this.mantenimiento = mantenimiento;
         this.fecha = new Date();
     }
@@ -45,23 +41,13 @@ public class Orden implements Comparable<Orden>{
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @Getter
     @Setter
-    private Planta planta;
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @Getter
-    @Setter
-    private Equipo equipo;
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @Getter
-    @Setter
     private Mantenimiento mantenimiento;
 
     @Override
     public int compareTo(final Orden other) {
         return ComparisonChain.start()
                 .compare(this.getNumeroOrden(), other.getNumeroOrden())
-                .compare(this.getPlanta(), other.getPlanta())
+                .compare(this.getMantenimiento().getEquipo().getPlanta(), other.getMantenimiento().getEquipo().getPlanta())
                 .result();
     }
 
