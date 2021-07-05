@@ -23,10 +23,8 @@ public class OrdenRepositorio {
     @MemberOrder(sequence = "1")
     public Orden create(
             @ParameterLayout(named="Numero")
-            final int numero,
-            @ParameterLayout(named="Mantenimiento")
-            final Mantenimiento mantenimiento){
-        return repositoryService.persist(new Orden(numero, mantenimiento));
+            final int numero){
+        return repositoryService.persist(new Orden(numero));
     }
 
     @Action(semantics = SemanticsOf.SAFE)

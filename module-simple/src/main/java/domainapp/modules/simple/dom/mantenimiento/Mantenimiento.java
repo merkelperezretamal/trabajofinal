@@ -1,5 +1,6 @@
 package domainapp.modules.simple.dom.mantenimiento;
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.orden.Orden;
 import domainapp.modules.simple.dom.tarea.Tarea;
 import domainapp.modules.simple.dom.equipo.Equipo;
 import lombok.AccessLevel;
@@ -54,6 +55,10 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
     @Getter
     @Setter
     private Equipo equipo;
+
+    @javax.jdo.annotations.Column(allowsNull = "false", name = "ordenId")
+    @Getter @Setter
+    private Orden orden;
 
     @Persistent(mappedBy = "mantenimiento", dependentElement = "true")
     @Collection()

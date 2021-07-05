@@ -38,9 +38,6 @@
                                 <c:action id="modificarEquipo">
                                     <c:describedAs>Cambiar datos de Equipo</c:describedAs>
                                 </c:action>
-                           <!--     <c:action id="cambioEstado">
-                                    <c:describedAs>Cambia el estado</c:describedAs>
-                                </c:action> -->
                                 <c:property id="denominacion" namedEscaped="true"/>
                                 <c:property id="planta"/>
                             </c:fieldSet>
