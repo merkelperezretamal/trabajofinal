@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.apache.isis.applib.annotation.Auditing;
 import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.DomainObjectLayout;
+import org.apache.isis.applib.annotation.Title;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
@@ -31,6 +32,7 @@ public class Orden implements Comparable<Orden>{
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter
     @Setter
+    @Title
     private int numeroOrden;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
