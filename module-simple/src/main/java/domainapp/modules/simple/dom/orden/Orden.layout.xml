@@ -31,9 +31,9 @@
                     <bs3:row>
                         <bs3:col span="12">
                             <c:fieldSet name="Informacion">
-<!--                                <c:action id="modificarMotor">-->
-<!--                                    <c:describedAs>Modifies this object from the persistent datastore</c:describedAs>-->
-<!--                                </c:action>-->
+                                <c:action id="modificar">
+                                    <c:describedAs>Modifies this object from the persistent datastore</c:describedAs>
+                                </c:action>
                                 <c:property id="numeroOrden"/>
                                 <c:property id="fecha"/>
                                 <c:property id="mantenimiento"/>

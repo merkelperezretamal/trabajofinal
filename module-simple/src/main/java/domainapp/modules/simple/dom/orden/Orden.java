@@ -2,12 +2,14 @@ package domainapp.modules.simple.dom.orden;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
+import domainapp.modules.simple.dom.tarea.Tarea;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.isis.applib.annotation.Auditing;
-import org.apache.isis.applib.annotation.DomainObject;
-import org.apache.isis.applib.annotation.DomainObjectLayout;
-import org.apache.isis.applib.annotation.Title;
+import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.services.message.MessageService;
+import org.apache.isis.applib.services.repository.RepositoryService;
+import org.apache.isis.applib.services.title.TitleService;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
@@ -54,5 +56,33 @@ public class Orden implements Comparable<Orden>{
                 .result();
     }
 
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Orden modificar(
+            @ParameterLayout(named = "Numero")
+            final int numeroOrden) {
+        setNumeroOrden(numeroOrden);
+        return this;
+    }
+    public int default0Modificar() {
+        return getNumeroOrden();
+    }
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
+    RepositoryService repositoryService;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
+    TitleService titleService;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
+    MessageService messageService;
 
 }
