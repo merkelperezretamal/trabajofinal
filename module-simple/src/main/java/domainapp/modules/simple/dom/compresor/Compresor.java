@@ -83,10 +83,6 @@ public class Compresor implements Comparable<Compresor>{
     @Getter @Setter
     private String cylinder4;
 
-   /* @javax.jdo.annotations.Column(allowsNull = "true")
-    @Getter @Setter
-    private double caudalDiario;*/
-
     @Override
     public String toString() {
         return getTag();
@@ -100,9 +96,8 @@ public class Compresor implements Comparable<Compresor>{
                 .result();
     }
 
-
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
-    public Compresor modificarCompresor(
+    public Compresor editarCompresor(
             final @ParameterLayout(named="TAG") String tag,
             final @ParameterLayout(named="Marca") String marca,
             final @ParameterLayout(named="Modelo") String modelo,

@@ -90,11 +90,11 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     private SortedSet<CargaDiaria> cargasDiarias = new TreeSet<CargaDiaria>();
 
-    @Persistent(mappedBy = "equipo", dependentElement = "true")
+   /* @Persistent(mappedBy = "equipo", dependentElement = "true")
     @Collection()
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="true")
-    private SortedSet<Mantenimiento> mantenimientos = new TreeSet<Mantenimiento>();
+    private SortedSet<Mantenimiento> mantenimientos = new TreeSet<Mantenimiento>();*/
 
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="false")
@@ -166,11 +166,11 @@ public class Equipo implements Comparable<Equipo> {
                                                         caudalDiario));
     }
 
-    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    /*@Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public Mantenimiento nuevoMantenimiento(final @ParameterLayout (named="Tipo de Mtto") ETipoMantenimiento tipoMantenimiento,
                             final @ParameterLayout (named="Horas") int horas) {
         return repositoryService.persist(new Mantenimiento(tipoMantenimiento, horas, this));
-    }
+    }*/
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public void cambioEstado() {
@@ -183,7 +183,7 @@ public class Equipo implements Comparable<Equipo> {
     }
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
-    public Equipo modificarEquipo(
+    public Equipo editarEquipo(
             final @ParameterLayout(named="TAG") String denominacion) {
         setDenominacion(denominacion);
         return this;

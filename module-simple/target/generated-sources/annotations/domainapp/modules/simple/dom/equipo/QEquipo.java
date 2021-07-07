@@ -32,7 +32,6 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     public final domainapp.modules.simple.dom.compresor.QCompresor compresor;
     public final domainapp.modules.simple.dom.planta.QPlanta planta;
     public final CollectionExpression cargasDiarias;
-    public final CollectionExpression mantenimientos;
     public final BooleanExpression activo;
 
     public QEquipo(PersistableExpression parent, String name, int depth)
@@ -64,7 +63,6 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
             this.planta = null;
         }
         this.cargasDiarias = new CollectionExpressionImpl(this, "cargasDiarias");
-        this.mantenimientos = new CollectionExpressionImpl(this, "mantenimientos");
         this.activo = new BooleanExpressionImpl(this, "activo");
     }
 
@@ -76,7 +74,6 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
         this.compresor = new domainapp.modules.simple.dom.compresor.QCompresor(this, "compresor", 5);
         this.planta = new domainapp.modules.simple.dom.planta.QPlanta(this, "planta", 5);
         this.cargasDiarias = new CollectionExpressionImpl(this, "cargasDiarias");
-        this.mantenimientos = new CollectionExpressionImpl(this, "mantenimientos");
         this.activo = new BooleanExpressionImpl(this, "activo");
     }
 }

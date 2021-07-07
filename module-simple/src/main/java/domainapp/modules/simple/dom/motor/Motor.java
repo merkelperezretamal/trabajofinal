@@ -78,7 +78,7 @@ public class Motor<string> implements Comparable<Motor>{
     }
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
-    public Motor modificarMotor(
+    public Motor editarMotor(
             final @ParameterLayout(named="TAG") String tag,
             final @ParameterLayout(named="Marca") String marca,
             final @ParameterLayout(named="Modelo") String modelo,

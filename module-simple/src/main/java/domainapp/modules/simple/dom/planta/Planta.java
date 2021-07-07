@@ -101,7 +101,7 @@ public class Planta implements Comparable<Planta> {
     }
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
-    public Planta modificarPlanta(
+    public Planta editarPlanta(
             final @ParameterLayout(named="Nombre") String nombre,
             final @ParameterLayout(named="Provincia") String provincia,
             final @ParameterLayout(named="Cliente") String cliente) {

@@ -36,9 +36,9 @@
                         <bs3:col span="12">
                             <c:fieldSet name="Informacion">
                                 <c:action id="nuevoEquipo">
-                                    <c:describedAs>Generar un nuevo Equipo</c:describedAs>
+                                    <c:describedAs>Crear un nuevo Equipo</c:describedAs>
                                 </c:action>
-                                <c:action id="modificarPlanta">
+                                <c:action id="editarPlanta">
                                     <c:describedAs>Cambiar datos de Planta</c:describedAs>
                                 </c:action>
                                 <c:property id="nombre"/>
