@@ -63,8 +63,6 @@ public class Orden implements Comparable<Orden>{
     public int compareTo(final Orden other) {
         return ComparisonChain.start()
                 .compare(this.getNumeroOrden(), other.getNumeroOrden())
-                .compare(this.getMantenimiento().getEquipo().getPlanta().getNombre(),
-                        other.getMantenimiento().getEquipo().getPlanta().getNombre())
                 .result();
     }
 
