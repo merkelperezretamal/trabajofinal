@@ -2,6 +2,7 @@ package domainapp.modules.simple.dom.orden;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
+import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.tarea.Tarea;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -26,9 +27,11 @@ import java.util.Date;
 @lombok.RequiredArgsConstructor
 public class Orden implements Comparable<Orden>{
 
-    public Orden(int numeroOrden) {
+    public Orden(int numeroOrden, String tipoMantenimiento, Motor motor) {
         this.numeroOrden = numeroOrden;
         this.fecha = new Date();
+        this.tipoMantenimiento = tipoMantenimiento;
+        this.motor = motor;
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false")
@@ -46,6 +49,15 @@ public class Orden implements Comparable<Orden>{
     @Getter
     @Setter
     private Mantenimiento mantenimiento;
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Getter @Setter
+    private String tipoMantenimiento;
+
+    @javax.jdo.annotations.Column(allowsNull = "true", name = "motorId")
+    @Property(editing = Editing.DISABLED)
+    @Getter @Setter
+    private Motor motor;
 
     @Override
     public int compareTo(final Orden other) {
