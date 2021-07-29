@@ -37,6 +37,13 @@ public class Orden implements Comparable<Orden>{
         this.motor = motor;
     }
 
+    public Orden(int numeroOrden, String tipoMantenimiento, Compresor compresor) {
+        this.numeroOrden = numeroOrden;
+        this.fecha = new Date();
+        this.tipoMantenimiento = tipoMantenimiento;
+        this.compresor = compresor;
+    }
+
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter
     @Setter
