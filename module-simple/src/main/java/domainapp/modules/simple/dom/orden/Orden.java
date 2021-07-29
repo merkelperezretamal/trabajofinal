@@ -2,6 +2,7 @@ package domainapp.modules.simple.dom.orden;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
+import domainapp.modules.simple.dom.mantenimiento.MantenimientoRepositorio;
 import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.tarea.Tarea;
 import lombok.AccessLevel;
@@ -93,6 +94,11 @@ public class Orden implements Comparable<Orden>{
     }
 
     public List<Mantenimiento> choices0AgregarMantenimiento() { return mantenimientoRepositorio.listAll(); }
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    MantenimientoRepositorio mantenimientoRepositorio;
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
