@@ -1,6 +1,7 @@
 package domainapp.modules.simple.dom.orden;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
 import domainapp.modules.simple.dom.mantenimiento.MantenimientoRepositorio;
 import domainapp.modules.simple.dom.motor.Motor;
@@ -68,6 +69,11 @@ public class Orden implements Comparable<Orden>{
     @Property(editing = Editing.DISABLED)
     @Getter @Setter
     private Motor motor;
+
+    @javax.jdo.annotations.Column(allowsNull = "true", name = "compresorId")
+    @Property(editing = Editing.DISABLED)
+    @Getter @Setter
+    private Compresor compresor;
 
     @Override
     public int compareTo(final Orden other) {
