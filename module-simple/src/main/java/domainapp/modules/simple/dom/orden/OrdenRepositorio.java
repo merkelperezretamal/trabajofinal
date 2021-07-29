@@ -19,13 +19,13 @@ import java.util.List;
 )
 public class OrdenRepositorio {
 
-    @Action(domainEvent = OrdenRepositorio.CreateDomainEvent.class)
-    @MemberOrder(sequence = "1")
-    public Orden create(
-            @ParameterLayout(named="Numero")
-            final int numero){
-        return repositoryService.persist(new Orden(numero));
-    }
+//    @Action(domainEvent = OrdenRepositorio.CreateDomainEvent.class)
+//    @MemberOrder(sequence = "1")
+//    public Orden create(
+//            @ParameterLayout(named="Numero")
+//            final int numero){
+//        return repositoryService.persist(new Orden(numero));
+//    }
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
