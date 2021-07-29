@@ -16,6 +16,8 @@ import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 import java.util.Date;
+import java.util.List;
+import java.util.SortedSet;
 
 @javax.jdo.annotations.PersistenceCapable(identityType= IdentityType.DATASTORE, schema = "simple")
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
@@ -76,6 +78,21 @@ public class Orden implements Comparable<Orden>{
     public int default0Modificar() {
         return getNumeroOrden();
     }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    @ActionLayout(named = "Asignar Mantenimiento")
+    public Orden agregarMantenimiento(
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Mantenimiento")
+            final Mantenimiento mantenimiento) {
+        SortedSet<Orden> ordenesMantenimiento = mantenimiento.getOrdenes();
+        setMantenimiento(mantenimiento);
+        ordenesMantenimiento.add(this);
+        mantenimiento.setOrdenes(ordenesMantenimiento);
+        return this;
+    }
+
+    public List<Mantenimiento> choices0AgregarMantenimiento() { return mantenimientoRepositorio.listAll(); }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
