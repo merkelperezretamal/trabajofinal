@@ -58,11 +58,9 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
     @javax.jdo.annotations.Column(allowsNull="true")
     private SortedSet<Tarea> tareas = new TreeSet<Tarea>();
 
-    public Mantenimiento(@NonNull ETipoMantenimiento tipoMantenimiento, int horas, Equipo equipo) {
+    public Mantenimiento(ETipoMantenimiento tipoMantenimiento, int horas) {
         this.tipoMantenimiento = tipoMantenimiento;
         this.horas = horas;
-        this.fecha = new Date();
-        this.equipo = equipo;
     }
 
     @Override
