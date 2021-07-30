@@ -71,16 +71,13 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
                 .result();
     }
 
-
     @Override
     public String toString() {
         return getTipoMantenimiento()+" - "+getHoras();
     }
 
     public String title() {
-        return String.format(
-                "%s",
-                getTipoMantenimiento(), getHoras());
+        return String.format(getTipoMantenimiento()+" - "+getHoras());
     }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
