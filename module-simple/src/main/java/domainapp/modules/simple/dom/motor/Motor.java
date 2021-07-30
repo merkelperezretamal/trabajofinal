@@ -2,6 +2,7 @@ package domainapp.modules.simple.dom.motor;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.orden.Orden;
 import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.tarea.Tarea;
 import lombok.AccessLevel;
@@ -14,7 +15,11 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
 import javax.jdo.annotations.IdentityType;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
@@ -64,6 +69,11 @@ public class Motor<string> implements Comparable<Motor>{
     @Getter @Setter
     private String serial;
 
+    @Persistent(mappedBy = "motor", dependentElement = "true")
+    @Collection()
+    @Getter @Setter
+    private SortedSet<Orden> ordenes = new TreeSet<Orden>();
+
     @Override
     public String toString() {
         return getTag();
@@ -88,6 +98,11 @@ public class Motor<string> implements Comparable<Motor>{
         setModelo(modelo);
         setSerial(serial);
         return this;
+    }
+
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    public Orden nuevaOrden(final @ParameterLayout (named="Numero de Orden") int numeroOrden) {
+        return repositoryService.persist(new Orden(numeroOrden, "Motor", this));
     }
 
     @javax.inject.Inject
