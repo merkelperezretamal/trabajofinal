@@ -17,7 +17,7 @@ import java.util.List;
         menuOrder = "10"
 )
 public class MantenimientoRepositorio {
-/*
+
     @Action(domainEvent = MantenimientoRepositorio.CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
     public Mantenimiento create(
@@ -25,7 +25,7 @@ public class MantenimientoRepositorio {
             @ParameterLayout(named = "Horas") final int horas) {
         return repositoryService.persist(new Mantenimiento(tipoMantenimiento, horas));
     }
-*/
+
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")

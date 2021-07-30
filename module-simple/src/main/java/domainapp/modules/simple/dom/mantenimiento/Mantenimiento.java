@@ -118,10 +118,4 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
-
-    /*
-    @Inject
-    @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    ClockService clockService;*/
 }
