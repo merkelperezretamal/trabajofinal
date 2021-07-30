@@ -47,8 +47,7 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
 
     @javax.jdo.annotations.Column(allowsNull = "true", name = "ordenesId")
     @Property(editing = Editing.DISABLED)
-    @Collection(
-            hidden = Where.EVERYWHERE)
+    @Collection(hidden = Where.EVERYWHERE)
     @Getter @Setter
     private SortedSet<Orden> ordenes = new TreeSet<Orden>();
 

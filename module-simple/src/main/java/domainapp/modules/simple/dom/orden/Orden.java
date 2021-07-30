@@ -55,8 +55,8 @@ public class Orden implements Comparable<Orden>{
     @Getter @Setter
     private Date fecha;
 
-    @Persistent(mappedBy = "orden", dependentElement = "true")
-    @javax.jdo.annotations.Column(allowsNull = "true", length = 40)
+    @Persistent(mappedBy = "ordenes", dependentElement = "true")
+    @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter
     @Setter
     private Mantenimiento mantenimiento;
