@@ -68,7 +68,6 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
         return ComparisonChain.start()
                 .compare(this.getTipoMantenimiento(), other.getTipoMantenimiento())
                 .compare(this.getHoras(), other.getHoras())
-                .compare(this.getFecha(), other.getFecha())
                 .result();
     }
 
