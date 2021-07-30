@@ -36,7 +36,14 @@
                                 </c:action>
                                 <c:property id="numeroOrden"/>
                                 <c:property id="fecha"/>
-                                <c:property id="mantenimiento"/>
+                                <c:property id="tipoMantenimiento"/>
+                            </c:fieldSet>
+                        </bs3:col>
+                        <bs3:col span="12">
+                            <c:fieldSet name="Asignacion Mantenimiento">
+                                <c:property id="mantenimiento" hidden="ALL_TABLES">
+                                    <c:action id="agregarMantenimiento" promptStyle="INLINE"/>
+                                </c:property>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
@@ -72,9 +79,6 @@
                     <bs3:row>
                         <bs3:col span="12">
                             <c:fieldSet name="Detalles">
-<!--                                <c:property id="serial"/>-->
-<!--                                <c:property id="marca"/>-->
-<!--                                <c:property id="modelo"/>-->
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
