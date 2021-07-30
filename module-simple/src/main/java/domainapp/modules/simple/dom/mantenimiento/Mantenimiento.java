@@ -33,32 +33,24 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @DomainObjectLayout()  // causes UI events to be triggered
 @lombok.Getter @lombok.Setter
 @lombok.RequiredArgsConstructor
-
-
 public class Mantenimiento implements Comparable<Mantenimiento>{
+
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Getter
     @Setter
     private ETipoMantenimiento tipoMantenimiento;
 
-    @javax.jdo.annotations.Column(allowsNull = "false")
-    @Getter @Setter
-    private Date fecha;
-
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="false")
     private int horas;
 
-    @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
+    @javax.jdo.annotations.Column(allowsNull = "true", name = "ordenesId")
     @Property(editing = Editing.DISABLED)
-    @Getter
-    @Setter
-    private Equipo equipo;
-
-    @javax.jdo.annotations.Column(allowsNull = "false", name = "ordenId")
+    @Collection(
+            hidden = Where.EVERYWHERE)
     @Getter @Setter
-    private Orden orden;
+    private SortedSet<Orden> ordenes = new TreeSet<Orden>();
 
     @Persistent(mappedBy = "mantenimiento", dependentElement = "true")
     @Collection()
