@@ -135,22 +135,19 @@ public class Equipo implements Comparable<Equipo> {
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public CargaDiaria nuevaCargaDiaria(final @ParameterLayout (named="Codigo") String codigo,
-                                        final @ParameterLayout (named="Horometro") double horometro,
+    public CargaDiaria nuevaCargaDiaria(final @ParameterLayout (named="Horometro") double horometro,
                                         @ParameterLayout (named="RPM") double rpm,
-                                        @ParameterLayout (named="Presion Aceite") double presionAceite,
-                                        @ParameterLayout (named="Temperatura Aceite") double temperaturaAceite,
-                                        @ParameterLayout (named="Temperatura Agua") double temperaturaAgua,
-                                        @ParameterLayout (named="Temperatura Succion 1") double temperaturaSuccion1,
-                                        @ParameterLayout (named="Presion Succion 1") double presionSuccion1,
-                                        @ParameterLayout (named="Temperatura Succion 2") double temperaturaSuccion2,
-                                        @ParameterLayout (named="Presion Succion 2") double presionSuccion2,
-                                        @ParameterLayout (named="Temperatura Succion 3") double temperaturaSuccion3,
-                                        @ParameterLayout (named="Presion Succion 3") double presionSuccion3,
-                                        @ParameterLayout (named="Presion Descarga") double presionDescarga,
-                                        @ParameterLayout (named="Caudal Diario") double caudalDiario) {
+                                        @ParameterLayout (named="Oil Press") double presionAceite,
+                                        @ParameterLayout (named="Oil Temp") double temperaturaAceite,
+                                        @ParameterLayout (named="Wat Temp") double temperaturaAgua,
+                                        @ParameterLayout (named="TS 1°") double temperaturaSuccion1,
+                                        @ParameterLayout (named="PS 1°") double presionSuccion1,
+                                        @ParameterLayout (named="TS 2°") double temperaturaSuccion2,
+                                        @ParameterLayout (named="PS 2°") double presionSuccion2,
+                                        @ParameterLayout (named="TS 3°") double temperaturaSuccion3,
+                                        @ParameterLayout (named="PS 3°") double presionSuccion3,
+                                        @ParameterLayout (named="PD 3°") double presionDescarga){
         return repositoryService.persist(new CargaDiaria(this,
-                                                        codigo,
                                                         horometro,
                                                         rpm,
                                                         presionAceite,
@@ -162,8 +159,7 @@ public class Equipo implements Comparable<Equipo> {
                                                         presionSuccion2,
                                                         temperaturaSuccion3,
                                                         presionSuccion3,
-                                                        presionDescarga,
-                                                        caudalDiario));
+                                                        presionDescarga));
     }
 
     /*@Action(semantics = SemanticsOf.NON_IDEMPOTENT)

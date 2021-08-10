@@ -32,6 +32,7 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
     public final StringExpression marca;
     public final StringExpression modelo;
     public final StringExpression serial;
+    public final CollectionExpression ordenes;
 
     public QMotor(PersistableExpression parent, String name, int depth)
     {
@@ -48,6 +49,7 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
         this.marca = new StringExpressionImpl(this, "marca");
         this.modelo = new StringExpressionImpl(this, "modelo");
         this.serial = new StringExpressionImpl(this, "serial");
+        this.ordenes = new CollectionExpressionImpl(this, "ordenes");
     }
 
     public QMotor(Class type, String name, ExpressionType exprType)
@@ -58,5 +60,6 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
         this.marca = new StringExpressionImpl(this, "marca");
         this.modelo = new StringExpressionImpl(this, "modelo");
         this.serial = new StringExpressionImpl(this, "serial");
+        this.ordenes = new CollectionExpressionImpl(this, "ordenes");
     }
 }

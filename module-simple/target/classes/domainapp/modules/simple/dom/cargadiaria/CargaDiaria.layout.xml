@@ -34,7 +34,6 @@
                                 <c:action id="borrar">
                                     <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
                                 </c:action>
-                                <c:property id="codigo"/>
                                 <c:property id="equipo"/>
                             </c:fieldSet>
                         </bs3:col>
@@ -72,7 +71,6 @@
                         <bs3:col span="12">
                             <c:fieldSet name="Details">
                                 <c:property id="horometro"/>
-                                <c:property id="porcentajeDisponibilidad"/>
                                 <c:property id="rpm"/>
                                 <c:property id="presionAceite"/>
                                 <c:property id="temperaturaAceite"/>
@@ -84,7 +82,6 @@
                                 <c:property id="temperaturaSuccion3"/>
                                 <c:property id="presionSuccion3"/>
                                 <c:property id="presionDescarga"/>
-                                <c:property id="caudalDiario"/>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>

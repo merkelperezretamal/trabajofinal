@@ -19,7 +19,7 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple" )
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
-@javax.jdo.annotations.Unique(name="CargaDiaria_equipo_tag_UNQ", members = {"equipo","codigo"})
+@javax.jdo.annotations.Unique(name="CargaDiaria_equipo_tag_UNQ", members = {"equipo"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 public class CargaDiaria implements Comparable<CargaDiaria> {
@@ -30,78 +30,67 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     @Setter
     private Equipo equipo;
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @Getter @Setter @Title
-    private String codigo;
-
     //De Equipo
 
     @javax.jdo.annotations.Column(allowsNull = "false")
-    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
+    //@Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
-    private double horometro;
+    @PropertyLayout(named="Horometro") private double horometro;
 
-    @javax.jdo.annotations.Column(allowsNull = "true")
-    @Getter @Setter
-    private double disponibilidad;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double rpm;
+    @PropertyLayout(named="Rpm") private double rpm;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double presionAceite;
+    @PropertyLayout(named="Oil Press") private double presionAceite;
 
     //De Motor
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double temperaturaAceite;
+    @PropertyLayout(named="Oil Temp") private double temperaturaAceite;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double temperaturaAgua;
+    @PropertyLayout(named="Wat Temp") private double temperaturaAgua;
 
     //De Compresor
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double temperaturaSuccion1;
+    @PropertyLayout(named="TS 1°") private double temperaturaSuccion1;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double temperaturaSuccion2;
+    @PropertyLayout(named="TS 2°") private double temperaturaSuccion2;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double temperaturaSuccion3;
+    @PropertyLayout(named="TS 3°") private double temperaturaSuccion3;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double presionSuccion1;
+    @PropertyLayout(named="PS 1°") private double presionSuccion1;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double presionSuccion2;
+    @PropertyLayout(named="PS 2°") private double presionSuccion2;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double presionSuccion3;
+    @PropertyLayout(named="PS 3°") private double presionSuccion3;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    private double presionDescarga;
+    @PropertyLayout(named="PD 3°") private double presionDescarga;
 
-    @javax.jdo.annotations.Column(allowsNull = "false")
-    @Getter @Setter
-    private double caudalDiario;
 
     @Override
     public int compareTo(final CargaDiaria other) {
         return ComparisonChain.start()
                 .compare(this.getEquipo(), other.getEquipo())
-                .compare(this.getCodigo(), other.getCodigo())
                 .result();
     }
 
@@ -113,7 +102,6 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     }
 
     public CargaDiaria(Equipo equipo,
-                       String codigo,
                        double horometro,
                        double rpm,
                        double presionAceite,
@@ -125,10 +113,8 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
                        double presionSuccion2,
                        double temperaturaSuccion3,
                        double presionSuccion3,
-                       double presionDescarga,
-                       double caudalDiario) {
+                       double presionDescarga){
         this.equipo = equipo;
-        this.codigo = codigo;
         this.horometro = horometro;
         this.rpm = rpm;
         this.presionAceite = presionAceite;
@@ -141,13 +127,8 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         this.presionSuccion2 = presionSuccion2;
         this.presionSuccion3 = presionSuccion3;
         this.presionDescarga = presionDescarga;
-        this.caudalDiario = caudalDiario;
     }
 
-    @Override
-    public String toString() {
-        return getCodigo();
-    }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

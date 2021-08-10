@@ -36,6 +36,7 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
     public final StringExpression cylinder2;
     public final StringExpression cylinder3;
     public final StringExpression cylinder4;
+    public final CollectionExpression ordenes;
 
     public QCompresor(PersistableExpression parent, String name, int depth)
     {
@@ -56,6 +57,7 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
         this.cylinder2 = new StringExpressionImpl(this, "cylinder2");
         this.cylinder3 = new StringExpressionImpl(this, "cylinder3");
         this.cylinder4 = new StringExpressionImpl(this, "cylinder4");
+        this.ordenes = new CollectionExpressionImpl(this, "ordenes");
     }
 
     public QCompresor(Class type, String name, ExpressionType exprType)
@@ -70,5 +72,6 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
         this.cylinder2 = new StringExpressionImpl(this, "cylinder2");
         this.cylinder3 = new StringExpressionImpl(this, "cylinder3");
         this.cylinder4 = new StringExpressionImpl(this, "cylinder4");
+        this.ordenes = new CollectionExpressionImpl(this, "ordenes");
     }
 }

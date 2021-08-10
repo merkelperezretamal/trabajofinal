@@ -28,9 +28,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
     }
 
     public final domainapp.modules.simple.dom.equipo.QEquipo equipo;
-    public final StringExpression codigo;
     public final NumericExpression<Double> horometro;
-    public final NumericExpression<Double> disponibilidad;
     public final NumericExpression<Double> rpm;
     public final NumericExpression<Double> presionAceite;
     public final NumericExpression<Double> temperaturaAceite;
@@ -42,7 +40,6 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
     public final NumericExpression<Double> presionSuccion2;
     public final NumericExpression<Double> presionSuccion3;
     public final NumericExpression<Double> presionDescarga;
-    public final NumericExpression<Double> caudalDiario;
 
     public QCargaDiaria(PersistableExpression parent, String name, int depth)
     {
@@ -55,9 +52,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
         {
             this.equipo = null;
         }
-        this.codigo = new StringExpressionImpl(this, "codigo");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.disponibilidad = new NumericExpressionImpl<Double>(this, "disponibilidad");
         this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
         this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
         this.temperaturaAceite = new NumericExpressionImpl<Double>(this, "temperaturaAceite");
@@ -69,16 +64,13 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
         this.presionSuccion2 = new NumericExpressionImpl<Double>(this, "presionSuccion2");
         this.presionSuccion3 = new NumericExpressionImpl<Double>(this, "presionSuccion3");
         this.presionDescarga = new NumericExpressionImpl<Double>(this, "presionDescarga");
-        this.caudalDiario = new NumericExpressionImpl<Double>(this, "caudalDiario");
     }
 
     public QCargaDiaria(Class type, String name, ExpressionType exprType)
     {
         super(type, name, exprType);
         this.equipo = new domainapp.modules.simple.dom.equipo.QEquipo(this, "equipo", 5);
-        this.codigo = new StringExpressionImpl(this, "codigo");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.disponibilidad = new NumericExpressionImpl<Double>(this, "disponibilidad");
         this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
         this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
         this.temperaturaAceite = new NumericExpressionImpl<Double>(this, "temperaturaAceite");
@@ -90,6 +82,5 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
         this.presionSuccion2 = new NumericExpressionImpl<Double>(this, "presionSuccion2");
         this.presionSuccion3 = new NumericExpressionImpl<Double>(this, "presionSuccion3");
         this.presionDescarga = new NumericExpressionImpl<Double>(this, "presionDescarga");
-        this.caudalDiario = new NumericExpressionImpl<Double>(this, "caudalDiario");
     }
 }
