@@ -29,13 +29,13 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @javax.jdo.annotations.Unique(name="Motor_equipo_tag_UNQ", members = {"equipo","tag"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-public class Motor<string> implements Comparable<Motor>{
+public class Motor implements Comparable<Motor>{
 
-    public Motor(Equipo equipo, String tag, String marca, String modelo, String serial){
+    public Motor(Equipo equipo, String tag, String marca, ETipoModelo modelo, String serial){
         this.equipo = equipo;
         this.tag = tag;
         this.marca = marca;
-        this.modelo = modelo;
+        this.tipoModelo = modelo;
         this.serial = serial;
     }
 
@@ -63,7 +63,7 @@ public class Motor<string> implements Comparable<Motor>{
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
-    private String modelo;
+    private ETipoModelo tipoModelo;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Getter @Setter
@@ -91,11 +91,11 @@ public class Motor<string> implements Comparable<Motor>{
     public Motor editarMotor(
             final @ParameterLayout(named="TAG") String tag,
             final @ParameterLayout(named="Marca") String marca,
-            final @ParameterLayout(named="Modelo") String modelo,
+            final @ParameterLayout(named="Modelo") ETipoModelo tipoModelo,
             final @ParameterLayout(named="Serial") String serial) {
         setTag(tag);
         setMarca(marca);
-        setModelo(modelo);
+        setTipoModelo(tipoModelo);
         setSerial(serial);
         return this;
     }

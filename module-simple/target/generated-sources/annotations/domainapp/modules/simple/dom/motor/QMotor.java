@@ -30,7 +30,7 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
     public final domainapp.modules.simple.dom.equipo.QEquipo equipo;
     public final StringExpression tag;
     public final StringExpression marca;
-    public final StringExpression modelo;
+    public final ObjectExpression<domainapp.modules.simple.dom.motor.ETipoModelo> tipoModelo;
     public final StringExpression serial;
     public final CollectionExpression ordenes;
 
@@ -47,7 +47,7 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
         }
         this.tag = new StringExpressionImpl(this, "tag");
         this.marca = new StringExpressionImpl(this, "marca");
-        this.modelo = new StringExpressionImpl(this, "modelo");
+        this.tipoModelo = new ObjectExpressionImpl<domainapp.modules.simple.dom.motor.ETipoModelo>(this, "tipoModelo");
         this.serial = new StringExpressionImpl(this, "serial");
         this.ordenes = new CollectionExpressionImpl(this, "ordenes");
     }
@@ -58,7 +58,7 @@ public class QMotor extends PersistableExpressionImpl<Motor> implements Persista
         this.equipo = new domainapp.modules.simple.dom.equipo.QEquipo(this, "equipo", 5);
         this.tag = new StringExpressionImpl(this, "tag");
         this.marca = new StringExpressionImpl(this, "marca");
-        this.modelo = new StringExpressionImpl(this, "modelo");
+        this.tipoModelo = new ObjectExpressionImpl<domainapp.modules.simple.dom.motor.ETipoModelo>(this, "tipoModelo");
         this.serial = new StringExpressionImpl(this, "serial");
         this.ordenes = new CollectionExpressionImpl(this, "ordenes");
     }

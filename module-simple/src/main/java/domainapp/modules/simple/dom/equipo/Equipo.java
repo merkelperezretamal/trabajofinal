@@ -21,6 +21,7 @@ package domainapp.modules.simple.dom.equipo;
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.compresor.Compresor;
+import domainapp.modules.simple.dom.motor.ETipoModelo;
 import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
@@ -115,9 +116,9 @@ public class Equipo implements Comparable<Equipo> {
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public Motor nuevoMotor(final @ParameterLayout (named="TAG") String tag,
                             final @ParameterLayout (named="Marca") String marca,
-                            final @ParameterLayout (named="Modelo") String modelo,
+                            final @ParameterLayout (named="Modelo") ETipoModelo tipoModelo,
                             final @ParameterLayout (named="Serial") String serial) {
-        return repositoryService.persist(new Motor(this, tag, marca, modelo, serial));
+        return repositoryService.persist(new Motor(this, tag, marca, tipoModelo, serial));
     }
 
 
