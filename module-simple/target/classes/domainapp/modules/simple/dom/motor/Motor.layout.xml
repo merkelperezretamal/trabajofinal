@@ -73,7 +73,7 @@
                             <c:fieldSet name="Configuración">
                                 <c:property id="serial"/>
                                 <c:property id="marca"/>
-                                <c:property id="modelo"/>
+                                <c:property id="tipoModelo"/>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
