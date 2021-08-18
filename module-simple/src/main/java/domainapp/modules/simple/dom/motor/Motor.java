@@ -102,7 +102,7 @@ public class Motor implements Comparable<Motor>{
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public Orden nuevaOrden(final @ParameterLayout (named="Numero de Orden") int numeroOrden) {
-        if(this.tipoModelo.equals("MOTOR_3500")){
+        if(this.tipoModelo.equals(ETipoModelo.MOTOR_3500)){
             return repositoryService.persist(new Orden(numeroOrden, "MOTOR_3500", this));
         }else{
             return repositoryService.persist(new Orden(numeroOrden, "MOTOR_3600", this));
