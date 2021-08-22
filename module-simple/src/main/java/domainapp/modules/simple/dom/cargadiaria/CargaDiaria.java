@@ -25,7 +25,7 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 public class CargaDiaria implements Comparable<CargaDiaria> {
 
     @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
-    @Property(editing = Editing.DISABLED)
+    @Property(editing = Editing.DISABLED, hidden = Where.EVERYWHERE)
     @Getter
     @Setter
     private Equipo equipo;

@@ -147,7 +147,7 @@ public class Equipo implements Comparable<Equipo> {
                                         @ParameterLayout (named="PS 2°") double presionSuccion2,
                                         @ParameterLayout (named="TS 3°") double temperaturaSuccion3,
                                         @ParameterLayout (named="PS 3°") double presionSuccion3,
-                                        @ParameterLayout (named="PD 3°") double presionDescarga){
+                                        @ParameterLayout (named="PD 3") double presionDescarga){
         return repositoryService.persist(new CargaDiaria(this,
                                                         horometro,
                                                         rpm,

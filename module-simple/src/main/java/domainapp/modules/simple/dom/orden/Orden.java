@@ -36,6 +36,7 @@ public class Orden implements Comparable<Orden>{
         this.fecha = new Date();
         this.tipoMantenimiento = tipoMantenimiento;
         this.motor = motor;
+
     }
 
     public Orden(int numeroOrden, String tipoMantenimiento, Compresor compresor) {
@@ -43,6 +44,7 @@ public class Orden implements Comparable<Orden>{
         this.fecha = new Date();
         this.tipoMantenimiento = tipoMantenimiento;
         this.compresor = compresor;
+
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false")
@@ -93,6 +95,25 @@ public class Orden implements Comparable<Orden>{
         return getNumeroOrden();
     }
 
+/*
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    @PropertyLayout (named = "Volver")
+    public Object regresar() {
+        if(this.motor != null){
+            return this.motor;
+        }else{
+            return this.compresor;
+        }
+    }
+    @Programmatic
+    public Object default0Regresar () {
+        if(this.motor != null){
+            return this.motor;
+        }else{
+            return this.compresor;
+        }
+    }
+*/
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     @ActionLayout(named = "Asignar Mantenimiento")
     public Orden agregarMantenimiento(
