@@ -68,12 +68,12 @@ public class Orden implements Comparable<Orden>{
     private String tipoMantenimiento;
 
     @javax.jdo.annotations.Column(allowsNull = "true", name = "motorId")
-    @Property(editing = Editing.DISABLED)
+    @Property(editing = Editing.DISABLED, hidden = Where.EVERYWHERE)
     @Getter @Setter
     private Motor motor;
 
     @javax.jdo.annotations.Column(allowsNull = "true", name = "compresorId")
-    @Property(editing = Editing.DISABLED)
+    @Property(editing = Editing.DISABLED, hidden = Where.EVERYWHERE)
     @Getter @Setter
     private Compresor compresor;
 
@@ -95,7 +95,7 @@ public class Orden implements Comparable<Orden>{
         return getNumeroOrden();
     }
 
-/*
+
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     @PropertyLayout (named = "Volver")
     public Object regresar() {
@@ -113,7 +113,7 @@ public class Orden implements Comparable<Orden>{
             return this.compresor;
         }
     }
-*/
+
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     @ActionLayout(named = "Asignar Mantenimiento")
     public Orden agregarMantenimiento(
