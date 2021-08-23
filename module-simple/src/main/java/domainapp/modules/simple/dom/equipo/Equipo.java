@@ -89,13 +89,8 @@ public class Equipo implements Comparable<Equipo> {
     @Persistent(mappedBy = "equipo", dependentElement = "true")
     @Collection()
     @Getter @Setter
-    private SortedSet<CargaDiaria> cargasDiarias = new TreeSet<CargaDiaria>();
-
-   /* @Persistent(mappedBy = "equipo", dependentElement = "true")
-    @Collection()
-    @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="true")
-    private SortedSet<Mantenimiento> mantenimientos = new TreeSet<Mantenimiento>();*/
+    private SortedSet<CargaDiaria> cargasDiarias = new TreeSet<CargaDiaria>();
 
     @Getter @Setter
     @javax.jdo.annotations.Column(allowsNull="false")

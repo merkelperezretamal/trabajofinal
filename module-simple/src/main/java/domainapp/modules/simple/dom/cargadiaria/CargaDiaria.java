@@ -19,7 +19,7 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple" )
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
-@javax.jdo.annotations.Unique(name="CargaDiaria_equipo_tag_UNQ", members = {"equipo"})
+@javax.jdo.annotations.Unique(name="CargaDiaria_tag_UNQ", members = {"tag"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 public class CargaDiaria implements Comparable<CargaDiaria> {
@@ -29,6 +29,13 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     @Getter
     @Setter
     private Equipo equipo;
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Property(editing = Editing.DISABLED, hidden = Where.EVERYWHERE)
+    @Getter
+    @Setter
+    @Title
+    private String tag;
 
     //De Equipo
 
@@ -127,6 +134,8 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         this.presionSuccion2 = presionSuccion2;
         this.presionSuccion3 = presionSuccion3;
         this.presionDescarga = presionDescarga;
+
+        this.tag = this.equipo.getDenominacion() + " - " + this.horometro;
     }
 
 

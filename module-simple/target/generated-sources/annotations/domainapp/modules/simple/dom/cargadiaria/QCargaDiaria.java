@@ -28,6 +28,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
     }
 
     public final domainapp.modules.simple.dom.equipo.QEquipo equipo;
+    public final StringExpression tag;
     public final NumericExpression<Double> horometro;
     public final NumericExpression<Double> rpm;
     public final NumericExpression<Double> presionAceite;
@@ -52,6 +53,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
         {
             this.equipo = null;
         }
+        this.tag = new StringExpressionImpl(this, "tag");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
         this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
         this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
@@ -70,6 +72,7 @@ public class QCargaDiaria extends PersistableExpressionImpl<CargaDiaria> impleme
     {
         super(type, name, exprType);
         this.equipo = new domainapp.modules.simple.dom.equipo.QEquipo(this, "equipo", 5);
+        this.tag = new StringExpressionImpl(this, "tag");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
         this.rpm = new NumericExpressionImpl<Double>(this, "rpm");
         this.presionAceite = new NumericExpressionImpl<Double>(this, "presionAceite");
