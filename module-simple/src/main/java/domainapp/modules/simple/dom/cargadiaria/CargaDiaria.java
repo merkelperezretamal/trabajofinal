@@ -14,28 +14,27 @@ import org.apache.isis.applib.services.title.TitleService;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.VersionStrategy;
 
+import java.util.Date;
+
 import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple" )
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
-@javax.jdo.annotations.Unique(name="CargaDiaria_tag_UNQ", members = {"tag"})
+@javax.jdo.annotations.Unique(name="CargaDiaria_fecha_UNQ", members = {"fecha"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 public class CargaDiaria implements Comparable<CargaDiaria> {
 
     @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
-    @Property(editing = Editing.DISABLED, hidden = Where.EVERYWHERE)
+    @Property(editing = Editing.DISABLED)
     @Getter
     @Setter
     private Equipo equipo;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
-    @Property(editing = Editing.DISABLED, hidden = Where.EVERYWHERE)
-    @Getter
-    @Setter
-    @Title
-    private String tag;
+    @Getter @Setter @Title
+    private Date fecha;
 
     //De Equipo
 
@@ -135,7 +134,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         this.presionSuccion3 = presionSuccion3;
         this.presionDescarga = presionDescarga;
 
-        this.tag = this.equipo.getDenominacion() + " - " + this.horometro;
+        this.fecha = new Date();;
     }
 
 

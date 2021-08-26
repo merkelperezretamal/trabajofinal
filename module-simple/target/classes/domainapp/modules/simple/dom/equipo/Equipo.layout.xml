@@ -67,6 +67,9 @@
                 <bs3:tab name="Cargas Diarias">
                     <bs3:row>
                         <bs3:col span="12">
+                            <c:action id="nuevaCargaDiaria">
+                                <c:describedAs>Generar una nueva carga diaria</c:describedAs>
+                            </c:action>
                             <c:collection id="cargasDiarias" defaultView="table"/>
                         </bs3:col>
                     </bs3:row>
@@ -75,9 +78,6 @@
         </bs3:col>
         <bs3:col span="6">
             <bs3:tabGroup collapseIfOne="false">
-                <c:action id="nuevaCargaDiaria">
-                    <c:describedAs>Generar una nueva carga diaria</c:describedAs>
-                </c:action>
                 <bs3:tab name="Miscelaneo">
                     <bs3:row>
                         <bs3:col span="12">

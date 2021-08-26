@@ -34,17 +34,20 @@
                                 <c:action id="borrar">
                                     <c:describedAs>Borrar Carga Diaria</c:describedAs>
                                 </c:action>
-                                <c:property id="tag" namedEscaped="true"/>
+                                <c:property id="fecha"/>
                                 <c:property id="equipo"/>
-                            </c:fieldSet>
-                        </bs3:col>
-                    </bs3:row>
-                </bs3:tab>
-                <bs3:tab name="Notes">
-                    <bs3:row>
-                        <bs3:col span="12">
-                            <c:fieldSet name="Notes">
-                                <c:property id="notes" namedEscaped="true" multiLine="10" hidden="ALL_TABLES"/>
+                                <c:property id="horometro"/>
+                                <c:property id="rpm"/>
+                                <c:property id="presionAceite"/>
+                                <c:property id="temperaturaAceite"/>
+                                <c:property id="temperaturaAgua"/>
+                                <c:property id="temperaturaSuccion1"/>
+                                <c:property id="presionSuccion1"/>
+                                <c:property id="temperaturaSuccion2"/>
+                                <c:property id="presionSuccion2"/>
+                                <c:property id="temperaturaSuccion3"/>
+                                <c:property id="presionSuccion3"/>
+                                <c:property id="presionDescarga"/>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
@@ -60,30 +63,6 @@
                     <bs3:row>
                         <bs3:col span="12">
                             <c:fieldSet name="Metadata"/>
-                        </bs3:col>
-                    </bs3:row>
-                </bs3:tab>
-            </bs3:tabGroup>
-        </bs3:col>
-        <bs3:col span="6">
-            <bs3:tabGroup collapseIfOne="false">
-                <bs3:tab name="Details">
-                    <bs3:row>
-                        <bs3:col span="12">
-                            <c:fieldSet name="Details">
-                                <c:property id="horometro"/>
-                                <c:property id="rpm"/>
-                                <c:property id="presionAceite"/>
-                                <c:property id="temperaturaAceite"/>
-                                <c:property id="temperaturaAgua"/>
-                                <c:property id="temperaturaSuccion1"/>
-                                <c:property id="presionSuccion1"/>
-                                <c:property id="temperaturaSuccion2"/>
-                                <c:property id="presionSuccion2"/>
-                                <c:property id="temperaturaSuccion3"/>
-                                <c:property id="presionSuccion3"/>
-                                <c:property id="presionDescarga"/>
-                            </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
