@@ -26,10 +26,9 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @DomainObjectLayout()  // causes UI events to be triggered
 public class CargaDiaria implements Comparable<CargaDiaria> {
 
-    @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
+    @javax.jdo.annotations.Column(allowsNull = "true", name = "equipoId")
     @Property(editing = Editing.DISABLED)
-    @Getter
-    @Setter
+    @Getter @Setter
     private Equipo equipo;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
