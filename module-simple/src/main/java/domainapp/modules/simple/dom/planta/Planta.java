@@ -1,10 +1,7 @@
 package domainapp.modules.simple.dom.planta;
 
 import com.google.common.collect.ComparisonChain;
-import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
-import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.equipo.Equipo;
-import domainapp.modules.simple.dom.motor.Motor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -20,7 +17,6 @@ import javax.jdo.annotations.VersionStrategy;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
 @javax.jdo.annotations.PersistenceCapable(identityType= IdentityType.DATASTORE, schema = "simple")
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
