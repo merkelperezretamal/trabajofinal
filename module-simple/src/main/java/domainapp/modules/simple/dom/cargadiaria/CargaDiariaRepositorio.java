@@ -26,7 +26,7 @@ public class CargaDiariaRepositorio {
             return repositoryService.allInstances(CargaDiaria.class);
         }
 
-        public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
+        public static class CreateDomainEvent extends ActionDomainEvent<CargaDiariaRepositorio> {}
 
         @javax.inject.Inject
         RepositoryService repositoryService;

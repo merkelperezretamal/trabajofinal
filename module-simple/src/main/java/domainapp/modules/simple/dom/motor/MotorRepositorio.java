@@ -18,7 +18,7 @@ public class MotorRepositorio {
         return repositoryService.allInstances(Motor.class);
     }
 
-    public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
+    public static class CreateDomainEvent extends ActionDomainEvent<MotorRepositorio> {}
 
     @javax.inject.Inject
     RepositoryService repositoryService;
