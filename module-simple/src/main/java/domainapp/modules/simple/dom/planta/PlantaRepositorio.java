@@ -1,10 +1,13 @@
 package domainapp.modules.simple.dom.planta;
 
 import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.impl.QSimpleObject;
+import domainapp.modules.simple.dom.impl.SimpleObject;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.datanucleus.query.typesafe.TypesafeQuery;
 
 import java.util.List;
 
@@ -36,6 +39,22 @@ public class PlantaRepositorio {
     @MemberOrder(sequence = "2")
     public List<Planta> listAll() {
         return repositoryService.allInstances(Planta.class);
+    }
+
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @MemberOrder(sequence = "3")
+    public List<Planta> findByName(
+            @ParameterLayout(named="Nombre")
+            final String nombre
+    ) {
+        TypesafeQuery<Planta> q = isisJdoSupport.newTypesafeQuery(Planta.class);
+        final QPlanta cand = QPlanta.candidate();
+        q = q.filter(
+                cand.nombre.indexOf(q.stringParameter("nombre")).ne(-1)
+        );
+        return q.setParameter("nombre", nombre)
+                .executeList();
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<PlantaRepositorio> {}

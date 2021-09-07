@@ -107,6 +107,7 @@ public class Planta implements Comparable<Planta> {
         return this;
     }
 
+
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
