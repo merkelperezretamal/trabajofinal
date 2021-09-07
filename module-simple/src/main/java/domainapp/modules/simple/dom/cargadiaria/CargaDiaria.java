@@ -18,6 +18,7 @@ import java.util.Date;
 
 import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
+@SuppressWarnings("ALL")
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple" )
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
@@ -26,7 +27,7 @@ import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_Y
 @DomainObjectLayout()  // causes UI events to be triggered
 public class CargaDiaria implements Comparable<CargaDiaria> {
 
-    @javax.jdo.annotations.Column(allowsNull = "true", name = "equipoId")
+    @javax.jdo.annotations.Column(allowsNull = "false", name = "equipoId")
     @Property(editing = Editing.DISABLED)
     @Getter @Setter
     private Equipo equipo;
@@ -95,7 +96,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     @Override
     public int compareTo(final CargaDiaria other) {
         return ComparisonChain.start()
-                .compare(this.getEquipo(), other.getEquipo())
+                .compare(this.getFecha(), other.getFecha())
                 .result();
     }
 
