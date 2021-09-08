@@ -20,6 +20,8 @@ package domainapp.modules.simple.dom.equipo;
 
 import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.impl.SimpleObjects;
+import domainapp.modules.simple.dom.planta.Planta;
+import domainapp.modules.simple.dom.planta.QPlanta;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
@@ -52,6 +54,21 @@ public class EquipoRepositorio {
     @MemberOrder(sequence = "2")
     public List<Equipo> listAll() {
         return repositoryService.allInstances(Equipo.class);
+    }
+
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @MemberOrder(sequence = "3")
+    public List<Equipo> findByPlanta(
+            @ParameterLayout(named="Planta")
+            final String nombrePlanta) {
+        TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
+        final QEquipo cand = QEquipo.candidate();
+        q = q.filter(
+                cand.planta.nombre.indexOf(q.stringParameter("nombrePlanta")).ne(-1)
+        );
+        return q.setParameter("nombrePlanta", nombrePlanta)
+                .executeList();
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
