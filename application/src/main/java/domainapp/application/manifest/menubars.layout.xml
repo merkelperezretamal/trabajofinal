@@ -41,6 +41,9 @@
                 <mb3:serviceAction objectType="simple.EquipoMenu" id="listAll">
                     <cpt:named>List All</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.EquipoMenu" id="findByDenominacion">
+                    <cpt:named>Buscar por denominacion</cpt:named>
+                </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.EquipoMenu" id="findByPlanta">
                     <cpt:named>Buscar por Planta</cpt:named>
                 </mb3:serviceAction>

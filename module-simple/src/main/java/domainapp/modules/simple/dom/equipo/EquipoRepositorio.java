@@ -58,7 +58,7 @@ public class EquipoRepositorio {
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "4")
+    @MemberOrder(sequence = "5")
     public List<Equipo> findByPlanta(
             @ParameterLayout(named="Planta")
             final String nombrePlanta) {
@@ -68,6 +68,21 @@ public class EquipoRepositorio {
                 cand.planta.nombre.indexOf(q.stringParameter("nombrePlanta")).ne(-1)
         );
         return q.setParameter("nombrePlanta", nombrePlanta)
+                .executeList();
+    }
+
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @MemberOrder(sequence = "4")
+    public List<Equipo> findByDenominacion(
+            @ParameterLayout(named="Denominacion")
+            final String denominacion) {
+        TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
+        final QEquipo cand = QEquipo.candidate();
+        q = q.filter(
+                cand.denominacion.indexOf(q.stringParameter("denominacion")).ne(-1)
+        );
+        return q.setParameter("denominacion", denominacion)
                 .executeList();
     }
 
