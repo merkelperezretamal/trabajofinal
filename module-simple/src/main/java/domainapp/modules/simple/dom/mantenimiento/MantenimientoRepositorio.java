@@ -14,7 +14,7 @@ import java.util.List;
 )
 @DomainServiceLayout(
         named = "Mantenimientos", //TITULO DE LEYENDA
-        menuOrder = "10"
+        menuOrder = "7"
 )
 public class MantenimientoRepositorio {
 

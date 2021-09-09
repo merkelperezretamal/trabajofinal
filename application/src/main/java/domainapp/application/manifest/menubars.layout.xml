@@ -48,6 +48,15 @@
         </mb3:menu>
 
         <mb3:menu>
+            <mb3:named>Cargas Diarias</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.CargaDiariaMenu" id="listAll">
+                    <cpt:named>List All</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>
+        </mb3:menu>
+
+        <mb3:menu>
             <mb3:named>Motores</mb3:named>
             <mb3:section>
                 <mb3:serviceAction objectType="simple.MotorMenu" id="listAll">
@@ -82,15 +91,6 @@
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.MantenimientoMenu" id="listAll">
                     <cpt:named>List All</cpt:named>
-                </mb3:serviceAction>
-            </mb3:section>
-        </mb3:menu>
-
-        <mb3:menu>
-            <mb3:named>Carga Diaria</mb3:named>
-            <mb3:section>
-                <mb3:serviceAction objectType="simple.CargaDiariaMenu" id="listAll">
-                    <cpt:named>Goncho</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>

@@ -9,6 +9,15 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 
 import java.util.List;
 
+@DomainService(
+        nature = NatureOfService.VIEW_MENU_ONLY,
+        objectType = "simple.MotorMenu",
+        repositoryFor = Motor.class
+)
+@DomainServiceLayout(
+        named = "Motores", //TITULO DE LEYENDA
+        menuOrder = "4"
+)
 public class MotorRepositorio {
 
     @Action(semantics = SemanticsOf.SAFE)

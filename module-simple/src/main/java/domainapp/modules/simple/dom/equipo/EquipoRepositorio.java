@@ -37,7 +37,7 @@ import java.util.List;
 )
 @DomainServiceLayout(
         named = "Equipos", //TITULO DE LEYENDA
-        menuOrder = "10"
+        menuOrder = "2"
 )
 public class EquipoRepositorio {
 
@@ -58,7 +58,7 @@ public class EquipoRepositorio {
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "3")
+    @MemberOrder(sequence = "4")
     public List<Equipo> findByPlanta(
             @ParameterLayout(named="Planta")
             final String nombrePlanta) {

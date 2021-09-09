@@ -14,8 +14,8 @@ import java.util.List;
         repositoryFor = CargaDiaria.class
 )
 @DomainServiceLayout(
-        named = "CargaDiaria", //TITULO DE LEYENDA
-        menuOrder = "10"
+        named = "Cargas Diarias", //TITULO DE LEYENDA
+        menuOrder = "3"
 )
 public class CargaDiariaRepositorio {
 
