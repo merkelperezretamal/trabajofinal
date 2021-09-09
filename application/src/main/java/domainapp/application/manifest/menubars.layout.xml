@@ -65,6 +65,9 @@
                 <mb3:serviceAction objectType="simple.MotorMenu" id="listAll">
                     <cpt:named>List All</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.MotorMenu" id="findByTipo">
+                    <cpt:named>Buscar por tipo de modelo</cpt:named>
+                </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
 
