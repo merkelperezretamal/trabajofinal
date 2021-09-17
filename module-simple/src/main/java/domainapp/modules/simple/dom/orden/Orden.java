@@ -2,6 +2,7 @@ package domainapp.modules.simple.dom.orden;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.compresor.Compresor;
+import domainapp.modules.simple.dom.mantenimiento.ETipoMantenimiento;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
 import domainapp.modules.simple.dom.mantenimiento.MantenimientoRepositorio;
 import domainapp.modules.simple.dom.motor.Motor;
@@ -127,7 +128,18 @@ public class Orden implements Comparable<Orden>{
         return this;
     }
 
-    public List<Mantenimiento> choices0AgregarMantenimiento() { return mantenimientoRepositorio.listAll(); }
+    public List<Mantenimiento> choices0AgregarMantenimiento() {
+        if(this.tipoMantenimiento.equals("MOTOR_3500")){
+            return mantenimientoRepositorio.findByTipoMantenimientoMotor(ETipoMantenimiento.MOTOR_3500);
+        }else {
+            if (this.tipoMantenimiento.equals("MOTOR_3600")) {
+                return mantenimientoRepositorio.findByTipoMantenimientoMotor(ETipoMantenimiento.MOTOR_3600);
+            } else {
+                //Aca deberia ir la opcion para compresores
+                return mantenimientoRepositorio.listAll();
+            }
+        }
+    }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

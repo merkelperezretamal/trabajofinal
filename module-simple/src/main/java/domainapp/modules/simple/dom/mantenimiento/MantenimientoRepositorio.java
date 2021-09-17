@@ -1,9 +1,13 @@
 package domainapp.modules.simple.dom.mantenimiento;
 
+import domainapp.modules.simple.dom.motor.ETipoModelo;
+import domainapp.modules.simple.dom.motor.Motor;
+import domainapp.modules.simple.dom.motor.QMotor;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.datanucleus.query.typesafe.TypesafeQuery;
 
 import java.util.List;
 
@@ -31,6 +35,21 @@ public class MantenimientoRepositorio {
     @MemberOrder(sequence = "2")
     public List<Mantenimiento> listAll() {
         return repositoryService.allInstances(Mantenimiento.class);
+    }
+
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @MemberOrder(sequence = "3")
+    public List<Mantenimiento> findByTipoMantenimientoMotor(
+            @ParameterLayout(named="Tipo de Mantenimiento")
+            final ETipoMantenimiento tipoMantenimiento) {
+        TypesafeQuery<Mantenimiento> q = isisJdoSupport.newTypesafeQuery(Mantenimiento.class);
+        final QMantenimiento cand = QMantenimiento.candidate();
+        q = q.filter(
+                cand.tipoMantenimiento.eq(q.stringParameter("tipoMantenimiento"))
+        );
+        return q.setParameter("tipoMantenimiento", tipoMantenimiento)
+                .executeList();
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<MantenimientoRepositorio> {
