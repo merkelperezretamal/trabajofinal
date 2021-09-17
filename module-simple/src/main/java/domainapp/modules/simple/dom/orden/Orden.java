@@ -130,13 +130,12 @@ public class Orden implements Comparable<Orden>{
 
     public List<Mantenimiento> choices0AgregarMantenimiento() {
         if(this.tipoMantenimiento.equals("MOTOR_3500")){
-            return mantenimientoRepositorio.findByTipoMantenimientoMotor(ETipoMantenimiento.MOTOR_3500);
+            return mantenimientoRepositorio.findByTipoMantenimiento(ETipoMantenimiento.MOTOR_3500);
         }else {
             if (this.tipoMantenimiento.equals("MOTOR_3600")) {
-                return mantenimientoRepositorio.findByTipoMantenimientoMotor(ETipoMantenimiento.MOTOR_3600);
+                return mantenimientoRepositorio.findByTipoMantenimiento(ETipoMantenimiento.MOTOR_3600);
             } else {
-                //Aca deberia ir la opcion para compresores
-                return mantenimientoRepositorio.listAll();
+                return mantenimientoRepositorio.findByTipoMantenimiento(ETipoMantenimiento.COMPRESOR);
             }
         }
     }

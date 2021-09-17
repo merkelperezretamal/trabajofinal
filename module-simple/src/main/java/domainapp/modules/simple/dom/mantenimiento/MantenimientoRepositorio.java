@@ -40,7 +40,7 @@ public class MantenimientoRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "3")
-    public List<Mantenimiento> findByTipoMantenimientoMotor(
+    public List<Mantenimiento> findByTipoMantenimiento(
             @ParameterLayout(named="Tipo de Mantenimiento")
             final ETipoMantenimiento tipoMantenimiento) {
         TypesafeQuery<Mantenimiento> q = isisJdoSupport.newTypesafeQuery(Mantenimiento.class);
