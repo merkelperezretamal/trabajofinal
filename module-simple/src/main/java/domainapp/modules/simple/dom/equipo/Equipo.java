@@ -14,6 +14,7 @@ import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
+import org.joda.time.LocalDate;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
@@ -151,7 +152,14 @@ public class Equipo implements Comparable<Equipo> {
         return this;
     }
 
+    //Para los reportes
+    public String RepoDenominacion() { return this.denominacion; }
+    public Planta RepoPlanta() { return this.planta; }
+    public Motor RepoMotor() { return this.motor; }
+    public Compresor RepoCompresor() { return this.compresor; }
+    public boolean RepoActivo() { return this.activo; }
 
+    //Injecciones
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
