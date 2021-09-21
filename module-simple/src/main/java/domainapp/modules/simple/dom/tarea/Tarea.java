@@ -71,13 +71,13 @@ public class Tarea implements Comparable<Tarea> {
 
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
-    public Tarea modificarTarea(
-            @Parameter(maxLength = 40)
+    public Tarea modificarDescripcion(
+            @ParameterLayout(named="Descripcion")
             final String descripcion) {
         setDescripcion(descripcion);
         return this;
     }
-    public String default0ModificarTarea() {
+    public String default0ModificarDescripcion() {
         return getDescripcion();
     }
 

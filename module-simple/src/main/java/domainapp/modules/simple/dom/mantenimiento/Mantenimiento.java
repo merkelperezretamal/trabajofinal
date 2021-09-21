@@ -94,7 +94,7 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Mantenimiento modificarHoras(
-            @Parameter(maxLength = 40)
+            @ParameterLayout(named="Horas")
             final int horas) {
         setHoras(horas);
         return this;

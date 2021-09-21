@@ -41,8 +41,8 @@
                                 <c:property id="nombre"/>
                                 <c:property id="mantenimiento"/>
                                 <c:property id="descripcion" namedEscaped="true">
-                                    <c:action id="modificarTarea">
-                                        <c:describedAs>Modifica la tarea</c:describedAs>
+                                    <c:action id="modificarDescripcion">
+                                        <c:describedAs>Modifica la descripcion</c:describedAs>
                                     </c:action>
                                 </c:property>
                             </c:fieldSet>
