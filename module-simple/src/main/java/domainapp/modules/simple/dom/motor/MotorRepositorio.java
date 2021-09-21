@@ -25,24 +25,24 @@ public class MotorRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "1")
-    public List<Motor> listAll() {
+    public List<Motor> listarTodos() {
         return repositoryService.allInstances(Motor.class);
     }
 
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "2")
-    public List<Motor> findByTipo(
-            @ParameterLayout(named="Tipo de Modelo")
-            final ETipoModelo tipoModelo) {
-        TypesafeQuery<Motor> q = isisJdoSupport.newTypesafeQuery(Motor.class);
-        final QMotor cand = QMotor.candidate();
-        q = q.filter(
-                cand.tipoModelo.eq(q.stringParameter("tipoModelo"))
-        );
-        return q.setParameter("tipoModelo", tipoModelo)
-                .executeList();
-    }
+//    @Action(semantics = SemanticsOf.SAFE)
+//    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+//    @MemberOrder(sequence = "2")
+//    public List<Motor> buscarPorTipo(
+//            @ParameterLayout(named="Tipo de Modelo")
+//            final ETipoModelo tipoModelo) {
+//        TypesafeQuery<Motor> q = isisJdoSupport.newTypesafeQuery(Motor.class);
+//        final QMotor cand = QMotor.candidate();
+//        q = q.filter(
+//                cand.tipoModelo.eq(q.stringParameter("tipoModelo"))
+//        );
+//        return q.setParameter("tipoModelo", tipoModelo)
+//                .executeList();
+//    }
 
     public static class CreateDomainEvent extends ActionDomainEvent<MotorRepositorio> {}
 

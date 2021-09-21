@@ -22,7 +22,7 @@ public class CargaDiariaRepositorio {
         @Action(semantics = SemanticsOf.SAFE)
         @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
         @MemberOrder(sequence = "1")
-        public List<CargaDiaria> listAll() {
+        public List<CargaDiaria> listarTodas() {
             return repositoryService.allInstances(CargaDiaria.class);
         }
 

@@ -24,7 +24,7 @@ public class MantenimientoRepositorio {
 
     @Action(domainEvent = MantenimientoRepositorio.CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
-    public Mantenimiento create(
+    public Mantenimiento crear(
             @ParameterLayout(named = "TipoMantenimiento") final ETipoMantenimiento tipoMantenimiento,
             @ParameterLayout(named = "Horas") final int horas) {
         return repositoryService.persist(new Mantenimiento(tipoMantenimiento, horas));
@@ -33,14 +33,14 @@ public class MantenimientoRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")
-    public List<Mantenimiento> listAll() {
+    public List<Mantenimiento> listarTodos() {
         return repositoryService.allInstances(Mantenimiento.class);
     }
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "3")
-    public List<Mantenimiento> findByTipoMantenimiento(
+    public List<Mantenimiento> buscarPorTipo(
             @ParameterLayout(named="Tipo de Mantenimiento")
             final ETipoMantenimiento tipoMantenimiento) {
         TypesafeQuery<Mantenimiento> q = isisJdoSupport.newTypesafeQuery(Mantenimiento.class);

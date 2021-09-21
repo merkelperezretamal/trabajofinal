@@ -24,7 +24,7 @@ public class PlantaRepositorio {
 
     @Action(domainEvent = CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
-    public Planta create(
+    public Planta crear(
             @ParameterLayout(named="Nombre")
             final String nombre,
             @ParameterLayout(named="Provincia")
@@ -37,14 +37,14 @@ public class PlantaRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")
-    public List<Planta> listAll() {
+    public List<Planta> listarTodas() {
         return repositoryService.allInstances(Planta.class);
     }
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "3")
-    public List<Planta> findByName(
+    public List<Planta> buscarPorNombre(
             @ParameterLayout(named="Nombre")
             final String nombre
     ) {

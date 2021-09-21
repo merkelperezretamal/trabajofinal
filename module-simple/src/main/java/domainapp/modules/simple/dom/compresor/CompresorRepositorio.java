@@ -24,7 +24,7 @@ public class CompresorRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "1")
-    public List<Compresor> listAll() {
+    public List<Compresor> listarTodos() {
         return repositoryService.allInstances(Compresor.class);
     }
 

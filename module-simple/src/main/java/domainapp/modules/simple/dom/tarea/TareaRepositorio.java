@@ -24,7 +24,7 @@ public class TareaRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "1")
-    public List<Tarea> listAll() {
+    public List<Tarea> listarTodas() {
         return repositoryService.allInstances(Tarea.class);
     }
 

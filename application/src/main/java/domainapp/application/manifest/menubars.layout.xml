@@ -23,13 +23,13 @@
         <mb3:menu>
             <mb3:named>Plantas</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.PlantaMenu" id="create">
-                    <cpt:named>Create</cpt:named>
+                <mb3:serviceAction objectType="simple.PlantaMenu" id="crear">
+                    <cpt:named>Crear</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.PlantaMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
+                <mb3:serviceAction objectType="simple.PlantaMenu" id="listarTodas">
+                    <cpt:named>Listar todas</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.PlantaMenu" id="findByName">
+                <mb3:serviceAction objectType="simple.PlantaMenu" id="buscarPorNombre">
                     <cpt:named>Buscar por nombre</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
@@ -38,14 +38,14 @@
         <mb3:menu>
             <mb3:named>Equipos</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.EquipoMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
+                <mb3:serviceAction objectType="simple.EquipoMenu" id="listarTodos">
+                    <cpt:named>Listar todos</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.EquipoMenu" id="findByDenominacion">
+                <mb3:serviceAction objectType="simple.EquipoMenu" id="buscarPorDenominacion">
                     <cpt:named>Buscar por denominacion</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.EquipoMenu" id="findByPlanta">
-                    <cpt:named>Buscar por Planta</cpt:named>
+                <mb3:serviceAction objectType="simple.EquipoMenu" id="buscarPorPlanta">
+                    <cpt:named>Buscar por planta</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
@@ -53,8 +53,8 @@
         <mb3:menu>
             <mb3:named>Cargas Diarias</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.CargaDiariaMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
+                <mb3:serviceAction objectType="simple.CargaDiariaMenu" id="listarTodas">
+                    <cpt:named>Listar todas</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
@@ -62,11 +62,8 @@
         <mb3:menu>
             <mb3:named>Motores</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.MotorMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
-                </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.MotorMenu" id="findByTipo">
-                    <cpt:named>Buscar por tipo de modelo</cpt:named>
+                <mb3:serviceAction objectType="simple.MotorMenu" id="listarTodos">
+                    <cpt:named>Listar todos</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
@@ -74,8 +71,8 @@
         <mb3:menu>
             <mb3:named>Compresores</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.CompresorMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
+                <mb3:serviceAction objectType="simple.CompresorMenu" id="listarTodos">
+                    <cpt:named>Listar todos</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
@@ -83,8 +80,8 @@
         <mb3:menu>
             <mb3:named>Ordenes</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.OrdenMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
+                <mb3:serviceAction objectType="simple.OrdenMenu" id="listarTodas">
+                    <cpt:named>Listar todas</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
@@ -92,11 +89,20 @@
         <mb3:menu>
             <mb3:named>Mantenimientos</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="simple.MantenimientoMenu" id="create">
-                    <cpt:named>Create</cpt:named>
+                <mb3:serviceAction objectType="simple.MantenimientoMenu" id="crear">
+                    <cpt:named>Crear</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.MantenimientoMenu" id="listAll">
-                    <cpt:named>List All</cpt:named>
+                <mb3:serviceAction objectType="simple.MantenimientoMenu" id="listarTodos">
+                    <cpt:named>Listar todos</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>
+        </mb3:menu>
+
+        <mb3:menu>
+            <mb3:named>Tareas</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.TareaMenu" id="listarTodas">
+                    <cpt:named>Listar todas</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>

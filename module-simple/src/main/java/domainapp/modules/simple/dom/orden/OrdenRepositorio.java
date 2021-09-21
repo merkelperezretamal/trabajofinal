@@ -25,7 +25,7 @@ public class OrdenRepositorio {
 
     @Action(domainEvent = OrdenRepositorio.CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
-    public Orden create(
+    public Orden crear(
             @ParameterLayout(named="Numero")
             final int numeroOrden,
             @ParameterLayout(named="Tipo de Mantenimiento")
@@ -38,7 +38,7 @@ public class OrdenRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")
-    public List<Orden> listAll() {
+    public List<Orden> listarTodas() {
         return repositoryService.allInstances(Orden.class);
     }
 

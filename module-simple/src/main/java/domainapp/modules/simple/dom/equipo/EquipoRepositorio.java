@@ -43,7 +43,7 @@ public class EquipoRepositorio {
 
     @Action(domainEvent = CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
-    public Equipo create(
+    public Equipo crear(
             @ParameterLayout(named="Denominacion")
             final String denominacion){
         return repositoryService.persist(new Equipo(denominacion));
@@ -52,14 +52,14 @@ public class EquipoRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")
-    public List<Equipo> listAll() {
+    public List<Equipo> listarTodos() {
         return repositoryService.allInstances(Equipo.class);
     }
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "5")
-    public List<Equipo> findByPlanta(
+    public List<Equipo> buscarPorPlanta(
             @ParameterLayout(named="Planta")
             final String nombrePlanta) {
         TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
@@ -74,7 +74,7 @@ public class EquipoRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "4")
-    public List<Equipo> findByDenominacion(
+    public List<Equipo> buscarPorDenominacion(
             @ParameterLayout(named="Denominacion")
             final String denominacion) {
         TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
