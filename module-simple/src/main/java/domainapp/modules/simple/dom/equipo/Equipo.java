@@ -154,10 +154,10 @@ public class Equipo implements Comparable<Equipo> {
 
     //Para los reportes
     public String RepoDenominacion() { return this.denominacion; }
-    public Planta RepoPlanta() { return this.planta; }
-    public Motor RepoMotor() { return this.motor; }
-    public Compresor RepoCompresor() { return this.compresor; }
-    public boolean RepoActivo() { return this.activo; }
+    public String RepoPlanta() { return this.planta.getNombre(); }
+    public String RepoMotor() { return this.motor.getTag(); }
+    public String RepoCompresor() { return this.compresor.getTag(); }
+    //public boolean RepoActivo() { return this.activo; }
 
     //Injecciones
     @javax.inject.Inject

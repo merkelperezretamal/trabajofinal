@@ -22,12 +22,16 @@ import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.impl.SimpleObjects;
 import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.planta.QPlanta;
+import domainapp.modules.simple.dom.reportes.EjecutarReportes;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.apache.isis.applib.value.Blob;
 import org.datanucleus.query.typesafe.TypesafeQuery;
 
+import java.io.IOException;
 import java.util.List;
 
 @DomainService(
@@ -84,6 +88,13 @@ public class EquipoRepositorio {
         );
         return q.setParameter("denominacion", denominacion)
                 .executeList();
+    }
+
+    @Action()
+    @ActionLayout(named = "Listado Exportado")
+    public Blob exportarListado() throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoEquiposPDF(repositoryService.allInstances(Equipo.class));
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}

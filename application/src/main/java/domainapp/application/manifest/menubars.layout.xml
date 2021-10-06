@@ -47,6 +47,9 @@
                 <mb3:serviceAction objectType="simple.EquipoMenu" id="buscarPorPlanta">
                     <cpt:named>Buscar por planta</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.EquipoMenu" id="exportarListado">
+                    <cpt:named>Exportar listado</cpt:named>
+                </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
 
