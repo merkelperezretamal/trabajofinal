@@ -2,6 +2,8 @@ package domainapp.modules.simple.dom.planta;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.equipo.EquipoRepositorio;
+import domainapp.modules.simple.dom.mantenimiento.MantenimientoRepositorio;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -14,6 +16,7 @@ import org.apache.isis.applib.services.title.TitleService;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -74,10 +77,15 @@ public class Planta implements Comparable<Planta> {
     }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public Equipo nuevoEquipo(
-                            @ParameterLayout(named="TAG")
-                            final String denominacion) {
-        return repositoryService.persist(new Equipo(denominacion, this));
+    public Equipo nuevoEquipo(@ParameterLayout(named="TAG") final String denominacion) {
+
+        List<Equipo> listaEquipos = equipoRepositorio.buscarPorDenominacion(denominacion);
+
+        if(listaEquipos.isEmpty()){
+            return repositoryService.persist(new Equipo(denominacion, this));
+        }else{
+            return listaEquipos.get(0);
+        }
     }
 
     public String title() {
@@ -107,6 +115,10 @@ public class Planta implements Comparable<Planta> {
         return this;
     }
 
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    EquipoRepositorio equipoRepositorio;
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

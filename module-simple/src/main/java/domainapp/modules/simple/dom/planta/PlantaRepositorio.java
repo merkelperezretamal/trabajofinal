@@ -31,15 +31,15 @@ public class PlantaRepositorio {
             final String provincia,
             @ParameterLayout(named="Cliente")
             final String cliente){
-            List<Planta> listaPlantas = buscarPorNombre(nombre);
 
-            if(listaPlantas.isEmpty()){
-                return repositoryService.persist(new Planta(nombre, provincia, cliente));
-            }else{
-                return listaPlantas.get(0);
-            }
+        List<Planta> listaPlantas = buscarPorNombre(nombre);
 
+        if(listaPlantas.isEmpty()){
+            return repositoryService.persist(new Planta(nombre, provincia, cliente));
+        }else{
+            return listaPlantas.get(0);
         }
+    }
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
