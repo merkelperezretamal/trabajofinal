@@ -1,6 +1,8 @@
 package domainapp.modules.simple.dom.reportes;
 
+import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.orden.Orden;
 import domainapp.modules.simple.dom.planta.Planta;
 import org.apache.isis.applib.value.Blob;
 
@@ -36,6 +38,35 @@ public class EjecutarReportes {
 
         JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoEquipos);
         return GenerarArchivoPDF("DetalleEquipos.jrxml", "Listado de Equipos.pdf", ds);
+    }
+
+    public Blob ListadoCargasDiariasPDF(List<CargaDiaria> cargasDiarias) throws JRException, IOException {
+        System.out.println("Entro al ListadoCargasDiariasPDF() de EjecutarReportes");
+        List<RepoCargasDiarias> repoCargasDiarias = new ArrayList<RepoCargasDiarias>();
+        repoCargasDiarias.add(new RepoCargasDiarias());
+
+        for (CargaDiaria cargaDiaria : cargasDiarias) {
+            RepoCargasDiarias repoCargaDiaria = new RepoCargasDiarias(cargaDiaria.RepoHorometro(), cargaDiaria.RepoRpm(), cargaDiaria.RepoPresionAceite());
+            repoCargasDiarias.add(repoCargaDiaria);
+            System.out.println("Horometro de la carga diaria actual: "+repoCargaDiaria.getHorometro());
+        }
+
+        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoCargasDiarias);
+        return GenerarArchivoPDF("DetalleCargasDiarias.jrxml", "Listado de Cargas Diarias.pdf", ds);
+    }
+
+    public Blob ListadoOrdenesPDF(List<Orden> ordenes) throws JRException, IOException {
+
+        List<RepoOrdenes> repoOrdenes = new ArrayList<RepoOrdenes>();
+        repoOrdenes.add(new RepoOrdenes());
+
+        for (Orden orden : ordenes) {
+            RepoOrdenes repoOrden = new RepoOrdenes(orden.RepoNumero(), orden.RepoMantenimiento());
+            repoOrdenes.add(repoOrden);
+        }
+
+        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoOrdenes);
+        return GenerarArchivoPDF("DetalleOrdenes.jrxml", "Listado de Ordenes.pdf", ds);
     }
 
     private Blob GenerarArchivoPDF(String archivoDesing, String nombreSalida, JRBeanCollectionDataSource ds) throws JRException, IOException{

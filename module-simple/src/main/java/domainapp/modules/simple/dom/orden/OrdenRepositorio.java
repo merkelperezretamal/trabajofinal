@@ -1,15 +1,20 @@
 package domainapp.modules.simple.dom.orden;
 
+import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.mantenimiento.Mantenimiento;
 import domainapp.modules.simple.dom.motor.ETipoModelo;
 import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.motor.QMotor;
+import domainapp.modules.simple.dom.reportes.EjecutarReportes;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.apache.isis.applib.value.Blob;
 import org.datanucleus.query.typesafe.TypesafeQuery;
 
+import java.io.IOException;
 import java.util.List;
 
 @DomainService(
@@ -43,6 +48,13 @@ public class OrdenRepositorio {
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<OrdenRepositorio> {}
+
+    @Action()
+    @ActionLayout(named = "Listado Exportado")
+    public Blob exportarListado() throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoOrdenesPDF(repositoryService.allInstances(Orden.class));
+    }
 
     @javax.inject.Inject
     RepositoryService repositoryService;

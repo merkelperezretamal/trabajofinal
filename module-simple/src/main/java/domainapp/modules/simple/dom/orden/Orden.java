@@ -140,6 +140,9 @@ public class Orden implements Comparable<Orden>{
         }
     }
 
+    public String RepoNumero() { return String.valueOf(this.numeroOrden); }
+    public String RepoMantenimiento() { return this.mantenimiento.title(); }
+
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)

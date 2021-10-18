@@ -14,6 +14,8 @@ import org.apache.isis.applib.services.title.TitleService;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.VersionStrategy;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
@@ -34,7 +36,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter @Title
-    private Date fecha;
+    private String fecha;
 
     //De Equipo
 
@@ -42,7 +44,6 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     //@Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
     @PropertyLayout(named="Horometro") private double horometro;
-
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
@@ -134,9 +135,18 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         this.presionSuccion3 = presionSuccion3;
         this.presionDescarga = presionDescarga;
 
-        this.fecha = new Date();;
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String fechaComoCadena = dateFormat.format(new Date());
+        this.fecha = fechaComoCadena;
     }
 
+    //Para los reportes
+    public String RepoFecha() {
+        return this.fecha;
+    }
+    public String RepoHorometro() { return String.valueOf(this.horometro); }
+    public String RepoRpm() { return String.valueOf(this.rpm); }
+    public String RepoPresionAceite() { return String.valueOf(this.presionAceite); }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

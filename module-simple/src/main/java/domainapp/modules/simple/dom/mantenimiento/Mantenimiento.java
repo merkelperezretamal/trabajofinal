@@ -76,7 +76,7 @@ public class Mantenimiento implements Comparable<Mantenimiento>{
     }
 
     public String title() {
-        return String.format(getTipoMantenimiento()+" - "+getHoras());
+        return getTipoMantenimiento()+" - "+getHoras();
     }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)

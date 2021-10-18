@@ -2,6 +2,7 @@ package domainapp.modules.simple.dom.equipo;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
+import domainapp.modules.simple.dom.cargadiaria.CargaDiariaRepositorio;
 import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.motor.ETipoModelo;
 import domainapp.modules.simple.dom.motor.Motor;
@@ -10,6 +11,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
@@ -20,6 +22,7 @@ import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
+import java.io.IOException;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -152,6 +155,12 @@ public class Equipo implements Comparable<Equipo> {
         return this;
     }
 
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public void exportarListadoCargasDiarias() throws JRException, IOException {
+        System.out.println("Entro al exportarListadoCargasDiarias() de Equipo");
+        cargaDiariaRepositorio.exportarListado(this.denominacion);
+    }
+
     //Para los reportes
     public String RepoDenominacion() { return this.denominacion; }
     public String RepoPlanta() { return this.planta.getNombre(); }
@@ -175,6 +184,9 @@ public class Equipo implements Comparable<Equipo> {
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
 
-
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    CargaDiariaRepositorio cargaDiariaRepositorio;
 
 }
