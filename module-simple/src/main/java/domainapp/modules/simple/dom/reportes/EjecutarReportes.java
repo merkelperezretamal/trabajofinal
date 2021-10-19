@@ -61,7 +61,7 @@ public class EjecutarReportes {
         repoOrdenes.add(new RepoOrdenes());
 
         for (Orden orden : ordenes) {
-            RepoOrdenes repoOrden = new RepoOrdenes(orden.RepoNumero(), orden.RepoMantenimiento());
+            RepoOrdenes repoOrden = new RepoOrdenes(orden.RepoNumero(), orden.RepoMantenimiento(), orden.RepoMotorCompresor());
             repoOrdenes.add(repoOrden);
         }
 

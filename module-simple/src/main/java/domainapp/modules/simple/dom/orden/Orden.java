@@ -140,8 +140,16 @@ public class Orden implements Comparable<Orden>{
         }
     }
 
+    //Para los reportes
     public String RepoNumero() { return String.valueOf(this.numeroOrden); }
     public String RepoMantenimiento() { return this.mantenimiento.title(); }
+    public String RepoMotorCompresor() {
+        if(this.motor != null){
+            return this.motor.getTag();
+        }else{
+            return this.compresor.getTag();
+        }
+    }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

@@ -9,10 +9,13 @@ public class RepoOrdenes {
     private String numeroOrden;
     @Getter @Setter
     private String mantenimiento;
+    @Getter @Setter
+    private String motorCompresor;
 
-    public RepoOrdenes(String numeroOrden, String mantenimiento) {
+    public RepoOrdenes(String numeroOrden, String mantenimiento, String motorCompresor) {
         this.numeroOrden = numeroOrden;
         this.mantenimiento = mantenimiento;
+        this.motorCompresor = motorCompresor;
     }
 
     public RepoOrdenes() {}
