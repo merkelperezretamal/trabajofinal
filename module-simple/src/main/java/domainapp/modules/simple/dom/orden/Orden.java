@@ -18,6 +18,8 @@ import org.apache.isis.applib.services.title.TitleService;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.SortedSet;
@@ -142,6 +144,11 @@ public class Orden implements Comparable<Orden>{
 
     //Para los reportes
     public String RepoNumero() { return String.valueOf(this.numeroOrden); }
+    public String RepoFecha() {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String fechaComoCadena = dateFormat.format(this.fecha);
+        return fechaComoCadena;
+    }
     public String RepoMantenimiento() { return this.mantenimiento.title(); }
     public String RepoMotorCompresor() {
         if(this.motor != null){
