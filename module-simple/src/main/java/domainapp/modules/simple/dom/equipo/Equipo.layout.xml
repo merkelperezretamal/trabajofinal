@@ -87,7 +87,7 @@
                 <bs3:tab name="Cargas Diarias">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:action id="exportarListado">
+                            <c:action id="exportarListadoCargasDiarias">
                                 <c:describedAs>Exportar en PDF el listado de Cargas Diarias del equipo</c:describedAs>
                             </c:action>
                             <c:collection id="cargasDiarias" defaultView="table"/>
