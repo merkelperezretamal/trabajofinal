@@ -41,14 +41,12 @@ public class EjecutarReportes {
     }
 
     public Blob ListadoCargasDiariasPDF(List<CargaDiaria> cargasDiarias) throws JRException, IOException {
-        System.out.println("Entro al ListadoCargasDiariasPDF() de EjecutarReportes");
         List<RepoCargasDiarias> repoCargasDiarias = new ArrayList<RepoCargasDiarias>();
         repoCargasDiarias.add(new RepoCargasDiarias());
 
         for (CargaDiaria cargaDiaria : cargasDiarias) {
-            RepoCargasDiarias repoCargaDiaria = new RepoCargasDiarias(cargaDiaria.RepoHorometro(), cargaDiaria.RepoRpm(), cargaDiaria.RepoPresionAceite());
+            RepoCargasDiarias repoCargaDiaria = new RepoCargasDiarias(cargaDiaria.RepoFecha(), cargaDiaria.RepoHorometro(), cargaDiaria.RepoRpm(), cargaDiaria.RepoPresionAceite());
             repoCargasDiarias.add(repoCargaDiaria);
-            System.out.println("Horometro de la carga diaria actual: "+repoCargaDiaria.getHorometro());
         }
 
         JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoCargasDiarias);

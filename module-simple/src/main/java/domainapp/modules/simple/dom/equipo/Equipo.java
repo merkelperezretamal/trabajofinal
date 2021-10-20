@@ -157,7 +157,6 @@ public class Equipo implements Comparable<Equipo> {
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public void exportarListadoCargasDiarias() throws JRException, IOException {
-        System.out.println("Entro al exportarListadoCargasDiarias() de Equipo");
         cargaDiariaRepositorio.exportarListado(this.denominacion);
     }
 

@@ -16,8 +16,8 @@ public class RepoCargasDiarias {
     @Getter @Setter
     private String presionAceite;
 
-    public RepoCargasDiarias(String horometro, String rpm, String presionAceite) {
-//        this.fecha = fecha;
+    public RepoCargasDiarias(String fecha, String horometro, String rpm, String presionAceite) {
+        this.fecha = fecha;
         this.horometro = horometro;
         this.rpm = rpm;
         this.presionAceite = presionAceite;

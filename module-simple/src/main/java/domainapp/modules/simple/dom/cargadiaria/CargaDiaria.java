@@ -36,7 +36,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter @Title
-    private String fecha;
+    private Date fecha;
 
     //De Equipo
 
@@ -135,14 +135,14 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         this.presionSuccion3 = presionSuccion3;
         this.presionDescarga = presionDescarga;
 
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        String fechaComoCadena = dateFormat.format(new Date());
-        this.fecha = fechaComoCadena;
+        this.fecha = new Date();
     }
 
     //Para los reportes
     public String RepoFecha() {
-        return this.fecha;
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String fechaComoCadena = dateFormat.format(this.fecha);
+        return fechaComoCadena;
     }
     public String RepoHorometro() { return String.valueOf(this.horometro); }
     public String RepoRpm() { return String.valueOf(this.rpm); }

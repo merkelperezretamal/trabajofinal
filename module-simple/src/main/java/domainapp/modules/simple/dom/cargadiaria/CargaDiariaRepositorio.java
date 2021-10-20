@@ -49,7 +49,6 @@ public class CargaDiariaRepositorio {
         @Action()
         @ActionLayout(named = "Listado Exportado")
         public Blob exportarListado(String denominacion) throws JRException, IOException {
-                System.out.println("Entro al exportarListado() de CargaDiariaRepositorio con denominacion: "+denominacion);
                 EjecutarReportes ejecutarReportes = new EjecutarReportes();
                 List<CargaDiaria> cargasDiarias = buscarPorEquipo(denominacion);
                 return ejecutarReportes.ListadoCargasDiariasPDF(cargasDiarias);
