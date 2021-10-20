@@ -18,6 +18,7 @@
  */
 package domainapp.modules.simple.dom.equipo;
 
+import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.impl.SimpleObjects;
 import domainapp.modules.simple.dom.planta.Planta;
@@ -91,10 +92,10 @@ public class EquipoRepositorio {
     }
 
     @Action()
-    @ActionLayout(named = "Listado Exportado")
-    public Blob exportarListado() throws JRException, IOException {
+    public Blob exportarListado(String nombre) throws JRException, IOException {
         EjecutarReportes ejecutarReportes = new EjecutarReportes();
-        return ejecutarReportes.ListadoEquiposPDF(repositoryService.allInstances(Equipo.class));
+        List<Equipo> equipos = buscarPorPlanta(nombre);
+        return ejecutarReportes.ListadoEquiposPDF(equipos);
     }
 
     public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}

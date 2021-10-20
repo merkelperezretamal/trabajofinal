@@ -8,14 +8,17 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
+import org.apache.isis.applib.value.Blob;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
+import java.io.IOException;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -113,6 +116,11 @@ public class Planta implements Comparable<Planta> {
         setProvincia(provincia);
         setCliente(cliente);
         return this;
+    }
+
+    @Action()
+    public Blob exportarListadoEquipos() throws JRException, IOException {
+        return equipoRepositorio.exportarListado(this.nombre);
     }
 
     @javax.inject.Inject

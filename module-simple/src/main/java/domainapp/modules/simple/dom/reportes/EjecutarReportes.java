@@ -32,7 +32,7 @@ public class EjecutarReportes {
         repoEquipos.add(new RepoEquipos());
 
         for (Equipo equipo : equipos) {
-            RepoEquipos repoEquipo = new RepoEquipos(equipo.RepoDenominacion(), equipo.RepoPlanta(), equipo.RepoMotor(), equipo.RepoCompresor());
+            RepoEquipos repoEquipo = new RepoEquipos(equipo.RepoDenominacion(), equipo.RepoMotor(), equipo.RepoCompresor());
             repoEquipos.add(repoEquipo);
         }
 

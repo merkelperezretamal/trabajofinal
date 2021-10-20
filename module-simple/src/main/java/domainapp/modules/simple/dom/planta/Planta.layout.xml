@@ -76,6 +76,9 @@
                 <c:action id="nuevoEquipo">
                     <c:describedAs>Generar un nuevo Equipo</c:describedAs>
                 </c:action>
+                <c:action id="exportarListadoEquipos">
+                    <c:describedAs>Cambiar datos de Planta</c:describedAs>
+                </c:action>
                 <bs3:tab name="Equipos">
                     <bs3:row>
                         <bs3:col span="12">

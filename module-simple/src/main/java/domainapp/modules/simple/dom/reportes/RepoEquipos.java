@@ -11,20 +11,15 @@ public class RepoEquipos {
     @Getter @Setter
     private String denominacion;
     @Getter @Setter
-    private String planta;
-    @Getter @Setter
     private String motor;
     @Getter @Setter
     private String compresor;
-   // @Getter @Setter
-   // private String activo;
 
-    public RepoEquipos(String denominacion, String planta, String motor, String compresor) {
+
+    public RepoEquipos(String denominacion, String motor, String compresor) {
         this.denominacion = denominacion;
-        this.planta = planta;
         this.motor = motor;
         this.compresor = compresor;
-     //   this.activo = activo;
     }
 
     public RepoEquipos() {}
