@@ -92,7 +92,8 @@ public class EquipoRepositorio {
     }
 
     @Action()
-    public Blob exportarListado(String nombre) throws JRException, IOException {
+    public Blob exportarListado(
+            @ParameterLayout(named="Nombre Planta") String nombre) throws JRException, IOException {
         EjecutarReportes ejecutarReportes = new EjecutarReportes();
         List<Equipo> equipos = buscarPorPlanta(nombre);
         return ejecutarReportes.ListadoEquiposPDF(equipos);
