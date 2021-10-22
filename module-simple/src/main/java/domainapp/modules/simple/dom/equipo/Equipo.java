@@ -122,7 +122,7 @@ public class Equipo implements Comparable<Equipo> {
                                         @ParameterLayout (named="PS 2°") double presionSuccion2,
                                         @ParameterLayout (named="TS 3°") double temperaturaSuccion3,
                                         @ParameterLayout (named="PS 3°") double presionSuccion3,
-                                        @ParameterLayout (named="PD 3") double presionDescarga){
+                                        @ParameterLayout (named="PD") double presionDescarga){
         return repositoryService.persist(new CargaDiaria(this,
                                                         horometro,
                                                         rpm,
@@ -166,7 +166,13 @@ public class Equipo implements Comparable<Equipo> {
     public String RepoPlanta() { return this.planta.getNombre(); }
     public String RepoMotor() { return this.motor.getTag(); }
     public String RepoCompresor() { return this.compresor.getTag(); }
-    //public boolean RepoActivo() { return this.activo; }
+    public String RepoActivo(){
+        if(this.activo){
+            return "Activo";
+        }else{
+            return "Inactivo";
+        }
+    }
 
     //Injecciones
     @javax.inject.Inject

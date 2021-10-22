@@ -14,12 +14,14 @@ public class RepoEquipos {
     private String motor;
     @Getter @Setter
     private String compresor;
+    @Getter @Setter
+    private String activo;
 
-
-    public RepoEquipos(String denominacion, String motor, String compresor) {
+    public RepoEquipos(String denominacion, String motor, String compresor, String activo) {
         this.denominacion = denominacion;
         this.motor = motor;
         this.compresor = compresor;
+        this.activo = activo;
     }
 
     public RepoEquipos() {}
