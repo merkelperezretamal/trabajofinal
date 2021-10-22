@@ -29,6 +29,7 @@
         </bs3:col>
     </bs3:row>
     <bs3:row>
+
         <bs3:col span="6">
             <bs3:tabGroup>
                 <bs3:tab name="General">
@@ -64,12 +65,19 @@
                 </bs3:tab>
             </bs3:tabGroup>
         </bs3:col>
+
         <bs3:col span="6">
             <bs3:tabGroup collapseIfOne="false">
                 <bs3:tab name="Miscelaneo">
                     <bs3:row>
                         <bs3:col span="12">
                             <c:fieldSet name="Componentes">
+                                <c:action id="nuevoMotor">
+                                    <c:describedAs>Asignarle un nuevo motor a este equipo</c:describedAs>
+                                </c:action>
+                                <c:action id="nuevoCompresor">
+                                    <c:describedAs>Asignarle un nuevo compresor a este equipo</c:describedAs>
+                                </c:action>
                             <c:property id="compresor"/>
                             <c:property id="motor"/>
                             </c:fieldSet >
@@ -78,6 +86,7 @@
                 </bs3:tab>
             </bs3:tabGroup>
         </bs3:col>
+
     </bs3:row>
 
     <bs3:row>
