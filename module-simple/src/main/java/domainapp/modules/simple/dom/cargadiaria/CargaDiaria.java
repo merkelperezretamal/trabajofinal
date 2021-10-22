@@ -91,7 +91,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
 
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Getter @Setter
-    @PropertyLayout(named="PD 3°") private double presionDescarga;
+    @PropertyLayout(named="PD") private double presionDescarga;
 
 
     @Override
@@ -147,6 +147,15 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     public String RepoHorometro() { return String.valueOf(this.horometro); }
     public String RepoRpm() { return String.valueOf(this.rpm); }
     public String RepoPresionAceite() { return String.valueOf(this.presionAceite); }
+    public String RepoTemperaturaAceite() { return String.valueOf(this.temperaturaAceite); }
+    public String RepoTemperaturaAgua() { return String.valueOf(this.temperaturaAgua); }
+    public String RepoTemperaturaSuccion1() { return String.valueOf(this.temperaturaSuccion1); }
+    public String RepoTemperaturaSuccion2() { return String.valueOf(this.temperaturaSuccion2); }
+    public String RepoTemperaturaSuccion3() { return String.valueOf(this.temperaturaSuccion3); }
+    public String RepoPresionSuccion1() { return String.valueOf(this.presionSuccion1); }
+    public String RepoPresionSuccion2() { return String.valueOf(this.presionSuccion2); }
+    public String RepoPresionSuccion3() { return String.valueOf(this.presionSuccion3); }
+    public String RepoPresionDescarga() { return String.valueOf(this.presionDescarga); }
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
