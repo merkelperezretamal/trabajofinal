@@ -48,17 +48,11 @@ public class CargaDiariaRepositorio {
 
         @Action()
         @ActionLayout(named = "Listado Exportado")
-        public Blob exportarListado(String denominacion) throws JRException, IOException {
+        public Blob exportarListado(
+                @ParameterLayout(named="Denominacion Equipo") String denominacion) throws JRException, IOException {
                 EjecutarReportes ejecutarReportes = new EjecutarReportes();
                 List<CargaDiaria> cargasDiarias = buscarPorEquipo(denominacion);
                 return ejecutarReportes.ListadoCargasDiariasPDF(cargasDiarias);
-        }
-
-        @Action()
-        @ActionLayout(named = "Listado Exportado")
-        public Blob exportarListado() throws JRException, IOException {
-                EjecutarReportes ejecutarReportes = new EjecutarReportes();
-                return ejecutarReportes.ListadoCargasDiariasPDF(repositoryService.allInstances(CargaDiaria.class));
         }
 
         @javax.inject.Inject
