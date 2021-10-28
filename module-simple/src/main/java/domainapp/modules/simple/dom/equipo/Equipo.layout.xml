@@ -29,7 +29,7 @@
     <bs3:row>
         <bs3:col span="12">
             <bs3:row>
-                <bs3:col span="3">
+                <bs3:col span="6">
                     <cpt:fieldSet name="General">
                         <cpt:action id="editarEquipo" promptStyle="INLINE"/>
                         <cpt:property id="denominacion"/>
@@ -38,7 +38,7 @@
                         <cpt:action id="cambioEstado" promptStyle="INLINE"/>
                     </cpt:fieldSet>
                 </bs3:col>
-                <bs3:col span="3">
+                <bs3:col span="6">
                     <cpt:fieldSet name="Miscelaneo">
                         <cpt:action id="nuevoMotor" promptStyle="INLINE"/>
                         <cpt:action id="nuevoCompresor" promptStyle="INLINE"/>

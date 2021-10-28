@@ -29,7 +29,7 @@
     <bs3:row>
         <bs3:col span="12">
             <bs3:row>
-                <bs3:col span="3">
+                <bs3:col span="6">
                     <cpt:fieldSet name="General">
                         <cpt:action id="editarPlanta" promptStyle="INLINE"/>
                         <cpt:property id="nombre"/>
@@ -39,20 +39,19 @@
                         <cpt:action id="cambioEstado" promptStyle="INLINE"/>
                     </cpt:fieldSet>
                 </bs3:col>
-                <bs3:col span="3">
-                    <cpt:fieldSet name="Equipos">
-                        <cpt:property id="equipos" hidden="ALL_TABLES">
-                            <cpt:action id="nuevoEquipo" promptStyle="INLINE"/>
-                            <cpt:action id="exportarListadoEquipos" promptStyle="INLINE"/>
-                        </cpt:property>
-                    </cpt:fieldSet>
-                </bs3:col>
-
             </bs3:row>
         </bs3:col>
     </bs3:row>
 
     <bs3:row>
+        <bs3:col span="6">
+            <cpt:fieldSet name="Equipos">
+                <cpt:property id="equipos" defaultView="table">
+                    <cpt:action id="nuevoEquipo" promptStyle="INLINE"/>
+                    <cpt:action id="exportarListadoEquipos" promptStyle="INLINE"/>
+                </cpt:property>
+            </cpt:fieldSet>
+        </bs3:col>
         <bs3:col span="12">
             <bs3:tabGroup>
                 <bs3:tab name="Other">

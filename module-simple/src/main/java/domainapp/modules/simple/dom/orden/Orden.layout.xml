@@ -17,79 +17,73 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<bs3:grid xsi:schemaLocation="http://isis.apache.org/applib/layout/component http://isis.apache.org/applib/layout/component/component.xsd http://isis.apache.org/applib/layout/grid/bootstrap3 http://isis.apache.org/applib/layout/grid/bootstrap3/bootstrap3.xsd" xmlns:c="http://isis.apache.org/applib/layout/component" xmlns:bs3="http://isis.apache.org/applib/layout/grid/bootstrap3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+<bs3:grid
+        xsi:schemaLocation="http://isis.apache.org/applib/layout/component http://isis.apache.org/applib/layout/component/component.xsd http://isis.apache.org/applib/layout/grid/bootstrap3 http://isis.apache.org/applib/layout/grid/bootstrap3/bootstrap3.xsd" xmlns:c="http://isis.apache.org/applib/layout/component" xmlns:bs3="http://isis.apache.org/applib/layout/grid/bootstrap3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:cpt="http://isis.apache.org/applib/layout/component">
     <bs3:row>
         <bs3:col span="12" unreferencedActions="true">
             <c:domainObject bookmarking="AS_ROOT"/>
         </bs3:col>
     </bs3:row>
+
     <bs3:row>
-        <bs3:col span="6">
+        <bs3:col span="12">
+            <bs3:row>
+                <bs3:col span="6">
+                    <cpt:fieldSet name="General">
+                        <cpt:action id="modificar" promptStyle="INLINE"/>
+                        <cpt:property id="numeroOrden"/>
+                        <cpt:property id="fecha"/>
+                        <cpt:property id="motor"/>
+                        <cpt:property id="compresor"/>
+                        <cpt:action id="cambioEstado" promptStyle="INLINE"/>
+                    </cpt:fieldSet>
+                </bs3:col>
+                <bs3:col span="6">
+                    <cpt:fieldSet name="Asignacion Mantenimiento">
+                        <cpt:property id="tipoMantenimiento"/>
+                        <cpt:property id="mantenimiento" hidden="ALL_TABLES">
+                            <cpt:action id="agregarMantenimiento" promptStyle="INLINE"/>
+                        </cpt:property>
+                    </cpt:fieldSet>
+                </bs3:col>
+
+            </bs3:row>
+        </bs3:col>
+    </bs3:row>
+
+    <bs3:row>
+        <bs3:col span="3">
+            <cpt:fieldSet name="Cargas Diarias">
+                <cpt:property id="cargasDiarias" hidden="ALL_TABLES">
+                    <cpt:action id="nuevaCargaDiaria" promptStyle="INLINE"/>
+                    <cpt:action id="exportarListadoCargasDiarias" promptStyle="INLINE"/>
+                </cpt:property>
+            </cpt:fieldSet>
+        </bs3:col>
+    </bs3:row>
+
+    <bs3:row>
+        <bs3:col span="12">
             <bs3:tabGroup>
-                <bs3:tab name="General">
+                <bs3:tab name="Other">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="Informacion">
-                                <c:action id="modificar">
-                                    <c:describedAs>Modifies this object from the persistent datastore</c:describedAs>
-                                </c:action>
-                                <c:property id="numeroOrden"/>
-                                <c:property id="fecha"/>
-                                <c:property id="tipoMantenimiento"/>
-                            </c:fieldSet>
-                        </bs3:col>
-                        <bs3:col span="12">
-                            <c:fieldSet name="Asignacion Mantenimiento">
-                                <c:property id="mantenimiento" hidden="ALL_TABLES">
-                                    <c:action id="agregarMantenimiento" promptStyle="INLINE"/>
-                                </c:property>
-                            </c:fieldSet>
-                        </bs3:col>
-                    </bs3:row>
-                </bs3:tab>
-                <bs3:tab name="Notes">
-                    <bs3:row>
-                        <bs3:col span="12">
-                            <c:fieldSet name="Notes">
-                                <c:property id="notes" namedEscaped="true" multiLine="10" hidden="ALL_TABLES"/>
-                            </c:fieldSet>
-                        </bs3:col>
-                    </bs3:row>
-                </bs3:tab>
-                <bs3:tab name="Datos">
-                    <bs3:row>
-                        <bs3:col span="12">
-                            <c:fieldSet name="Datos" unreferencedProperties="true"/>
+                            <cpt:fieldSet name="Other" unreferencedProperties="true"/>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
                 <bs3:tab name="Metadata">
                     <bs3:row>
-                        <bs3:col span="12">
-                            <c:fieldSet name="Metadata"/>
+                        <bs3:col span="0">
+                            <cpt:fieldSet name="Metadata"/>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
             </bs3:tabGroup>
         </bs3:col>
-        <bs3:col span="6">
-            <bs3:tabGroup collapseIfOne="false">
-                <bs3:tab name="Details">
-                    <bs3:row>
-                        <bs3:col span="12">
-                            <c:fieldSet name="Detalles">
-                            </c:fieldSet>
-                        </bs3:col>
-                    </bs3:row>
-                </bs3:tab>
-            </bs3:tabGroup>
-        </bs3:col>
-    </bs3:row>
-    <bs3:row>
         <bs3:col span="12">
-            <bs3:tabGroup  unreferencedCollections="true">
-            </bs3:tabGroup>
+            <bs3:tabGroup unreferencedCollections="true"/>
         </bs3:col>
     </bs3:row>
 </bs3:grid>
