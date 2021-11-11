@@ -55,6 +55,7 @@
             <cpt:fieldSet name="Ordenes">
                 <cpt:property id="ordenes" hidden="ALL_TABLES">
                     <cpt:action id="nuevaOrden" promptStyle="INLINE"/>
+                    <cpt:action id="exportarListadoOrdenes" promptStyle="INLINE"/>
                 </cpt:property>
             </cpt:fieldSet>
         </bs3:col>

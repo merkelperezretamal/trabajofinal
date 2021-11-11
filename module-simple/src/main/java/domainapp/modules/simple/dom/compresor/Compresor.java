@@ -5,18 +5,22 @@ import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.compresor.Compresor;
 import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.orden.Orden;
+import domainapp.modules.simple.dom.orden.OrdenRepositorio;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
+import org.apache.isis.applib.value.Blob;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
+import java.io.IOException;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -131,6 +135,11 @@ public class Compresor implements Comparable<Compresor>{
         return repositoryService.persist(new Orden(numeroOrden, "Compresor", this));
     }
 
+    @Action()
+    public Blob exportarListadoOrdenes() throws JRException, IOException {
+        return ordenRepositorio.exportarListado(this.tag, 1);
+    }
+
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
@@ -145,4 +154,9 @@ public class Compresor implements Comparable<Compresor>{
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    OrdenRepositorio ordenRepositorio;
 }

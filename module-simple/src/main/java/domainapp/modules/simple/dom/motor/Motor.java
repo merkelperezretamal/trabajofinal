@@ -114,6 +114,11 @@ public class Motor implements Comparable<Motor>{
         }
     }
 
+    @Action()
+    public Blob exportarListadoOrdenes() throws JRException, IOException {
+        return ordenRepositorio.exportarListado(this.tag, 0);
+    }
+
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
@@ -128,5 +133,10 @@ public class Motor implements Comparable<Motor>{
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    OrdenRepositorio ordenRepositorio;
 
 }
