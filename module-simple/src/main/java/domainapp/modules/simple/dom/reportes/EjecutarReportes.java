@@ -45,9 +45,10 @@ public class EjecutarReportes {
         repoCargasDiarias.add(new RepoCargasDiarias());
 
         for (CargaDiaria cargaDiaria : cargasDiarias) {
-            RepoCargasDiarias repoCargaDiaria = new RepoCargasDiarias(cargaDiaria.RepoFecha(), cargaDiaria.RepoHorometro(), cargaDiaria.RepoRpm(), cargaDiaria.RepoPresionAceite(), cargaDiaria.RepoTemperaturaAceite(), cargaDiaria.RepoTemperaturaAgua(), cargaDiaria.RepoTemperaturaSuccion1(), cargaDiaria.RepoTemperaturaSuccion2(), cargaDiaria.RepoTemperaturaSuccion3(), cargaDiaria.RepoPresionSuccion1(), cargaDiaria.RepoPresionSuccion2(), cargaDiaria.RepoPresionSuccion3(), cargaDiaria.RepoPresionDescarga());
+            RepoCargasDiarias repoCargaDiaria = new RepoCargasDiarias(cargaDiaria.RepoFecha(), cargaDiaria.RepoHorometro(), cargaDiaria.RepoEquipo(), cargaDiaria.RepoRpm(), cargaDiaria.RepoPresionAceite(), cargaDiaria.RepoTemperaturaAceite(), cargaDiaria.RepoTemperaturaAgua(), cargaDiaria.RepoTemperaturaSuccion1(), cargaDiaria.RepoTemperaturaSuccion2(), cargaDiaria.RepoTemperaturaSuccion3(), cargaDiaria.RepoPresionSuccion1(), cargaDiaria.RepoPresionSuccion2(), cargaDiaria.RepoPresionSuccion3(), cargaDiaria.RepoPresionDescarga());
             repoCargasDiarias.add(repoCargaDiaria);
         }
+
 
         JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoCargasDiarias);
         return GenerarArchivoPDF("DetalleCargasDiarias.jrxml", "Listado de Cargas Diarias.pdf", ds);

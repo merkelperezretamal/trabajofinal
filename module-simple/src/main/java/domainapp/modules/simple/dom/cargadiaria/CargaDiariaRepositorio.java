@@ -46,6 +46,7 @@ public class CargaDiariaRepositorio {
                         .executeList();
         }
 
+
         @Action()
         @ActionLayout(named = "Listado Exportado")
         public Blob exportarListado(

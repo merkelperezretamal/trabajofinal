@@ -69,7 +69,6 @@ public class Tarea implements Comparable<Tarea> {
         repositoryService.remove(this);
     }
 
-
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Tarea modificarDescripcion(
             @ParameterLayout(named="Descripcion")

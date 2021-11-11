@@ -59,7 +59,6 @@ public class Planta implements Comparable<Planta> {
     @javax.jdo.annotations.Column(allowsNull="false")
     private boolean activo;
 
-
     @Persistent(mappedBy = "planta", dependentElement = "true")
     @Collection()
     @Getter @Setter

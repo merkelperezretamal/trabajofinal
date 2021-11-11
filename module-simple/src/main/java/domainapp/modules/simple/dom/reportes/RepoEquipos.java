@@ -19,6 +19,7 @@ public class RepoEquipos {
     @Getter @Setter
     private String activo;
 
+
     public RepoEquipos(String denominacion, String planta, String motor, String compresor, String activo) {
         this.denominacion = denominacion;
         this.planta = planta;

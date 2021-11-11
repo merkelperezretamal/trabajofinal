@@ -38,8 +38,6 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
     @Getter @Setter @Title
     private Date fecha;
 
-    //De Equipo
-
     @javax.jdo.annotations.Column(allowsNull = "false")
     //@Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
@@ -145,6 +143,7 @@ public class CargaDiaria implements Comparable<CargaDiaria> {
         return fechaComoCadena;
     }
     public String RepoHorometro() { return String.valueOf(this.horometro); }
+    public String RepoEquipo() { return this.equipo.getDenominacion(); }
     public String RepoRpm() { return String.valueOf(this.rpm); }
     public String RepoPresionAceite() { return String.valueOf(this.presionAceite); }
     public String RepoTemperaturaAceite() { return String.valueOf(this.temperaturaAceite); }

@@ -1,6 +1,7 @@
 package domainapp.modules.simple.dom.motor;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.cargadiaria.CargaDiariaRepositorio;
 import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.orden.Orden;
 import domainapp.modules.simple.dom.orden.OrdenRepositorio;

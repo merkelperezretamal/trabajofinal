@@ -91,6 +91,7 @@ public class EquipoRepositorio {
                 .executeList();
     }
 
+
     @Action()
     public Blob exportarListado(
             @ParameterLayout(named="Nombre Planta") String nombre) throws JRException, IOException {

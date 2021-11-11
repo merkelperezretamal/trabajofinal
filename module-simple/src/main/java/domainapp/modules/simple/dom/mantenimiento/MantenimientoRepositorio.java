@@ -52,6 +52,7 @@ public class MantenimientoRepositorio {
                 .executeList();
     }
 
+
     public static class CreateDomainEvent extends ActionDomainEvent<MantenimientoRepositorio> {
     }
 

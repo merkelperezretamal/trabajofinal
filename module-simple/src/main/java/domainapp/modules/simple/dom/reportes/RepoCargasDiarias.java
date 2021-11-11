@@ -12,6 +12,8 @@ public class RepoCargasDiarias {
     @Getter @Setter
     private String horometro;
     @Getter @Setter
+    private String equipo;
+    @Getter @Setter
     private String rpm;
     @Getter @Setter
     private String presionAceite;
@@ -34,8 +36,10 @@ public class RepoCargasDiarias {
     @Getter @Setter
     private String presionDescarga;
 
+
     public RepoCargasDiarias(String fecha,
                              String horometro,
+                             String equipo,
                              String rpm,
                              String presionAceite,
                              String temperaturaAceite,
@@ -49,6 +53,7 @@ public class RepoCargasDiarias {
                              String presionDescarga) {
         this.fecha = fecha;
         this.horometro = horometro;
+        this.equipo = equipo;
         this.rpm = rpm;
         this.presionAceite = presionAceite;
         this.temperaturaAceite = temperaturaAceite;

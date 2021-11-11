@@ -49,6 +49,7 @@ public class OrdenRepositorio {
 
     public static class CreateDomainEvent extends ActionDomainEvent<OrdenRepositorio> {}
 
+
     @Action()
     @ActionLayout(named = "Listado Exportado")
     public Blob exportarListado() throws JRException, IOException {

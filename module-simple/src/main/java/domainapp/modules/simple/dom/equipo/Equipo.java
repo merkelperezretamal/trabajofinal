@@ -16,6 +16,7 @@ import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
+import org.apache.isis.applib.services.wrapper.DisabledException;
 import org.apache.isis.applib.value.Blob;
 import org.joda.time.LocalDate;
 

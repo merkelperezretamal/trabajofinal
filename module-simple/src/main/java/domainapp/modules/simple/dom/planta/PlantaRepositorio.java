@@ -48,6 +48,7 @@ public class PlantaRepositorio {
         return repositoryService.allInstances(Planta.class);
     }
 
+
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "3")
