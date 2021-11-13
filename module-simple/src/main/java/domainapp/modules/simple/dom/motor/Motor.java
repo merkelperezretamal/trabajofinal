@@ -1,7 +1,7 @@
 package domainapp.modules.simple.dom.motor;
 
 import com.google.common.collect.ComparisonChain;
-import domainapp.modules.simple.dom.cargadiaria.CargaDiariaRepositorio;
+import domainapp.modules.simple.dom.motor.MotorRepositorio;
 import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.orden.Orden;
 import domainapp.modules.simple.dom.orden.OrdenRepositorio;
@@ -119,6 +119,18 @@ public class Motor implements Comparable<Motor>{
         return ordenRepositorio.exportarListado(this.tag, 0);
     }
 
+//    @Action()
+//    public Blob exportarDetalleMotor() throws JRException, IOException {
+//        return motorRepositorio.exportarDetalle(this);
+//    }
+
+    //Para los reportes
+    public String RepoTag() { return this.tag; }
+    public String RepoEquipo() { return this.equipo.getDenominacion(); }
+    public String RepoMarca() { return this.getMarca(); }
+    public String RepoTipoModelo() { return this.getTipoModelo().name(); }
+    public String RepoSerial() { return this.getSerial(); }
+
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
@@ -138,5 +150,10 @@ public class Motor implements Comparable<Motor>{
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     OrdenRepositorio ordenRepositorio;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    MotorRepositorio motorRepositorio;
 
 }

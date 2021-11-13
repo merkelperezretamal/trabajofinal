@@ -2,8 +2,11 @@ package domainapp.modules.simple.dom.reportes;
 
 import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.orden.Orden;
 import domainapp.modules.simple.dom.planta.Planta;
+import net.sf.jasperreports.engine.data.JRAbstractBeanDataSourceProvider;
+import net.sf.jasperreports.engine.data.JRAbstractTextDataSource;
 import org.apache.isis.applib.value.Blob;
 
 import net.sf.jasperreports.engine.JRException;

@@ -3,12 +3,16 @@ package domainapp.modules.simple.dom.motor;
 import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.equipo.EquipoRepositorio;
 import domainapp.modules.simple.dom.equipo.QEquipo;
+import domainapp.modules.simple.dom.reportes.EjecutarReportes;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.apache.isis.applib.value.Blob;
 import org.datanucleus.query.typesafe.TypesafeQuery;
 
+import java.io.IOException;
 import java.util.List;
 
 @DomainService(
@@ -46,6 +50,12 @@ public class MotorRepositorio {
 //    }
 
     public static class CreateDomainEvent extends ActionDomainEvent<MotorRepositorio> {}
+
+//    @Action()
+//    public Blob exportarDetalle(Motor motor) throws JRException, IOException {
+//        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+//        return ejecutarReportes.ListadoMotorPDF(motor);
+//    }
 
     @javax.inject.Inject
     RepositoryService repositoryService;

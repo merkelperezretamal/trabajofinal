@@ -139,7 +139,6 @@ public class Equipo implements Comparable<Equipo> {
                                                         presionDescarga));
     }
 
-
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public void cambioEstado() {
         setActivo(!this.activo);
@@ -160,6 +159,14 @@ public class Equipo implements Comparable<Equipo> {
     @Action()
     public Blob exportarListadoCargasDiarias() throws JRException, IOException {
         return cargaDiariaRepositorio.exportarListado(this.denominacion);
+    }
+
+    public String disableNuevoMotor() {
+        return getMotor() != null ? "Ya tiene asignado un Motor": null;
+    }
+
+    public String disableNuevoCompresor() {
+        return getCompresor() != null ? "Ya tiene asignado un Compresor": null;
     }
 
     //Para los reportes
