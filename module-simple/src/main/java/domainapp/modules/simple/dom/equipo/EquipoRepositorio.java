@@ -46,13 +46,13 @@ import java.util.List;
 )
 public class EquipoRepositorio {
 
-    @Action(domainEvent = CreateDomainEvent.class)
-    @MemberOrder(sequence = "1")
-    public Equipo crear(
-            @ParameterLayout(named="Denominacion")
-            final String denominacion){
-        return repositoryService.persist(new Equipo(denominacion));
-    }
+//    @Action(domainEvent = CreateDomainEvent.class)
+//    @MemberOrder(sequence = "1")
+//    public Equipo crear(
+//            @ParameterLayout(named="Denominacion")
+//            final String denominacion){
+//        return repositoryService.persist(new Equipo(denominacion));
+//    }
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
