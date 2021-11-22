@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title slot="end">Plantas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let resultado of resultadosP" (click)="goDetPla(resultado.$$instanceId)">
+    <ion-label>
+        <h1>{{resultado.$$title}}</h1>
+      </ion-label>
+    </ion-item>
+</ion-content>

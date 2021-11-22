@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="ligth">
+    <ion-title>Inicio de Sesi&oacute;n</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row center>
+      <ion-col size="10" offset="1">
+
+        <div class="vertical-center">
+          <div class="center">
+          </div>
+        </div>
+
+        <form [formGroup]='loginForm' (ngSubmit)=submit()>
+
+
+          <div id="margenesForm">
+
+
+            <ion-item id="rounded">
+              <ion-label position="floating">
+                <ion-icon name="person"></ion-icon>
+                Usuario:
+              </ion-label>
+              <ion-input type="text" formControlName="usuario"></ion-input>
+            </ion-item>
+
+
+            <ion-item id="rounded">
+
+
+              <ion-label position="floating">
+                <ion-icon name="key"></ion-icon>
+                Contraseña:
+              </ion-label>
+
+
+              <ion-icon slot="end" id="eye" [name]="hide ? 'eye' : 'eye-off'" (click)="hide = !hide"></ion-icon>
+              <ion-input type="password" [type]="hide ? 'text' : 'password'" required formControlName="password">
+              </ion-input>
+
+
+            </ion-item>
+
+          </div>
+          <div id="button">
+            <ion-button type="submit" color="primary" size="medium" class="buttonform" [disabled]="!loginForm.valid">
+              Ingresar
+              <ion-icon slot="start" name="log-in"></ion-icon>
+            </ion-button>
+          </div>
+
+
+        </form>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,35 @@
+ion-title{
+    text-align: center;
+    color: #ffffffee;
+}
+
+.vertical-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+#rounded {
+    width: 100%;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    margin-bottom: 15px;  
+    color: #ffffffd8;
+    font-weight: bold;
+}
+
+
+.buttonform{
+    border-radius:3px;
+    size: 30px;
+    border:rgba(0,0,0,.3) 0px solid;
+    box-sizing:border-box;
+  }
+
+  #button{
+      text-align: right;
+  }
