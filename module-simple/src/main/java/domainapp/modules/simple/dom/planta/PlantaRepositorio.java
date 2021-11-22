@@ -4,11 +4,13 @@ import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.impl.QSimpleObject;
 import domainapp.modules.simple.dom.impl.SimpleObject;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.annotation.Action;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.datanucleus.query.typesafe.TypesafeQuery;
 
+import javax.swing.*;
 import java.util.List;
 
 @DomainService(
@@ -37,6 +39,8 @@ public class PlantaRepositorio {
         if(listaPlantas.isEmpty()){
             return repositoryService.persist(new Planta(nombre, provincia, cliente));
         }else{
+            JOptionPane.showMessageDialog(null, "Ya existe una Planta con ese nombre");
+            JOptionPane.showMessageDialog(null, "Redirigiendote a la Planta existente");
             return listaPlantas.get(0);
         }
     }

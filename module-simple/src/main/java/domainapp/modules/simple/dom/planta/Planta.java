@@ -10,6 +10,7 @@ import lombok.NonNull;
 import lombok.Setter;
 import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.annotation.Action;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
@@ -18,6 +19,7 @@ import org.apache.isis.applib.value.Blob;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
+import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.SortedSet;
@@ -86,6 +88,8 @@ public class Planta implements Comparable<Planta> {
         if(listaEquipos.isEmpty()){
             return repositoryService.persist(new Equipo(denominacion, this));
         }else{
+            JOptionPane.showMessageDialog(null, "Ya existe un equipo con esa denominacion en "+this.nombre);
+            JOptionPane.showMessageDialog(null, "Redirigiendote al equipo existente");
             return listaEquipos.get(0);
         }
     }
