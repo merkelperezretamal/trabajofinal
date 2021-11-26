@@ -16,7 +16,7 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-
+/*
 package domainapp.modules.simple.fixture;
 
 import org.apache.isis.applib.fixturescripts.PersonaWithBuilderScript;
@@ -47,7 +47,7 @@ public enum SimpleObject_persona implements PersonaWithBuilderScript<SimpleObjec
 
 //    @Override
     public SimpleObjectBuilder builder() {
-        return new SimpleObjectBuilder().setName(name);
+        return new SimpleObjectBuilder().setNombre(name);
     }
 
     //@Override
@@ -63,3 +63,5 @@ public enum SimpleObject_persona implements PersonaWithBuilderScript<SimpleObjec
         }
     }
 }
+
+ */

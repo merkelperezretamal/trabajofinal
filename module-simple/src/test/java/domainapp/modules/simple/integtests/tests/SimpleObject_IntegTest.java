@@ -16,6 +16,8 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
+
+/*
 package domainapp.modules.simple.integtests.tests;
 
 import java.sql.Timestamp;
@@ -43,7 +45,7 @@ public class SimpleObject_IntegTest extends SimpleModuleIntegTestAbstract {
     @Before
     public void setUp() {
         // given
-        simpleObject = fixtureScripts.runBuilderScript(SimpleObject_persona.FOO.builder());
+//        simpleObject = fixtureScripts.runBuilderScript(SimpleObject_persona.FOO.builder());
     }
 
     public static class Name extends SimpleObject_IntegTest {
@@ -137,3 +139,5 @@ public class SimpleObject_IntegTest extends SimpleModuleIntegTestAbstract {
     }
 
 }
+
+ */

@@ -16,6 +16,7 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
+/*
 package domainapp.modules.simple.integtests.tests;
 
 import java.sql.SQLIntegrityConstraintViolationException;
@@ -117,3 +118,5 @@ public class SimpleObjectMenu_IntegTest extends SimpleModuleIntegTestAbstract {
     SimpleObjects menu;
 
 }
+
+ */

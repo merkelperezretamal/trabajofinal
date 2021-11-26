@@ -16,6 +16,7 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
+/*
 package domainapp.modules.simple.integtests;
 
 import org.apache.isis.core.integtestsupport.IntegrationTestAbstract3;
@@ -30,3 +31,5 @@ public abstract class SimpleModuleIntegTestAbstract extends IntegrationTestAbstr
 
 
 }
+
+ */
