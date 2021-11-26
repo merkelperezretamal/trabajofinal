@@ -60,7 +60,7 @@
                     <cpt:named>Listar todas</cpt:named>
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.CargaDiariaMenu" id="buscarPorEquipo">
-                    <cpt:named>Buscar x equipo</cpt:named>
+                    <cpt:named>Buscar por equipo</cpt:named>
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.CargaDiariaMenu" id="exportarListado">
                     <cpt:named>Exportar listado</cpt:named>
