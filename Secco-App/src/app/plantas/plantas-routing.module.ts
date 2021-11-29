@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: PlantasPage
-  },
-  {
-    path: 'planta-detalle',
-    loadChildren: () => import('./planta-detalle/planta-detalle.module').then( m => m.PlantaDetallePageModule)
   }
 ];
 
