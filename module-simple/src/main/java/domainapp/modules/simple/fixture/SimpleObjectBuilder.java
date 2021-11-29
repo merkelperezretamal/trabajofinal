@@ -19,6 +19,8 @@
 
 package domainapp.modules.simple.fixture;
 
+import domainapp.modules.simple.dom.planta.Planta;
+import domainapp.modules.simple.dom.planta.PlantaRepositorio;
 import org.apache.isis.applib.fixturescripts.BuilderScriptAbstract;
 
 import domainapp.modules.simple.dom.impl.SimpleObject;
@@ -28,23 +30,35 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
-public class SimpleObjectBuilder extends BuilderScriptAbstract<SimpleObject, SimpleObjectBuilder> {
+public class SimpleObjectBuilder extends BuilderScriptAbstract<Planta, SimpleObjectBuilder> {
+
+//    @Getter @Setter
+//    private String name;
 
     @Getter @Setter
-    private String name;
+    private String nombre;
+
+    @Getter @Setter
+    private String provincia;
+
+    @Getter @Setter
+    private String cliente;
+
+    @Getter @Setter
+    private boolean activo;
 
     @Getter
-    private SimpleObject object;
+    private Planta object;
 
     @Override
     protected void execute(final ExecutionContext ec) {
 
         checkParam("name", ec, String.class);
 
-        object = wrap(simpleObjects).create(name);
+        object = wrap(plantaRepositorio).crear(nombre, provincia, cliente);
     }
 
     @javax.inject.Inject
-    SimpleObjects simpleObjects;
+    PlantaRepositorio plantaRepositorio;
 
 }
