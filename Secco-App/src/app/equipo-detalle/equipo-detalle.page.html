@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title slot="end">Equipo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/equipos"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label *ngIf="equData != null">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center"><strong>{{equData.$$title}}</strong></ion-card-title>
+      </ion-card-header>
+
+      <ion-item>
+        <ion-label>
+          <strong>Denominacion:</strong> 
+          {{equData.denominacion}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>Planta: </strong>
+          {{equData.planta.title}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>Activo: </strong>
+          {{equData.activo}}</ion-label>
+      </ion-item>
+
+    </ion-card> 
+    </ion-label>
+</ion-content>
