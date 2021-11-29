@@ -8,12 +8,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class LoginService {
 
   ConversionBase64: string;
-
   constructor(private http: HttpClient) { }
-
   public URLservidor: String;
-  //Si no encuentra URL en la cookie usara la siguiente URL
-  public URLSecundaria: String =  'http://localhost:8080';
+  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
 
   realizaLogin(usuario:String, contrasena:String){
 
@@ -29,9 +26,8 @@ export class LoginService {
       headers = headers.append('Accept', 'application/json;profile="urn:org.apache.isis/v1"');
       headers = headers.append('Authorization', 'Basic '+this.ConversionBase64);
 
-    const URL = this.URLservidor+'/restful/services/simple.PlantaMenu/actions/listarTodas/invoke';
+    const URL = this.URLSecundaria+'/restful/services/simple.PlantaMenu/actions/listarTodas/invoke';
     return this.http.get<any>(URL, {headers: headers})  
 
   } 
-
 }

@@ -10,7 +10,7 @@ export class CargadiariaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private urlServidor = 'http://localhost:8080';
+  private urlServidor = 'https://secco-app.herokuapp.com';
 
   httpOptions = {
     headers: new HttpHeaders({
