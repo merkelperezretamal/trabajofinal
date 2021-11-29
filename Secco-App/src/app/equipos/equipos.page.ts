@@ -12,7 +12,7 @@ export class EquiposPage implements OnInit {
   public resultadosE : any = null;
   private autenticacion = '';
   public URLservidor: String;
-  public URLSecundaria: String =  'http://localhost:8080';
+  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -35,11 +35,10 @@ export class EquiposPage implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept':  'application/json;profile="urn:org.apache.isis/v1"',
-        // 'Authorization': 'Basic bmFjaG86cGFzcw==',
-        'Authorization': 'Basic ' + this.autenticacion,
+        'Authorization': 'Basic bmFjaG86cGFzcw==',
       })
     }
-    const URL = this.URLservidor+'/restful/services/simple.EquipoMenu/actions/listarTodos/invoke';
+    const URL = this.URLSecundaria+'/restful/services/simple.EquipoMenu/actions/listarTodos/invoke';
     this.http.get(URL, httpOptions)
     .subscribe((resultados : Array<any>) => {
       var array = resultados;
@@ -50,7 +49,7 @@ export class EquiposPage implements OnInit {
   }
 
   goDetEqu(id_equ) { 
-    this.router.navigate(['/equipo', { idEqu: id_equ }])
+    this.router.navigate(['/equipo-detalle', { idEqu: id_equ }])
   }
 
 
