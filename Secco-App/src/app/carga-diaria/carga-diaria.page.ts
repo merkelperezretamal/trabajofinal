@@ -12,7 +12,7 @@ export class CargaDiariaPage implements OnInit {
   public resultadosC : any = null;
   private autenticacion = '';
   public URLservidor: String;
-  public URLSecundaria: String =  'http://localhost:8080';
+  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -35,11 +35,10 @@ export class CargaDiariaPage implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept':  'application/json;profile="urn:org.apache.isis/v1"',
-        // 'Authorization': 'Basic bmFjaG86cGFzcw==',
-        'Authorization': 'Basic ' + this.autenticacion,
+        'Authorization': 'Basic bmFjaG86cGFzcw==',
       })
     }
-    const URL = this.URLservidor+'/restful/services/simple.CargaDiariaMenu/actions/listarTodas/invoke';
+    const URL = this.URLSecundaria+'/restful/services/simple.CargaDiariaMenu/actions/listarTodas/invoke';
     this.http.get(URL, httpOptions)
     .subscribe((resultados : Array<any>) => {
       var array = resultados;
@@ -50,7 +49,7 @@ export class CargaDiariaPage implements OnInit {
   }
 
     goDetCar(id_car) { 
-      this.router.navigate(['/ver', { idCar: id_car }])
+      this.router.navigate(['/ver-carga', { idCar: id_car }])
   }
 
 filterItemsOfType(){
