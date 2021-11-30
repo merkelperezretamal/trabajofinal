@@ -121,6 +121,16 @@ public class Planta implements Comparable<Planta> {
         return this;
     }
 
+    public String default0EditarPlanta() {
+        return this.nombre;
+    }
+    public String default1EditarPlanta() {
+        return this.provincia;
+    }
+    public String default2EditarPlanta() {
+        return this.cliente;
+    }
+
     @Action()
     public Blob exportarListadoEquipos() throws JRException, IOException {
         return equipoRepositorio.exportarListado(this.nombre);
