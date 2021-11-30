@@ -40,10 +40,11 @@ public class HomePageViewModel {
 //        return TranslatableString.tr("Listado de Plantas");
 //    }
 
-    @CollectionLayout(named = "Listado de Plantas")
+    public String title() { return getPlantas().size() + " plantas"; }
+
+    @CollectionLayout(defaultView = "table")
     public List<Planta> getPlantas() {
-        List<Planta> plantas = plantaRepositorio.listarTodas();
-        return plantas;
+        return plantaRepositorio.listarTodas();
     }
 
     @javax.inject.Inject

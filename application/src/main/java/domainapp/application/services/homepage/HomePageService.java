@@ -24,6 +24,9 @@ import org.apache.isis.applib.annotation.HomePage;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.SemanticsOf;
 import org.apache.isis.applib.services.factory.FactoryService;
+import org.apache.isis.applib.services.registry.ServiceRegistry2;
+
+import javax.inject.Inject;
 
 @DomainService(
         nature = NatureOfService.DOMAIN, // trick to suppress the actions from the top-level menu
@@ -34,10 +37,11 @@ public class HomePageService {
     @Action(semantics = SemanticsOf.SAFE)
     @HomePage
     public HomePageViewModel homePage() {
-        return factoryService.instantiate(HomePageViewModel.class);
+        return serviceRegistry2.injectServicesInto(new HomePageViewModel());
     }
 
-
-    @javax.inject.Inject
-    FactoryService factoryService;
+    @Inject
+    ServiceRegistry2 serviceRegistry2;
 }
+
+
