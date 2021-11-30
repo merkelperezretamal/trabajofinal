@@ -156,6 +156,10 @@ public class Equipo implements Comparable<Equipo> {
         return this;
     }
 
+    public String default0EditarEquipo() {
+        return this.denominacion;
+    }
+
     @Action()
     public Blob exportarListadoCargasDiarias() throws JRException, IOException {
         return cargaDiariaRepositorio.exportarListado(this.denominacion);
