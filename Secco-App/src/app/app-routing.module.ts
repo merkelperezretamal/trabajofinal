@@ -1,49 +1,49 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: '',
+    redirectTo: 'menu',
+    pathMatch: 'full',
   },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'equipos',
-    loadChildren: () => import('./equipos/equipos.module').then( m => m.EquiposPageModule)
-  },
-  {
-    path: 'equipo',
-    loadChildren: () => import('./equipos/equipo-detalle/equipo-detalle.module').then( m => m.EquipoDetallePageModule)
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule), canActivate: [LoginGuard],
   },
   {
     path: 'plantas',
     loadChildren: () => import('./plantas/plantas.module').then( m => m.PlantasPageModule)
   },
   {
-    path: 'planta',
-    loadChildren: () => import('./plantas/planta-detalle/planta-detalle.module').then( m => m.PlantaDetallePageModule)
+    path: 'equipos',
+    loadChildren: () => import('./equipos/equipos.module').then( m => m.EquiposPageModule)
   },
   {
     path: 'carga-diaria',
     loadChildren: () => import('./carga-diaria/carga-diaria.module').then( m => m.CargaDiariaPageModule)
   },
   {
-    path: 'ver',
-    loadChildren: () => import('./carga-diaria/ver-carga/ver-carga.module').then( m => m.VerCargaPageModule)
+    path: 'planta-detalle',
+    loadChildren: () => import('./planta-detalle/planta-detalle.module').then( m => m.PlantaDetallePageModule)
   },
   {
-    path: 'crear',
-    loadChildren: () => import('./carga-diaria/crear-carga/crear-carga.module').then( m => m.CrearCargaPageModule)
+    path: 'equipo-detalle',
+    loadChildren: () => import('./equipo-detalle/equipo-detalle.module').then( m => m.EquipoDetallePageModule)
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: 'ver-carga',
+    loadChildren: () => import('./ver-carga/ver-carga.module').then( m => m.VerCargaPageModule)
   },
-  
+  {
+    path: 'crear-carga',
+    loadChildren: () => import('./crear-carga/crear-carga.module').then( m => m.CrearCargaPageModule)
+  },
 ];
 
 @NgModule({
@@ -52,4 +52,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

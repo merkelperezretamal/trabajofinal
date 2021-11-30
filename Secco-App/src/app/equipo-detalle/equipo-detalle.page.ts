@@ -1,23 +1,24 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
-@Component({
-  selector: 'app-ver-carga',
-  templateUrl: './ver-carga.page.html',
-  styleUrls: ['./ver-carga.page.scss'],
-})
-export class VerCargaPage implements OnInit {
 
-  idCar;
-  carData;
+@Component({
+  selector: 'app-equipo-detalle',
+  templateUrl: './equipo-detalle.page.html',
+  styleUrls: ['./equipo-detalle.page.scss'],
+})
+export class EquipoDetallePage implements OnInit {
+
+  idEqu;
+  equData;
   param : any;
   private autenticacion = '';
   public URLservidor: String;
-  public URLSecundaria: String =  'http://localhost:8080';
+  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, public toastController: ToastController) {}
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, public toastController: ToastController) { }
 
   ngOnInit() {
     if(window.localStorage.autenticacion){
@@ -30,22 +31,24 @@ export class VerCargaPage implements OnInit {
     }
     this.param = this.activatedRoute.snapshot.params;
     if (Object.keys(this.param).length) {
-			this.listarCar(this.param.idCar);
+			this.listarEqu(this.param.idEqu);
 		}
   }
 
-  listarCar(idCar) {
+  listarEqu(idEqu) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept': 'application/json;profile="urn:org.apache.isis/v1"',
-        // 'Authorization': 'Basic bmFjaG86cGFzcw==',
-        'Authorization': 'Basic ' + this.autenticacion,
+        'Authorization': 'Basic bmFjaG86cGFzcw==',
       })
     }
-    const URL = this.URLservidor+'/restful/objects/simple.CargaDiaria/' + idCar;
+    const URL = this.URLSecundaria+'/restful/objects/simple.Equipo/' + idEqu;
+    console.log(URL);
+    
+
     this.http.get(URL, httpOptions)
       .subscribe((resultados) => {
-        this.carData = resultados;
+        this.equData = resultados;
       });
   }
 

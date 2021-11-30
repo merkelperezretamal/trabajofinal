@@ -2,15 +2,23 @@
   <ion-toolbar color="primary">
     <ion-title slot="end">Equipos</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"> </ion-back-button>
+      <ion-back-button defaultHref="/menu/home"> </ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Lista de Equipos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+<ion-content>
   <ion-item *ngFor="let resultado of resultadosE" (click)="goDetEqu(resultado.$$instanceId)">
     <ion-label>
-      <h1>{{resultado.$$title}}</h1>
+      <h2>{{resultado.$$title}}</h2>
     </ion-label>
   </ion-item>
 </ion-content>

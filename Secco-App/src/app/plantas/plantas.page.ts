@@ -12,7 +12,7 @@ export class PlantasPage implements OnInit {
   public resultadosP : any = null;
   private autenticacion = '';
   public URLservidor: String;
-  public URLSecundaria: String =  'http://localhost:8080';
+  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -37,15 +37,12 @@ export class PlantasPage implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept':  'application/json;profile="urn:org.apache.isis/v1"',
-        // 'Authorization': 'Basic bmFjaG86cGFzcw==',
-        'Authorization': 'Basic ' + this.autenticacion,
-
+        'Authorization': 'Basic bmFjaG86cGFzcw==',
       })
     }
     const URL = this.URLservidor+'/restful/services/simple.PlantaMenu/actions/listarTodas/invoke';
     this.http.get(URL, httpOptions)
-    // .subscribe(resultados => {this.resultadosP = resultados; debugger}
-    // );
+    
     .subscribe((resultados : Array<any>) => {
       var array = resultados;
       array.pop();
@@ -55,7 +52,7 @@ export class PlantasPage implements OnInit {
   }
 
     goDetPla(id_pla) { 
-      this.router.navigate(['/planta', { idPla: id_pla }])
+      this.router.navigate(['/planta-detalle', { idPla: id_pla }])
   }
 
 filterItemsOfType(){

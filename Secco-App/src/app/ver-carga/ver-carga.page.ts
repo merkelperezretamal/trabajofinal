@@ -3,20 +3,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
-
 @Component({
-  selector: 'app-planta-detalle',
-  templateUrl: './planta-detalle.page.html',
-  styleUrls: ['./planta-detalle.page.scss'],
+  selector: 'app-ver-carga',
+  templateUrl: './ver-carga.page.html',
+  styleUrls: ['./ver-carga.page.scss'],
 })
-export class PlantaDetallePage implements OnInit {
+export class VerCargaPage implements OnInit {
 
-  idPla;
-  plaData;
+  idCar;
+  carData;
   param : any;
   private autenticacion = '';
   public URLservidor: String;
-  public URLSecundaria: String =  'http://localhost:8080';
+  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, public toastController: ToastController) {}
 
@@ -31,25 +30,22 @@ export class PlantaDetallePage implements OnInit {
     }
     this.param = this.activatedRoute.snapshot.params;
     if (Object.keys(this.param).length) {
-			this.listarPla(this.param.idPla);
+			this.listarCar(this.param.idCar);
 		}
   }
 
-  listarPla(idPla) {
+  listarCar(idCar) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept': 'application/json;profile="urn:org.apache.isis/v1"',
-        // 'Authorization': 'Basic bmFjaG86cGFzcw==',
-        'Authorization': 'Basic ' + this.autenticacion,
-
+        'Authorization': 'Basic bmFjaG86cGFzcw==',
       })
     }
-    const URL = this.URLservidor+'/restful/objects/simple.Planta/' + idPla;
+    const URL = this.URLSecundaria+'/restful/objects/simple.CargaDiaria/' + idCar;
     this.http.get(URL, httpOptions)
       .subscribe((resultados) => {
-        this.plaData = resultados;
+        this.carData = resultados;
       });
-
   }
 
 }

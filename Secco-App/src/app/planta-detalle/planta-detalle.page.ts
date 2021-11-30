@@ -1,24 +1,24 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
 
 @Component({
-  selector: 'app-equipo-detalle',
-  templateUrl: './equipo-detalle.page.html',
-  styleUrls: ['./equipo-detalle.page.scss'],
+  selector: 'app-planta-detalle',
+  templateUrl: './planta-detalle.page.html',
+  styleUrls: ['./planta-detalle.page.scss'],
 })
-export class EquipoDetallePage implements OnInit {
+export class PlantaDetallePage implements OnInit {
 
-  idEqu;
-  equData;
+  idPla;
+  plaData;
   param : any;
   private autenticacion = '';
   public URLservidor: String;
-  public URLSecundaria: String =  'http://localhost:8080';
+  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, public toastController: ToastController) { }
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, public toastController: ToastController) {}
 
   ngOnInit() {
     if(window.localStorage.autenticacion){
@@ -31,26 +31,24 @@ export class EquipoDetallePage implements OnInit {
     }
     this.param = this.activatedRoute.snapshot.params;
     if (Object.keys(this.param).length) {
-			this.listarEqu(this.param.idEqu);
+			this.listarPla(this.param.idPla);
 		}
   }
 
-  listarEqu(idEqu) {
+  listarPla(idPla) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept': 'application/json;profile="urn:org.apache.isis/v1"',
-        // 'Authorization': 'Basic bmFjaG86cGFzcw==',
-        'Authorization': 'Basic ' + this.autenticacion,
+        'Authorization': 'Basic bmFjaG86cGFzcw==',
+
       })
     }
-    const URL = this.URLservidor+'/restful/objects/simple.Equipo/' + idEqu;
-    console.log(URL);
-    
-
+    const URL = this.URLSecundaria+'/restful/objects/simple.Planta/' + idPla;
     this.http.get(URL, httpOptions)
       .subscribe((resultados) => {
-        this.equData = resultados;
+        this.plaData = resultados;
       });
+
   }
 
 }

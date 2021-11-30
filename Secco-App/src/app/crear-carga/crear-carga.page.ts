@@ -16,7 +16,7 @@ export class CrearCargaPage implements OnInit {
   cargaForm: FormGroup;
   private autenticacion = '';
 
-  public urlServidor = 'http://localhost:8080';
+  public urlServidor = 'https://secco-app.herokuapp.com';
   public equipoArray: any = null;
 
   constructor(private http: HttpClient,

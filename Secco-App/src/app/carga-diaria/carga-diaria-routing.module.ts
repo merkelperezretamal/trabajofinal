@@ -7,14 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: CargaDiariaPage
-  },
-  {
-    path: 'crear-carga',
-    loadChildren: () => import('./crear-carga/crear-carga.module').then( m => m.CrearCargaPageModule)
-  },
-  {
-    path: 'ver-carga',
-    loadChildren: () => import('./ver-carga/ver-carga.module').then( m => m.VerCargaPageModule)
   }
 ];
 
