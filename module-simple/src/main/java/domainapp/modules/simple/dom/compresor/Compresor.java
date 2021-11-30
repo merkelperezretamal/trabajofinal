@@ -130,6 +130,15 @@ public class Compresor implements Comparable<Compresor>{
         return this;
     }
 
+    public String default0EditarCompresor(){ return this.tag; }
+    public String default1EditarCompresor(){ return this.marca; }
+    public String default2EditarCompresor(){ return this.modelo; }
+    public String default3EditarCompresor(){ return this.frame; }
+    public String default4EditarCompresor(){ return this.cylinder1; }
+    public String default5EditarCompresor(){ return this.cylinder2; }
+    public String default6EditarCompresor(){ return this.cylinder3; }
+    public String default7EditarCompresor(){ return this.cylinder4; }
+
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public Orden nuevaOrden(final @ParameterLayout (named="Numero de Orden") int numeroOrden) {
         return repositoryService.persist(new Orden(numeroOrden, "Compresor", this));
