@@ -20,6 +20,8 @@ package domainapp.application.services.homepage;
 
 import java.util.List;
 
+import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.equipo.EquipoRepositorio;
 import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.planta.PlantaRepositorio;
 import org.apache.isis.applib.annotation.CollectionLayout;
@@ -40,13 +42,21 @@ public class HomePageViewModel {
 //        return TranslatableString.tr("Listado de Plantas");
 //    }
 
-    public String title() { return getPlantas().size() + " plantas"; }
+    public String title() { return "home"; }
 
     @CollectionLayout(defaultView = "table")
     public List<Planta> getPlantas() {
         return plantaRepositorio.listarTodas();
     }
 
+//    @CollectionLayout(defaultView = "table")
+//    public List<Equipo> getEquipos() {
+//        return equipoRepositorio.listarTodos();
+//    }
+
     @javax.inject.Inject
     PlantaRepositorio plantaRepositorio;
+
+    @javax.inject.Inject
+    EquipoRepositorio equipoRepositorio;
 }
