@@ -151,7 +151,7 @@ public class Equipo implements Comparable<Equipo> {
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Equipo editarEquipo(
-            final @ParameterLayout(named="TAG") String denominacion) {
+            final @ParameterLayout(named="Denominacion") String denominacion) {
         setDenominacion(denominacion);
         return this;
     }
