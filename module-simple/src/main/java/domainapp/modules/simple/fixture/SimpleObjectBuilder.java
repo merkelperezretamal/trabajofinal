@@ -23,8 +23,6 @@ import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.planta.PlantaRepositorio;
 import org.apache.isis.applib.fixturescripts.BuilderScriptAbstract;
 
-import domainapp.modules.simple.dom.impl.SimpleObject;
-import domainapp.modules.simple.dom.impl.SimpleObjects;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
