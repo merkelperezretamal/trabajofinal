@@ -40,6 +40,7 @@ public class MantenimientoRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "3")
+    @Programmatic
     public List<Mantenimiento> buscarPorTipo(
             @ParameterLayout(named="Tipo de Mantenimiento")
             final ETipoMantenimiento tipoMantenimiento) {
