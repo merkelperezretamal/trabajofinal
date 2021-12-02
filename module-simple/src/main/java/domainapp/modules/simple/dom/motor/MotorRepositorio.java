@@ -52,11 +52,11 @@ public class MotorRepositorio {
 
     public static class CreateDomainEvent extends ActionDomainEvent<MotorRepositorio> {}
 
-//    @Action()
-//    public Blob exportarDetalle(Motor motor) throws JRException, IOException {
-//        EjecutarReportes ejecutarReportes = new EjecutarReportes();
-//        return ejecutarReportes.ListadoMotorPDF(motor);
-//    }
+    @Action()
+    public Blob exportarDetalle(Motor motor) throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoMotorPDF(motor);
+    }
 
     @javax.inject.Inject
     RepositoryService repositoryService;

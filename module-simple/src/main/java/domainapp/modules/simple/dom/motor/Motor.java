@@ -124,10 +124,10 @@ public class Motor implements Comparable<Motor>{
         return ordenRepositorio.exportarListado(this.tag, 0);
     }
 
-//    @Action()
-//    public Blob exportarDetalleMotor() throws JRException, IOException {
-//        return motorRepositorio.exportarDetalle(this);
-//    }
+    @Action()
+    public Blob exportarDetalleMotor() throws JRException, IOException {
+        return motorRepositorio.exportarDetalle(this);
+    }
 
     //Para los reportes
     public String RepoTag() { return this.tag; }
