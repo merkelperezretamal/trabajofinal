@@ -23,6 +23,7 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -98,11 +99,19 @@ public class Motor implements Comparable<Motor>{
             final @ParameterLayout(named="Marca") String marca,
             final @ParameterLayout(named="Modelo") ETipoModelo tipoModelo,
             final @ParameterLayout(named="Serial") String serial) {
-        setTag(tag);
-        setMarca(marca);
-        setTipoModelo(tipoModelo);
-        setSerial(serial);
-        return this;
+
+        List<Motor> listaMotores = motorRepositorio.buscarPorTag(tag);
+
+        if(listaMotores.isEmpty()){
+            setTag(tag);
+            setMarca(marca);
+            setTipoModelo(tipoModelo);
+            setSerial(serial);
+            return this;
+        }else{
+            messageService.raiseError("Ya existe un motor con el tag '"+tag+"'. Presione 'Continue' para volver");
+            return listaMotores.get(0);
+        }
     }
 
     public String default0EditarMotor(){ return this.tag; }

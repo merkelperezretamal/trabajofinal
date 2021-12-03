@@ -34,21 +34,20 @@ public class MotorRepositorio {
         return repositoryService.allInstances(Motor.class);
     }
 
-//    @Action(semantics = SemanticsOf.SAFE)
-//    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-//    @MemberOrder(sequence = "2")
-//    @Programmatic
-//    public List<Motor> buscarPorTipo(
-//            @ParameterLayout(named="Tipo de Modelo")
-//            final ETipoModelo tipoModelo) {
-//        TypesafeQuery<Motor> q = isisJdoSupport.newTypesafeQuery(Motor.class);
-//        final QMotor cand = QMotor.candidate();
-//        q = q.filter(
-//                cand.tipoModelo.eq(q.stringParameter("tipoModelo"))
-//        );
-//        return q.setParameter("tipoModelo", tipoModelo)
-//                .executeList();
-//    }
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @MemberOrder(sequence = "4")
+    public List<Motor> buscarPorTag(
+            @ParameterLayout(named="TAG")
+            final String tag) {
+        TypesafeQuery<Motor> q = isisJdoSupport.newTypesafeQuery(Motor.class);
+        final QMotor cand = QMotor.candidate();
+        q = q.filter(
+                cand.tag.indexOf(q.stringParameter("tag")).ne(-1)
+        );
+        return q.setParameter("tag", tag)
+                .executeList();
+    }
 
     public static class CreateDomainEvent extends ActionDomainEvent<MotorRepositorio> {}
 
