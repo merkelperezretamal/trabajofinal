@@ -19,68 +19,67 @@
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="time-outline" slot="start"></ion-icon>
           Horometro : &nbsp;
-          <ion-input type="text" formControlName="horometro"></ion-input>
+          <ion-input type="number" formControlName="horometro" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="speedometer-outline" slot="start"></ion-icon>
           RPM : &nbsp;
-          <ion-input type="text" formControlName="rpm"></ion-input>
+          <ion-input type="number" formControlName="rpm" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="timer-outline" slot="start"></ion-icon>
           Presion Aceite : &nbsp;
-          <ion-input type="text" formControlName="presionAceite"></ion-input>
+          <ion-input type="number" formControlName="presionAceite" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="thermometer-outline" slot="start"></ion-icon>
           Temperatura Aceite : &nbsp;
-          <ion-input type="text" formControlName="temperaturaAceite"></ion-input>
+          <ion-input type="number" formControlName="temperaturaAceite" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="thermometer-outline" slot="start"></ion-icon>
           Temperatura Agua : &nbsp;
-          <ion-input type="text" formControlName="temperaturaAgua"></ion-input>
+          <ion-input type="number" formControlName="temperaturaAgua" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="thermometer-outline" slot="start"></ion-icon>
           Temperatura de Succion 1° : &nbsp;
-          <ion-input type="text" formControlName="temperaturaSuccion1"></ion-input>
+          <ion-input type="number" formControlName="temperaturaSuccion1" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="timer-outline" slot="start"></ion-icon>
           Presion de Succcion 1° : &nbsp;
-          <ion-input type="text" formControlName="presionSuccion1"></ion-input>
+          <ion-input type="number" formControlName="presionSuccion1" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="thermometer-outline" slot="start"></ion-icon>
           Temperatura de Succion 2° : &nbsp;
-          <ion-input type="text" formControlName="temperaturaSuccion2"></ion-input>
+          <ion-input type="number" formControlName="temperaturaSuccion2" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="timer-outline" slot="start" required></ion-icon>
           Presion de Succion 2° : &nbsp;
-          <ion-input type="text" formControlName="presionSuccion2"></ion-input>
+          <ion-input type="number" formControlName="presionSuccion2" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="thermometer-outline" slot="start"></ion-icon>
           Temperatura de Succion 3° : &nbsp;
-          <ion-input type="text" formControlName="temperaturaSuccion3"></ion-input>
+          <ion-input type="number" formControlName="temperaturaSuccion3" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="timer-outline" slot="start"></ion-icon>
           Presion de Succion 3° : &nbsp;
-          <ion-input type="text" formControlName="presionSuccion3"></ion-input>
+          <ion-input type="number" formControlName="presionSuccion3" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+          <ion-icon name="timer-outline" slot="start" required></ion-icon>
           Presion de Descarga : &nbsp;
-          <ion-input type="text" formControlName="presionDescarga"></ion-input>
+          <ion-input type="number" formControlName="presionDescarga" required></ion-input>
         </ion-item>
       </ion-card>
-      <ion-button type="submit" style="background-color: rgb(170, 196, 245)">
-        Guardar
+      <ion-button expand="full" shape="round" color="success" [disabled]="!cargaForm.valid" type="submit">Guardar
       </ion-button>
     </form>
   </div>
