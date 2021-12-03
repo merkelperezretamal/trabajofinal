@@ -4,6 +4,7 @@ import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.equipo.Equipo;
 import domainapp.modules.simple.dom.equipo.EquipoRepositorio;
 import domainapp.modules.simple.dom.mantenimiento.MantenimientoRepositorio;
+import domainapp.modules.simple.dom.motor.Motor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -120,10 +121,18 @@ public class Planta implements Comparable<Planta> {
             final @ParameterLayout(named="Nombre") String nombre,
             final @ParameterLayout(named="Provincia") String provincia,
             final @ParameterLayout(named="Cliente") String cliente) {
-        setNombre(nombre);
-        setProvincia(provincia);
-        setCliente(cliente);
-        return this;
+
+        List<Planta> listaPlantas = plantaRepositorio.buscarPorNombre(nombre);
+
+        if(listaPlantas.isEmpty()){
+            setNombre(nombre);
+            setProvincia(provincia);
+            setCliente(cliente);
+            return this;
+        }else{
+            messageService.raiseError("Ya existe una planta con el nombre '"+nombre+"'. Presione 'Continue' para volver");
+            return listaPlantas.get(0);
+        }
     }
 
     public String default0EditarPlanta() {
@@ -145,6 +154,11 @@ public class Planta implements Comparable<Planta> {
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     EquipoRepositorio equipoRepositorio;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    PlantaRepositorio plantaRepositorio;
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

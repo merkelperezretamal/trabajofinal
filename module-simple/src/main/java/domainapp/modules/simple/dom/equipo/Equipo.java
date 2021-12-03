@@ -175,8 +175,16 @@ public class Equipo implements Comparable<Equipo> {
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Equipo editarEquipo(
             final @ParameterLayout(named="Denominacion") String denominacion) {
-        setDenominacion(denominacion);
-        return this;
+
+        List<Equipo> listaEquipos = equipoRepositorio.buscarPorDenominacion(denominacion);
+
+        if(listaEquipos.isEmpty()){
+            setDenominacion(denominacion);
+            return this;
+        }else{
+            messageService.raiseError("Ya existe un equipo con la denominacion '"+denominacion+"'. Presione 'Continue' para volver");
+            return listaEquipos.get(0);
+        }
     }
 
     public String default0EditarEquipo() {
@@ -239,5 +247,10 @@ public class Equipo implements Comparable<Equipo> {
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     CompresorRepositorio compresorRepositorio;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    EquipoRepositorio equipoRepositorio;
 
 }
