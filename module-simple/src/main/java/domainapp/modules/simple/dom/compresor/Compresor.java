@@ -21,6 +21,7 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -119,15 +120,23 @@ public class Compresor implements Comparable<Compresor>{
             final @ParameterLayout(named="Cyl 2") String cylinder2,
             final @ParameterLayout(named="Cyl 3") String cylinder3,
             final @ParameterLayout(named="Cyl 4") String cylinder4) {
-        setTag(tag);
-        setMarca(marca);
-        setModelo(modelo);
-        setFrame(frame);
-        setCylinder1(cylinder1);
-        setCylinder2(cylinder2);
-        setCylinder3(cylinder3);
-        setCylinder4(cylinder4);
-        return this;
+
+        List<Compresor> listaCompresores = compresorRepositorio.buscarPorTag(tag);
+
+        if(listaCompresores.isEmpty()){
+            setTag(tag);
+            setMarca(marca);
+            setModelo(modelo);
+            setFrame(frame);
+            setCylinder1(cylinder1);
+            setCylinder2(cylinder2);
+            setCylinder3(cylinder3);
+            setCylinder4(cylinder4);
+            return this;
+        }else{
+            messageService.raiseError("Ya existe un compresor con el tag '"+tag+"'. Presione 'Continue' para volver");
+            return listaCompresores.get(0);
+        }
     }
 
     public String default0EditarCompresor(){ return this.tag; }
@@ -168,4 +177,9 @@ public class Compresor implements Comparable<Compresor>{
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     OrdenRepositorio ordenRepositorio;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    CompresorRepositorio compresorRepositorio;
 }

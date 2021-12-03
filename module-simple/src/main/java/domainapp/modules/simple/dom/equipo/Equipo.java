@@ -4,6 +4,7 @@ import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.cargadiaria.CargaDiariaRepositorio;
 import domainapp.modules.simple.dom.compresor.Compresor;
+import domainapp.modules.simple.dom.compresor.CompresorRepositorio;
 import domainapp.modules.simple.dom.motor.ETipoModelo;
 import domainapp.modules.simple.dom.motor.Motor;
 import domainapp.modules.simple.dom.motor.MotorRepositorio;
@@ -120,7 +121,16 @@ public class Equipo implements Comparable<Equipo> {
                                     final @ParameterLayout (named="Cyl 2") String cylinder2,
                                     final @ParameterLayout (named="Cyl 3") String cylinder3,
                                     final @ParameterLayout (named="Cyl 4") String cylinder4) {
-        return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
+
+        List<Compresor> listaCompresores = compresorRepositorio.buscarPorTag(tag);
+
+        if(listaCompresores.isEmpty()){
+            return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
+        }else{
+            messageService.raiseError("Ya existe un compresor con el tag '"+tag+"'. Presione 'Continue' para volver al equipo "+this.denominacion);
+            return listaCompresores.get(0);
+        }
+
     }
 
 
@@ -224,5 +234,10 @@ public class Equipo implements Comparable<Equipo> {
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MotorRepositorio motorRepositorio;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    CompresorRepositorio compresorRepositorio;
 
 }
