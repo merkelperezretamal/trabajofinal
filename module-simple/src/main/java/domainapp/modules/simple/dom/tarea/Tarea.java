@@ -63,7 +63,7 @@ public class Tarea implements Comparable<Tarea> {
     }
 
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void borrar() {
+    public void eliminar() {
         final String title = titleService.titleOf(this);
         messageService.informUser(String.format("'%s' deleted", title));
         repositoryService.remove(this);

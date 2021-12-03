@@ -20,15 +20,14 @@ package domainapp.application.services.homepage;
 
 import java.util.List;
 
+import domainapp.modules.simple.dom.equipo.Equipo;
+import domainapp.modules.simple.dom.equipo.EquipoRepositorio;
 import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.planta.PlantaRepositorio;
 import org.apache.isis.applib.annotation.CollectionLayout;
 import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.Nature;
 import org.apache.isis.applib.services.i18n.TranslatableString;
-
-import domainapp.modules.simple.dom.impl.SimpleObject;
-import domainapp.modules.simple.dom.impl.SimpleObjects;
 
 @DomainObject(
         nature = Nature.VIEW_MODEL,
@@ -40,12 +39,21 @@ public class HomePageViewModel {
 //        return TranslatableString.tr("Listado de Plantas");
 //    }
 
-    @CollectionLayout(named = "Listado de Plantas")
+    public String title() { return "home"; }
+
+    @CollectionLayout(defaultView = "table")
     public List<Planta> getPlantas() {
-        List<Planta> plantas = plantaRepositorio.listarTodas();
-        return plantas;
+        return plantaRepositorio.listarTodas();
     }
+
+//    @CollectionLayout(defaultView = "table")
+//    public List<Equipo> getEquipos() {
+//        return equipoRepositorio.listarTodos();
+//    }
 
     @javax.inject.Inject
     PlantaRepositorio plantaRepositorio;
+
+    @javax.inject.Inject
+    EquipoRepositorio equipoRepositorio;
 }

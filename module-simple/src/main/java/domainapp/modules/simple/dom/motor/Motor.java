@@ -105,6 +105,11 @@ public class Motor implements Comparable<Motor>{
         return this;
     }
 
+    public String default0EditarMotor(){ return this.tag; }
+    public String default1EditarMotor(){ return this.marca; }
+    public ETipoModelo default2EditarMotor(){ return this.tipoModelo; }
+    public String default3EditarMotor(){ return this.serial; }
+
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     public Orden nuevaOrden(final @ParameterLayout (named="Numero de Orden") int numeroOrden) {
         if(this.tipoModelo.equals(ETipoModelo.MOTOR_3500)){

@@ -20,7 +20,6 @@ package domainapp.modules.simple.dom.equipo;
 
 import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.equipo.Equipo;
-import domainapp.modules.simple.dom.impl.SimpleObjects;
 import domainapp.modules.simple.dom.planta.Planta;
 import domainapp.modules.simple.dom.planta.QPlanta;
 import domainapp.modules.simple.dom.reportes.EjecutarReportes;

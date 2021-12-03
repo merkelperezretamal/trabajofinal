@@ -37,6 +37,7 @@ public class MotorRepositorio {
 //    @Action(semantics = SemanticsOf.SAFE)
 //    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
 //    @MemberOrder(sequence = "2")
+//    @Programmatic
 //    public List<Motor> buscarPorTipo(
 //            @ParameterLayout(named="Tipo de Modelo")
 //            final ETipoModelo tipoModelo) {

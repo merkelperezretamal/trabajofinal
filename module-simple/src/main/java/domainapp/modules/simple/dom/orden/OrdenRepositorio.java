@@ -32,6 +32,7 @@ public class OrdenRepositorio {
 
     @Action(domainEvent = OrdenRepositorio.CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
+    @Programmatic
     public Orden crear(
             @ParameterLayout(named="Numero")
             final int numeroOrden,
@@ -54,6 +55,7 @@ public class OrdenRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "3")
+    @Programmatic
     public List<Orden> buscarPorMotor(
             @ParameterLayout(named="Tag Motor")
             final String tag) {
@@ -69,6 +71,7 @@ public class OrdenRepositorio {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "4")
+    @Programmatic
     public List<Orden> buscarPorCompresor(
             @ParameterLayout(named="Tag Compresor")
             final String tag) {
