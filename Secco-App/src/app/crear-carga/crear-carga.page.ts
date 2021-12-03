@@ -46,6 +46,7 @@ export class CrearCargaPage implements OnInit {
   ngOnInit() {
     this.listarEquipos();
   }
+  
 
   onSelectEquipo(equipo) {
     console.log(equipo);
@@ -79,7 +80,7 @@ export class CrearCargaPage implements OnInit {
         console.log(carga);
       });
 
-      this.router.navigate(['/carga-diaria']);
+      this.router.navigate(['/menu/carga-diaria']);
 
   }
 }
