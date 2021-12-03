@@ -24,6 +24,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.SortedSet;
 
+import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
+
 @javax.jdo.annotations.PersistenceCapable(identityType= IdentityType.DATASTORE, schema = "simple")
 @javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
