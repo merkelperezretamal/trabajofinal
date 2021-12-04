@@ -71,6 +71,15 @@ public class EjecutarReportes {
         return GenerarArchivoPDF("DetalleOrdenes.jrxml", "Listado de Ordenes.pdf", ds);
     }
 
+    public Blob ListadoMotorPDF(Motor motor) throws JRException, IOException {
+
+        List<RepoMotor> repoMotors = new ArrayList<RepoMotor>();
+        repoMotors.add(new RepoMotor(motor.RepoEquipo(), motor.RepoTag(), motor.RepoMarca(), motor.RepoTipoModelo(), motor.RepoSerial()));
+
+        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoMotors);
+        return GenerarArchivoPDF("DetalleMotor.jrxml", "Detalle Baja Motor.pdf", ds);
+    }
+
     private Blob GenerarArchivoPDF(String archivoDesing, String nombreSalida, JRBeanCollectionDataSource ds) throws JRException, IOException{
 
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(archivoDesing);

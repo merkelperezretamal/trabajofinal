@@ -1,10 +1,12 @@
 package domainapp.modules.simple.dom.planta;
 
 import domainapp.modules.simple.dom.equipo.Equipo;
+import lombok.AccessLevel;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.annotation.Action;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
+import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.datanucleus.query.typesafe.TypesafeQuery;
 
@@ -37,8 +39,7 @@ public class PlantaRepositorio {
         if(listaPlantas.isEmpty()){
             return repositoryService.persist(new Planta(nombre, provincia, cliente));
         }else{
-            JOptionPane.showMessageDialog(null, "Ya existe una Planta con ese nombre");
-            JOptionPane.showMessageDialog(null, "Redirigiendote a la Planta existente");
+            messageService.raiseError("Ya existe una Planta con el nombre '"+nombre+"'. Presione 'Continue' para volver");
             return listaPlantas.get(0);
         }
     }
@@ -74,5 +75,10 @@ public class PlantaRepositorio {
 
     @javax.inject.Inject
     IsisJdoSupport isisJdoSupport;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    MessageService messageService;
 
 }

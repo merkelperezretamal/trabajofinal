@@ -4,8 +4,10 @@ import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.cargadiaria.CargaDiaria;
 import domainapp.modules.simple.dom.cargadiaria.CargaDiariaRepositorio;
 import domainapp.modules.simple.dom.compresor.Compresor;
+import domainapp.modules.simple.dom.compresor.CompresorRepositorio;
 import domainapp.modules.simple.dom.motor.ETipoModelo;
 import domainapp.modules.simple.dom.motor.Motor;
+import domainapp.modules.simple.dom.motor.MotorRepositorio;
 import domainapp.modules.simple.dom.planta.Planta;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -25,6 +27,7 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -94,7 +97,18 @@ public class Equipo implements Comparable<Equipo> {
                             final @ParameterLayout (named="Marca") String marca,
                             final @ParameterLayout (named="Modelo") ETipoModelo tipoModelo,
                             final @ParameterLayout (named="Serial") String serial) {
-        return repositoryService.persist(new Motor(this, tag, marca, tipoModelo, serial));
+
+        List<Motor> listaMotores = motorRepositorio.buscarPorTag(tag);
+
+        if(listaMotores.isEmpty()){
+            return repositoryService.persist(new Motor(this, tag, marca, tipoModelo, serial));
+        }else{
+//            JOptionPane.showMessageDialog(null, "Ya existe un equipo con esa denominacion en "+this.nombre);
+//            JOptionPane.showMessageDialog(null, "Redirigiendote al equipo existente");
+            messageService.raiseError("Ya existe un motor con el tag '"+tag+"'. Presione 'Continue' para volver al equipo "+this.denominacion);
+
+            return listaMotores.get(0);
+        }
     }
 
 
@@ -107,7 +121,16 @@ public class Equipo implements Comparable<Equipo> {
                                     final @ParameterLayout (named="Cyl 2") String cylinder2,
                                     final @ParameterLayout (named="Cyl 3") String cylinder3,
                                     final @ParameterLayout (named="Cyl 4") String cylinder4) {
-        return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
+
+        List<Compresor> listaCompresores = compresorRepositorio.buscarPorTag(tag);
+
+        if(listaCompresores.isEmpty()){
+            return repositoryService.persist(new Compresor(this,tag,marca,modelo,frame,cylinder1,cylinder2,cylinder3,cylinder4));
+        }else{
+            messageService.raiseError("Ya existe un compresor con el tag '"+tag+"'. Presione 'Continue' para volver al equipo "+this.denominacion);
+            return listaCompresores.get(0);
+        }
+
     }
 
 
@@ -206,5 +229,15 @@ public class Equipo implements Comparable<Equipo> {
     @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     CargaDiariaRepositorio cargaDiariaRepositorio;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    MotorRepositorio motorRepositorio;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    CompresorRepositorio compresorRepositorio;
 
 }

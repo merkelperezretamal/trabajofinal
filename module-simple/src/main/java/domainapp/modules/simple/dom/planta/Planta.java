@@ -11,6 +11,7 @@ import lombok.Setter;
 import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.annotation.Action;
+import org.apache.isis.applib.services.i18n.TranslatableString;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
@@ -24,6 +25,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
+import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
 
 @javax.jdo.annotations.PersistenceCapable(identityType= IdentityType.DATASTORE, schema = "simple")
@@ -81,15 +84,17 @@ public class Planta implements Comparable<Planta> {
     }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public Equipo nuevoEquipo(@ParameterLayout(named="TAG") final String denominacion) {
+    public Equipo nuevoEquipo(@ParameterLayout(named="Denominacion") final String denominacion) {
 
         List<Equipo> listaEquipos = equipoRepositorio.buscarPorDenominacion(denominacion);
 
         if(listaEquipos.isEmpty()){
             return repositoryService.persist(new Equipo(denominacion, this));
         }else{
-            JOptionPane.showMessageDialog(null, "Ya existe un equipo con esa denominacion en "+this.nombre);
-            JOptionPane.showMessageDialog(null, "Redirigiendote al equipo existente");
+//            JOptionPane.showMessageDialog(null, "Ya existe un equipo con esa denominacion en "+this.nombre);
+//            JOptionPane.showMessageDialog(null, "Redirigiendote al equipo existente");
+            messageService.raiseError("Ya existe un equipo con la denominacion '"+denominacion+"'. Presione 'Continue' para volver a la planta "+this.nombre);
+
             return listaEquipos.get(0);
         }
     }
