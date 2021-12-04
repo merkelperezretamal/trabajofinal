@@ -11,36 +11,32 @@
 
   <ion-label *ngIf="plaData != null">
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="ion-text-center"><strong>{{plaData.$$title}}</strong></ion-card-title>
-    </ion-card-header>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center"><strong>{{plaData.$$title}}</strong></ion-card-title>
+      </ion-card-header>
 
-    <ion-item>
-      <ion-label>
-        <strong>Nombre:</strong> 
-        {{plaData.nombre}}</ion-label>
-    </ion-item>
+      <ion-item>
+        <ion-label>
+          <strong>Nombre:</strong>
+          {{plaData.nombre}}
+        </ion-label>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>
-        <strong>Provincia: </strong>
-        {{plaData.provincia}}</ion-label>
-    </ion-item>
+      <ion-item>
+        <ion-label>
+          <strong>Provincia: </strong>
+          {{plaData.provincia}}
+        </ion-label>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>
-        <strong>Cliente: </strong>
-        {{plaData.cliente}}</ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>
-        <strong>Activo: </strong>
-        {{plaData.activo}}</ion-label>
-    </ion-item>
-
-  </ion-card> 
+      <ion-item>
+        <ion-label>
+          <strong>Cliente: </strong>
+          {{plaData.cliente}}
+        </ion-label>
+      </ion-item>
+    </ion-card>
 
   </ion-label>
 
