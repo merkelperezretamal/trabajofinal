@@ -86,6 +86,7 @@ public class OrdenRepositorio {
 
     @Action()
     @ActionLayout(named = "Listado Exportado")
+    @Programmatic
     public Blob exportarListado(
             @ParameterLayout(named="Tag Motor") String tag, int tipo) throws JRException, IOException {
         if(tipo == 0) { //Motor

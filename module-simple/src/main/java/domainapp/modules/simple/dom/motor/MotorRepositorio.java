@@ -52,6 +52,7 @@ public class MotorRepositorio {
     public static class CreateDomainEvent extends ActionDomainEvent<MotorRepositorio> {}
 
     @Action()
+    @Programmatic
     public Blob exportarDetalle(Motor motor) throws JRException, IOException {
         EjecutarReportes ejecutarReportes = new EjecutarReportes();
         return ejecutarReportes.ListadoMotorPDF(motor);

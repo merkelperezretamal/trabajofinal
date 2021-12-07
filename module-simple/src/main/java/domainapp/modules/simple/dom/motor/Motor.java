@@ -134,6 +134,7 @@ public class Motor implements Comparable<Motor>{
     }
 
     @Action()
+    @Programmatic
     public Blob exportarDetalleMotor() throws JRException, IOException {
         return motorRepositorio.exportarDetalle(this);
     }

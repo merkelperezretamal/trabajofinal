@@ -74,6 +74,9 @@
                 <mb3:serviceAction objectType="simple.MotorMenu" id="listarTodos">
                     <cpt:named>Listar todos</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.MotorMenu" id="buscarPorTag">
+                    <cpt:named>Buscar por tag</cpt:named>
+                </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
 
@@ -83,6 +86,9 @@
                 <mb3:serviceAction objectType="simple.CompresorMenu" id="listarTodos">
                     <cpt:named>Listar todos</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.CompresorMenu" id="buscarPorTag">
+                    <cpt:named>Buscar por tag</cpt:named>
+                </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
 
@@ -91,9 +97,6 @@
             <mb3:section>
                 <mb3:serviceAction objectType="simple.OrdenMenu" id="listarTodas">
                     <cpt:named>Listar todas</cpt:named>
-                </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.OrdenMenu" id="exportarListado">
-                    <cpt:named>Exportar listado</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
