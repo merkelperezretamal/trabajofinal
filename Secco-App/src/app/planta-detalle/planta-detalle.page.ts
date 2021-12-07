@@ -13,26 +13,26 @@ export class PlantaDetallePage implements OnInit {
 
   idPla;
   plaData;
-  param : any;
+  param: any;
   private autenticacion = '';
   public URLservidor: String;
-  public URLSecundaria: String =  'https://secco-app.herokuapp.com';
+  public URLSecundaria: String = 'https://secco-app.herokuapp.com';
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, public toastController: ToastController) {}
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, public toastController: ToastController) { }
 
   ngOnInit() {
-    if(window.localStorage.autenticacion){
+    if (window.localStorage.autenticacion) {
       this.autenticacion = window.localStorage.autenticacion;
     }
-    if(window.localStorage.URLservidor){
+    if (window.localStorage.URLservidor) {
       this.URLservidor = window.localStorage.URLservidor;
-    }else{ 
+    } else {
       this.URLservidor = this.URLSecundaria;
     }
     this.param = this.activatedRoute.snapshot.params;
     if (Object.keys(this.param).length) {
-			this.listarPla(this.param.idPla);
-		}
+      this.listarPla(this.param.idPla);
+    }
   }
 
   listarPla(idPla) {
@@ -43,12 +43,13 @@ export class PlantaDetallePage implements OnInit {
 
       })
     }
-    const URL = this.URLSecundaria+'/restful/objects/simple.Planta/' + idPla;
+    const URL = this.URLSecundaria + '/restful/objects/simple.Planta/' + idPla;
     this.http.get(URL, httpOptions)
       .subscribe((resultados) => {
         this.plaData = resultados;
       });
 
   }
+
 
 }

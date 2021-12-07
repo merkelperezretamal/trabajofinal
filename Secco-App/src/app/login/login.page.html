@@ -1,17 +1,20 @@
 <ion-content [fullscreen]="true">
   <figure class="ion-text-center ion-padding">
-    <img src="assets/img/seccoLogo2.png" alt="Secco logo" />
+    <img src="assets/img/LogoSecco.png" alt="Secco logo" />
   </figure>
-  <form [formGroup]="loginForm" (ngSubmit)="submit()">
-    <ion-item lines="full">
-      <ion-label position="floating">Usuario:</ion-label>
-      <ion-input type="text" formControlName="username" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña: </ion-label>
-      <ion-input type="password" formControlName="password" required></ion-input>
-    </ion-item>
-    <ion-button expand="full" shape="round" color="primary" [disabled]="!loginForm.valid" type="submit">Login
-    </ion-button>
-  </form>
+  <div class="form-style">
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()" >
+      <ion-item lines="full">
+        <ion-label position="floating">Usuario:</ion-label>
+        <ion-input type="text" formControlName="username" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Contraseña: </ion-label>
+        <ion-input type="password" formControlName="password" required ></ion-input>
+      </ion-item>
+      <ion-button expand="full" shape="round" color="primary" [disabled]="!loginForm.valid" type="submit">Login
+      </ion-button>
+    </form>
+  </div>
 </ion-content>
