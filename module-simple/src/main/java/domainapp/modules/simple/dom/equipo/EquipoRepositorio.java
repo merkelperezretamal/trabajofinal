@@ -99,6 +99,12 @@ public class EquipoRepositorio {
         return ejecutarReportes.ListadoEquiposPDF(equipos);
     }
 
+    @Action()
+    public Blob exportarListado() throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoEquiposPDF();
+    }
+
     public static class CreateDomainEvent extends ActionDomainEvent<EquipoRepositorio> {}
 
     @javax.inject.Inject

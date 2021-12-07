@@ -23,6 +23,7 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 import javax.swing.*;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -147,7 +148,20 @@ public class Planta implements Comparable<Planta> {
 
     @Action()
     public Blob exportarListadoEquipos() throws JRException, IOException {
-        return equipoRepositorio.exportarListado(this.nombre);
+        boolean exporta = true;
+
+        for (Equipo equipo : equipos){
+            if(equipo.getMotor() == null || equipo.getCompresor() == null){
+                exporta = false;
+            }
+        }
+
+        if(exporta == true){
+            return equipoRepositorio.exportarListado(this.nombre);
+        }else {
+            messageService.raiseError("Hay equipos en " + this.nombre + " que no disponen de todos los componentes. Verifique e intente de nuevo. Presione 'Continue' para volver");
+            return equipoRepositorio.exportarListado();
+        }
     }
 
     @javax.inject.Inject

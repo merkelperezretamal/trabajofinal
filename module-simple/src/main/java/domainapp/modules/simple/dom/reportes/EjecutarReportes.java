@@ -43,6 +43,11 @@ public class EjecutarReportes {
         return GenerarArchivoPDF("DetalleEquipos.jrxml", "Listado de Equipos.pdf", ds);
     }
 
+    public Blob ListadoEquiposPDF() throws JRException, IOException {
+
+        return GenerarArchivoPDF("DetalleEquipos.jrxml", "Listado de Equipos.pdf", null);
+    }
+
     public Blob ListadoCargasDiariasPDF(List<CargaDiaria> cargasDiarias) throws JRException, IOException {
         List<RepoCargasDiarias> repoCargasDiarias = new ArrayList<RepoCargasDiarias>();
         repoCargasDiarias.add(new RepoCargasDiarias());
