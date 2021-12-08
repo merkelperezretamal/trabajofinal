@@ -84,6 +84,22 @@ public class OrdenRepositorio {
                 .executeList();
     }
 
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @MemberOrder(sequence = "3")
+    @Programmatic
+    public List<Orden> buscarPorNumero(
+            @ParameterLayout(named="Numero")
+            final int numeroOrden) {
+        TypesafeQuery<Orden> q = isisJdoSupport.newTypesafeQuery(Orden.class);
+        final QOrden cand = QOrden.candidate();
+        q = q.filter(
+                cand.numeroOrden.eq(q.integerParameter("numeroOrden"))
+        );
+        return q.setParameter("numeroOrden", numeroOrden)
+                .executeList();
+    }
+
     @Action()
     @ActionLayout(named = "Listado Exportado")
     @Programmatic
