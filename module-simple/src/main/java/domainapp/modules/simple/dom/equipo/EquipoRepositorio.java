@@ -92,6 +92,7 @@ public class EquipoRepositorio {
 
 
     @Action()
+    @Programmatic
     public Blob exportarListado(
             @ParameterLayout(named="Nombre Planta") String nombre) throws JRException, IOException {
         EjecutarReportes ejecutarReportes = new EjecutarReportes();
@@ -100,6 +101,7 @@ public class EquipoRepositorio {
     }
 
     @Action()
+    @Programmatic
     public Blob exportarListado() throws JRException, IOException {
         EjecutarReportes ejecutarReportes = new EjecutarReportes();
         return ejecutarReportes.ListadoEquiposPDF();
