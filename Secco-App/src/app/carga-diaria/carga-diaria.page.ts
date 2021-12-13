@@ -35,7 +35,7 @@ export class CargaDiariaPage implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept':  'application/json;profile="urn:org.apache.isis/v1"',
-        'Authorization': 'Basic bmFjaG86cGFzcw==',
+        'Authorization': 'Basic dXN1YXJpbzp1c3Vhcmlv',
       })
     }
     const URL = this.URLSecundaria+'/restful/services/simple.CargaDiariaMenu/actions/listarTodas/invoke';
