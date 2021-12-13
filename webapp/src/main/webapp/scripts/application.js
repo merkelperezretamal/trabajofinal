@@ -3,9 +3,8 @@ $(document).ready(function() {
 
 	if ($("body").find(".accountManagementPanel").length > 0){
 
-        $('body').css('background-color', '#426ab2');
-        $('body').css('background-image', 'url("/images/seccoimagen.jpg")');
-        $('body').css('color', '#ffffff');
+        $('body').css('background-color', '#FFFFFF');
+        $('body').css('color', '#000000');
         $('body').css('position', 'relative');
         $('body').css('height', 'calc(100vh)');
         $('body').css('background-size', 'cover');
@@ -25,7 +24,6 @@ $(document).ready(function() {
 
     	}else{
         $('body').css('background-color', 'white');
-        $('body').css('background-image', 'url("/images/background.jpg")');
         $('body').css('background-repeat', 'repeat-y');
         $('body').css('color', 'black');
         $('body').css('position', 'relative');
